@@ -1,0 +1,62 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Главная страница{% endblock %}
+
+
+{% block content %}
+
+    <main class="page-main">
+        {% include "widgets/bredcrumbs.twig" with {"title": "Линии белорусской косметики"} %}
+        <section>
+            <div class="uk-container uk-container-center">
+                <div class="section-inner">
+                    <div class="d-fx fx-justify lg-fx-column-reverse mb20 fx-middle" data-uk-grid-margin="">
+                        <div class="fx-b220">
+                            <select>
+                                <option>Цена</option>
+                                <option>Популярность</option>
+                                <option>Количество</option>
+                            </select>
+                        </div>
+                        
+                        <div class="fx-grow-1">
+                            <p>В нашем магазине представлено 145 коллекций 17 производителей косметики и парфюмерии</p>
+                        </div>
+                    </div>
+                    <div class="lines-list mb30">
+                        <div class="uk-grid " data-uk-grid-margin="">
+                            {% for 1 in 1..8 %}
+                            <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2">
+                                    
+                            
+                            <div class="lines-item d-fx fx-justify">
+                                <div class="lines-item__img">
+                                    <img src="http://via.placeholder.com/104x104" alt=" " />
+                                </div>
+                                <div class="lines-item__text d-fx fx-column fx-justify">
+                                    <div class="lines-item__name fz20 text-uppercase uk-text-left mb10">
+                                        <p>
+                                            COLOR LUX С МАСЛОМ <br/>
+                                            АРГАНЫ И ФИТОКЕРАТИНОМ
+                                        </p>
+                                    </div>
+                                    <div class="lines-item__production mb25 text-brand">
+                                        <p>Белита - Витекс</p>
+                                    </div>
+                                    <div class="lines-item__description">
+                                        <p>Волшебное преображение Ваших волос! 7 масел красоты - 7 эффектов. Особая формула без утяжеления волос</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    {% include "widgets/pagination.twig" %}
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+{% endblock %}

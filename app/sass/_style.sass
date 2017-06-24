@@ -1,0 +1,1340 @@
+body
+	color: $black
+	font-size: 18px
+	line-height: 1.2em
+	font-family: $font-base
+	font-weight: normal
+
+
+.owl-nav
+	height: 0
+
+.page-header
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	
+
+.page-header__navbar
+	background-color: #f2eeef
+	padding: 10px 0 10px 0
+	font-size: 17px
+
+//SLIDERS
+.lines-slider
+	padding-left: 30px
+	padding-right: 30px
+
+		
+.products-slider-tabs
+	.owl-carousel
+		@extend %navs
+
+.products-slider
+	@extend %navs
+
+.lines-slider, .page-hero-slider__list
+	@extend %navs
+
+.page-hero-slider__img
+	min-height: 350px
+	position: relative
+
+
+.page-hero-slider__list
+	min-height: 350px
+	.owl-prev, .owl-next
+		background-color: $black
+
+	.owl-prev
+		&::before
+			color: $brand
+
+
+	.owl-next
+		&::before
+			color: $brand
+
+
+.reviews-slider, .partners-slider, .card-carousel
+	@extend %navs-arrows
+
+.card-carousel
+	.owl-item
+		cursor: pointer
+
+		// dsdsdsdsdsds
+
+
+.partners-slider
+
+	.owl-prev
+		&::before
+			transform: translate(-120%, -50%)
+			color: $text-black
+			font-size: 20px 
+
+	.owl-next
+		&::before
+			transform: translate(120%, -50%)
+			color: $text-black
+			font-size: 20px
+
+
+.page-header__navbar-inner
+
+.page-header__nav
+
+	align-items: center
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	li
+		&:not(:last-child)
+			margin-right: 20px
+
+.page-header__nav-inner
+
+
+.page-header__phone-wrapper
+	position: absolute
+	top: 50%
+	right: 0
+	transform: translateY(-50%)
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	& > a
+		&:not(:last-child)
+			margin-right: 20px
+
+.page-header__logo-panel
+	padding: 20px 0 20px 0
+
+
+.page-header__search-panel
+
+	background-color: $black
+
+.page-header__search-panel-inner
+	padding: 10px 0 10px 0
+
+.mobile-menu-btn
+	color: $brand
+	font-size: 25px
+	margin-right: 20px
+	background-color: transparent
+	border: none
+	&:focus
+		outline: none
+
+.page-header__tovars-counter
+	margin-left: 35px ////dwdwdwdwdwdwdw
+	&::after
+		content: 'товаров'
+
+
+.page-header__search-bar
+	width: 100%
+	position: relative
+	input
+		width: 100%
+		height: 35px
+		background-color: transparent
+		border: 1px solid $brand
+		padding: 0 40px 0 15px
+		color: #fff
+		font-size: 18px		
+		&:focus
+			outline: none !important
+
+	&::after
+		content: '\f002'
+		font-family: $font-icon
+		position: absolute
+		color: $brand
+		top: 48%
+		transform: translateY(-50%)
+		right: 15px
+		flex: 25px
+
+
+.page-hero-slider__img
+	object-fit: cover
+	max-height: 400px
+
+
+
+.page-hero-slider__list-content
+	position: relative
+	z-index: 200
+	padding: 30px 0 20px 50px
+
+
+
+.grey-bg
+	background-color: $lightgrey
+
+
+
+.section-title
+	text-transform: uppercase
+	font-size: 30px
+	margin-bottom: 30px
+	text-align: center
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	line-height: 1.2em
+	&::before
+		@extend %line
+		margin-bottom: 15px
+	&.section-title-bottom
+		&::before
+			display: none
+		&::after
+			@extend %line
+			margin-top: 15px
+
+.underlined-list__img
+	width: 100%
+	margin-bottom: 30px
+	img
+		object-fit: cover
+		width: 100%
+
+.underlined-list__caption
+	position: relative
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	font-size: 25px
+	text-transform: uppercase
+	flex-direction: column
+	&::after
+		@extend %line
+		margin-top: 20px
+
+.tabs-nav
+	li
+		width: 100%
+		text-align: center
+		flex-basis: 150px
+		flex-grow: 1
+		max-width: 230px
+		opacity: 1
+
+
+		& > a
+			font-size: 20px
+			color: $darker-black
+			font-size: 20px
+			text-transform: uppercase
+			font-family: $font-base-bold
+			background-color: $lightgrey
+			white-space: nowrap
+		&:hover > a
+			color: $darker-black
+		&.uk-active , &.active
+			& > a
+				background-color: $brand
+				color: #fff
+			.card-reviews__counter
+				background-color: #FFF
+				color: #2b2b2b
+
+	&.product-tabs
+		li
+			max-width: 300px
+			a
+				line-height: 46px
+
+
+.tabs-nav .uk-tab
+	flex-wrap: wrap	
+
+.tabs-nav
+	.uk-tab
+		display: flex
+		justify-content: center
+		border: none
+		flex-wrap: wrap
+		.uk-grid-margin
+			margin-top: 20px
+		li.uk-grid-margin
+			margin-top: 15px
+			margin-right: 20px
+
+.products-img
+	max-height: 200px
+	overflow: hidden
+	display: flex
+	justify-content: center
+	img
+		width: initial !important
+
+.products-item
+	padding: 40px 17px 15px 17px		
+	border: 1px solid #c1c1c1
+	max-width: 260px
+	margin: 0 auto
+
+.ruble-icon, .delivery-icon 
+	width: 60px
+	height: 60px ////ewfefwefwefwe
+
+.products-item__icon
+	width: 25px
+	height: 25px
+
+.products-item-footer
+	padding-top: 10px
+	border-top: 1px solid #c9c9c9
+
+.page-footer__bottom-panel
+	background-color: #323232
+	padding: 15px 0 15px 0
+	font-size: 16px
+	color: $brand
+	a
+		color: $brand
+
+.page-footer__inner
+	background-color: $lightgrey
+	padding: 30px 0 40px 0
+
+.page-footer__title
+	font-size: 23px
+	margin-bottom: 45px
+	font-family: $font-base-bold
+
+.page-footer__nav
+	display: flex
+	flex-direction: column
+	a
+		text-decoration: underline
+		&:not(:last-child)
+			margin-bottom: 10px
+
+.footer-logo__wrapper
+	max-width: 185px
+
+.page-footer__hot-line
+	margin-bottom: 7px
+
+.footer-logo__wrapper
+	margin-bottom: 20px
+
+.page-footer__mail
+	margin-left: 60px
+
+.page-footer__year
+	margin-right: 30px
+
+
+.centered-limitation-block
+	max-width: 780px
+	margin: 0 auto  //efefefe
+
+.advantages-list		
+	&.uk-grid > *
+		padding-left: 20px
+
+.advantages-icon
+	width: 70px
+	height: 70px
+	display: inline-block			
+
+.reviews-slider__img
+	border-radius: 100%
+	width: 80px
+	height: 80px
+	overflow: hidden
+
+
+.reviews-slider__item
+	border: 1px solid #c1c1c1
+	background-color: #FFF
+	padding: 25px 20px 25px 20px
+	min-height: 315px
+	max-width: 240px
+	margin: 0 auto
+
+.reviews-slider__social-icon
+	position: absolute
+	top: 15px
+	right: 15px
+	color: #6b6b6b
+	font-size: 30px	
+
+.products-valuation
+	display: flex
+	flex-direction: row
+	font-size: 15px //dsdsds
+	color: $brand
+
+.products-number
+	&::before
+		content: '('
+		display: inline
+	&::after
+		content: ')'
+		display: inline
+
+
+.products-price
+	display: flex
+	align-items: baseline
+	& > p
+		display: inline
+		vertical-align: middle
+		line-height: 1em
+	.icon-ruble
+		width: initial
+		height: 24px
+		display: inline
+		vertical-align: middle
+		margin-left: 3px
+		line-height: 1em
+
+.header-delivery-icon
+	width: 40px
+	height: 20px
+	margin-right: 20px
+
+.page-header__actions-bar__icon
+	width: 35px
+	height: auto
+
+
+.page-header__actions-bar
+	height: 40px
+	a
+		position: relative
+		width: 35px
+		z-index: 20
+		&:not(:last-child)
+			margin-right: 20px
+		&.page-header__actions-bar__key
+			width: 40px
+		svg 
+			path
+				+trans()
+				fill: $brand
+		&:hover
+			svg 
+				
+				path
+					fill: $brand * 0.9
+
+.products-item__icon
+	svg 
+		path
+			+trans()
+			fill: $brand
+	&:hover
+		svg 
+			path
+				fill: $brand * 0.9
+
+.page-hero-slider__list-content-half
+	margin: 30px 0 20px 50px
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+
+.page-hero-slider__list-content
+	font-size: 0
+	overflow: hidden
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: stretch
+
+.page-header__search-panel-delivery
+
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: row
+
+
+.d-n
+	display: none
+
+.page-hero-slider__img
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+.page-hero-slider__title
+	font-size: 40px
+
+.page-hero-slider__description
+	font-size: 25px
+
+.fx-wrap
+	flex-wrap: wrap
+
+.partners-slider__item
+	max-width: 131px
+	margin: 0 auto
+
+.lines-item__img
+	height: auto
+	margin-right: 45px
+
+.lines-item
+	padding: 30px
+	border: 1px solid #c1c1c1
+
+.lines-item__img
+	width: 25%
+
+
+.lines-item__text
+	width: 75%
+
+.sidebar-item
+	.slide-toggle
+		margin-left: 20px
+
+.b-word
+	white-space: break word
+
+.slide-toggle
+	width: 27px
+	height: 27px
+	background-color: $brand
+	position: relative
+	+trans()
+	cursor: pointer 
+	&:hover
+		background-color: $brand * 0.8
+	&::before
+		width: 13px
+		height: 3px
+		background-color: #FFF
+		position: absolute
+		content: ''
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&.active
+		&::after
+			width: 3px
+			height: 13px
+			background-color: #FFF
+			position: absolute
+			content: ''
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+.sidebar-item
+	padding: 20px
+	position: relative
+	background-color: #f2eeef
+	&::before
+		width: 107px
+		height: 3px
+		background-color: $brand
+		position: absolute
+		left: 0
+		content: ''
+		display: block
+		top: 0
+
+.category-filter__item
+	&:not(:last-child)
+		margin-bottom: 15px
+
+
+.category
+	.sidebar
+		width: 25%
+	.content
+		width: 75%
+
+.category-filter__item-number
+	background-color: $brand
+	line-height: 15px
+	font-size: 16px
+	color: #fff
+	padding: 5px
+	margin-left: 30px
+
+.sidebar-item
+	&:not(:last-child)
+		margin-bottom: 20px
+
+.list-mb-10
+	& > *:not(:last-child)
+		margin-bottom: 10px 
+
+.list-mb-20
+	& > *:not(:last-child)
+		margin-bottom: 20px 
+
+
+.card-manufacturer__img
+	max-width: 130px
+	height: auto
+
+
+.card-slider
+	padding: 0 25px 0 25px
+
+.sidebar-title 
+	font-size: 20px
+	text-transform: uppercase
+	font-family: $font-base-semibold
+
+.card__old-price
+	color: #5c5c5c
+	text-transform: uppercase
+	text-decoration: line-through
+
+.card__new-price
+	font-size: 40px
+	text-transform: uppercase
+	display: inline-flex
+	align-items: baseline
+	white-space: nowrap
+	p
+		display: inline
+	h3
+		display: inline
+	i
+		display: inline
+	.icon-ruble
+		height: 27px
+		margin-left: 3px
+		width: initial
+
+.advantages-ruble
+	display: flex
+	align-items: baseline
+	justify-content: center //////wdwdwdwd
+	.icon-ruble
+		height: 17px
+		margin-left: 3px
+		width: initial
+		path
+			fill: $brand
+.card-socials
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	font-size: 25px
+	.uk-icon
+		&:not(:last-child)
+			margin-right: 10px
+
+
+.breadcrumb
+	margin-top: -30px
+	margin-bottom: 30px !important
+
+
+.card-main
+	background-color: $beige
+	padding: 20px 35px 30px 35px
+
+.dd-full
+
+	height: 100vh
+
+.dp-panel	
+	transform: translate(100%, 0)
+	transform: translate3d(100%, 0, 0)
+	transition: transform .4s ease
+	transform-origin: top left
+	position: absolute
+	overflow-x: hidden
+	background-color: #fff ///wefewfwefwegergr
+
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	& > a
+		width: 100%
+		display: block
+		text-align: center
+		line-height: 40px
+		font-size: 16px 
+		color: #000
+		position: relative
+		padding: 0 30px 0 30px
+		text-transform: uppercase
+		border-bottom: 1px solid $lightgrey
+		&::before
+			content: '\f053'
+			font-family: $font-icon
+			font-size: 15px
+			position: absolute
+			top: 50%
+			left: 15px
+			transform: translateY(-50%)
+	.uk-nav
+		padding: 45px 20px 50px 20px
+
+
+
+.dp-panel-open	
+	transform: translate(0, 0)
+	transform: translate3d(0, 0, 0)
+
+.uk-offcanvas-bar
+	background-color: #fff
+	padding: 70px 20px 50px 20px
+	.uk-nav-offcanvas > li > a
+		color: #000
+
+.uk-nav-offcanvas, .dp-panel .uk-nav
+
+	& > li
+		&:not(:last-child)
+		border-bottom: 1px solid $lightgrey
+		&:hover
+			& > a
+				color: #000
+		& > a
+			padding: 0 15px 0 15px
+			color: #000
+			line-height: 40px
+			
+				
+
+.uk-nav-parent-icon > .uk-parent
+	& > a:after
+		content: '\f054'
+	&.uk-open > a:after
+		content: '\f054'
+
+.uk-offcanvas-bar__close
+	position: absolute
+	right: 20px
+	top: 20px
+	font-size: 30px
+	cursor: pointer
+
+.uk-offcanvas-bar__search
+	width: 100%
+	position: relative
+	margin-bottom: 30px
+	input
+		width: 100%
+		height: 35px
+		background-color: transparent
+		border: 1px solid $brand
+		padding: 0 40px 0 15px
+		color: #000
+		font-size: 18px		
+		&:focus
+			outline: none !important
+
+	&::after
+		content: '\f002'
+		font-family: $font-icon
+		position: absolute
+		color: $brand
+		top: 48%
+		transform: translateY(-50%)
+		right: 15px
+		flex: 25px
+
+.breadcrumb
+	background: $lightgrey
+	padding: 15px 0 15px 0
+
+.uk-breadcrumb
+	& > li > *
+		font-size: 17px 
+	& > li:not(.uk-active)
+		a
+			text-decoration: underline !important
+
+.card-reviews 
+	.tabs-content
+		background-color: $lightgrey
+		padding: 35px 80px 35px 
+		border-top: 4px solid $brand
+		position: relative
+		z-index: 15
+
+	.tabs-nav 
+		.uk-tab
+			justify-content: flex-start
+			a
+				display: flex
+				align-items: center
+				justify-content: center
+	
+
+.uk-tab > li:nth-child(n+2) > a
+	margin-left: 0
+
+.uk-tab > li:nth-child(n+2)
+	margin-left: 20px
+
+.card-slider__item-wrapper
+	background-color: #FFF
+	border: 1px solid #c1c1c1
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	padding: 35px 0 35px
+	margin-left: 5px
+	margin-right: 5px
+
+
+.card-carousel__item
+	border: 1px solid #c1c1c1
+
+
+.card-slider__item
+	max-width: 415px
+
+.card-slider
+	.owl-dots > div
+		width: 165px
+		height: 145px
+		&:not(:last-child)
+			margin-right: 25px
+
+
+.hamburger
+	padding: 0
+	height: 25px
+	&:focus
+		outline: none
+
+.side-dd-wrapper
+	margin-bottom: -3px
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+	
+	background: $brand
+	width: 35px
+	height: 3px
+
+
+
+[class*='owl-'] 
+	+trans
+
+.card-carousel
+	padding: 0 25px 0 25px
+	.owl-prev  
+		&::before
+			transform: translate(-50%, -50%) /////сысысысысысысаысысыс
+
+      
+
+	.owl-next
+		&::before
+			transform: translate(50%, -50%)
+
+
+
+select
+	height: 35px
+	opacity: 0
+
+input[type="checkbox"]
+	opacity: 0
+
+.jq-selectbox
+	width: 100%
+
+
+.jq-selectbox__select
+	background: transparent
+	box-shadow: none
+	border-radius: 0
+	border-color: $brand ///dwwd
+	&:hover
+		background: transparent
+		box-shadow: none
+
+
+.jq-selectbox__trigger
+	border-color: $brand
+
+.jq-selectbox.focused .jq-selectbox__select
+	border-color: $brand
+
+
+.jq-selectbox__trigger-arrow
+	border-top-color:  #d1688f
+	//border-color: $brand
+
+
+.jq-selectbox__dropdown
+	border-color: $brand
+
+.uk-modal
+	transition: none !important
+
+.jq-checkbox
+	border-color: $brand
+	border-radius: 0
+	position: relative
+	margin: 0 10px 0 0
+	text-align: initial !important
+	&.checked
+		&::before
+			content: '\f00c'
+			font-family: $font-icon
+			position: absolute
+			font-size: 14px
+			color: $brand
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+
+.jq-checkbox__div
+	display: none
+
+.uk-pagination > li
+	font-size: 22px
+
+.uk-pagination > li > a, .uk-pagination > li > span
+	padding: 7px 9px
+
+.uk-pagination > .uk-active > span
+	background: $brand
+
+.pagination
+	.uk-icon:before
+		color: #d1688f
+		font-size: 15px
+	.uk-pagination
+		li:first-child > a
+			background: transparent
+
+		li:last-child > a
+			background: transparent
+
+.checkbox-btn
+	cursor: pointer
+
+.pagination-annotation
+	position: absolute
+	left: 0
+	top: 50%
+	transform: translateY(-50%)
+	span
+		display: inline
+
+.card-description-product
+	border: 1px solid #c1c1c1
+	min-height: 200px
+	max-width: 320px
+	margin: 0 auto
+
+.login-btn
+	background-color: $brand
+	font-size: 18px
+	text-transform: uppercase
+	font-family: $font-base-bold
+	color: #fff
+	+trans()
+	&:hover
+		background-color: $brand * 0.8
+		color: #fff
+
+a.svg 
+	position: relative
+	display: inline-block
+	&::after 
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+
+
+.uk-offcanvas-bar
+	width: 320px
+
+.slide-toggle-content
+	padding-top: 20px
+
+
+.modal-login
+	width: 100%
+	max-width: 330px
+	padding: 41px 38px 0
+
+.modal-login__socials
+	&-gp
+		background-color: #d03324
+		&:hover
+			background-color: #d03324 * 0.8
+	&-fb
+		background-color: #3b5998
+		&:hover
+			background-color: #3b5998 * 0.8
+	&-vk
+		background-color: #4d75a3
+		&:hover
+			background-color: #4d75a3 * 0.8
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	a
+		width: 80px
+		color: #fff
+		+trans()
+		height: 30px
+		border-radius: 3px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: center
+		&:focus
+			outline: none
+
+.mr40
+	margin-right: 40px
+
+.modal-reg__socials
+	flex-grow: 1 ///efefef
+	&-gp
+		background-color: #d03324
+		&:hover
+			background-color: #d03324 * 0.8
+	&-fb
+		background-color: #3b5998
+		&:hover
+			background-color: #3b5998 * 0.8
+	&-vk
+		background-color: #4d75a3
+		&:hover
+			background-color: #4d75a3 * 0.8
+	&-link
+		background-color: #c1c1c1
+		&:hover
+			background-color: #c1c1c1 * 0.8
+		
+
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+
+	a
+		+trans()
+		width: 30px
+		height: 30px
+		border-radius: 5px
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		&:focus
+			outline: none
+
+.modal-login__divider
+	overflow: hidden
+	position: relative
+	z-index: 20
+	&::before
+		content: ''
+		border-top: 1px solid $lightgrey
+		position: absolute			
+		top: 60%
+		z-index: 1
+		left: 0
+		height: 1px
+		width: 100%
+		transform: translateY(-50%)
+	p
+		position: relative
+		display: inline
+		padding-left: 5px
+		padding-right: 5px
+		z-index: 2
+		background-color: #fff
+
+.modal-login__footer
+	padding: 15px 0
+	position: relative
+	&::before
+		background-color: $beige
+		position: absolute
+		top: 0
+		left: -38px
+		right: -38px
+		bottom: 0
+		z-index: -1
+		content: ''
+
+
+.uk-modal-close
+	position: absolute
+	top: 20px
+	right: 20px
+	font-size: 20px
+	
+	&::after
+		color: $black
+		opacity: 1
+
+.uk-icon-map-marker
+	margin-right: 7px
+
+.page-hero-slider
+	min-height: 400px
+
+.products-slider-tabs
+	.tabs-content
+
+		
+.page-title
+	background-color: #FFF
+	margin-bottom: 30px
+	text-align: left
+	h1, h2, h3, p
+		font-size: 30px
+		text-transform: uppercase
+		line-height: 1.2em
+
+.card-code
+	margin-left: 10px
+
+.hidden
+	visibility: hidden
+	+trans()
+
+.show
+	visibility: visible
+
+.side-dd-sub__title
+	margin-bottom: 20px
+	a
+		text-transform: uppercase 
+		color: $black ///dwdwdwd
+
+.side-dd-sub
+	position: absolute !important
+	top: 0
+	width: 700px
+	padding: 15px
+	display: none
+	background-color: #f5f5f5
+	.uk-nav ul a
+		padding: 5px 15px
+	&.active
+		display: block
+
+.header-logo
+	height: 32px
+	object
+		width: 235px
+		height: auto
+
+.catalog-dd.uk-open
+	.catalog-dd-overlay
+		position: relative
+		transition: opacity .15s linear
+		position: fixed
+		content: ''
+		overflow-y: scroll
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 20
+		background: rgba(0,0,0,.4)
+		transform: translateZ(0)
+		transition: opacity .15s linear
+
+.side-dd
+	font-size: 16px
+	background-color: $brand
+	.uk-nav-dropdown > li > a
+		text-transform: uppercase
+		color: #fff
+	.uk-nav-dropdown > li > a:hover, .uk-nav-dropdown > li > a:focus
+		background: $black
+
+.uk-nav-dropdown ul a
+	color: $black
+
+.side-dd-sub-column
+	padding: 0 15px 0 15px
+
+.side-dd-sub-column-wrapper
+	&:not(:last-child)
+		border-right: 1px solid #d6d6d6
+
+.card-reviews__counter
+	font-size: 22px
+	color: #fff
+	text-transform: uppercase
+	background-color: $brand
+	display: inline
+	padding: 0 10px
+	margin-left: 25px
+	p
+		display: inline
+
+.ml25
+	margin-left: 25px
+
+.card-valuation
+	.uk-icon
+		color: $brand
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+	background-color: #d1688f
+	color: #fff
+	border: none
+
+.nav-tabs > li
+	width: 100%
+	& > a
+		border-radius: 0
+		width: 100%
+
+.nav-tabs
+	border: none
+	& > li > a
+		border: none
+		margin: 0
+
+.nav > li > a
+	padding: 0
+
+.nav-tabs > li > a:hover
+	border: none
+
+
+.page-footer__payment-variants-item
+	&:not(:last-child)
+		margin-right: 40px
+	width: 65px
+	height: auto
+	object
+		width: 100%
+		height: auto	
+
+.page-footer__payment-variants
+	display: flex
+	justify-content: center
+	align-items: center
+
+
+.page-footer__payment-variants-list
+	display: flex
+	justify-content: flex-start
+	align-items: center
+
+.fx-b220
+
+	flex-shrink: 0
+	max-width: 220px
+	width: 100%
+
+.uk-comment-avatar
+	float: none
+	font-size: 40px
+	border-radius: 100%
+	border: 1px solid $grey
+	color: $grey
+	width: 60px
+	height: 60px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: center
+
+.uk-comment-header
+	display: flex
+	justify-content: flex-start
+	align-items: center
+
+.uk-comment
+	&:not(:last-child)
+		padding-bottom: 15px
+		border-bottom: 1px solid #cccccc
+
+.uk-comment-list
+	li:not(:last-child)
+		padding-bottom: 15px
+		border-bottom: 1px solid #cccccc
+		
+
+.logo-primary-part
+	fill: $black
+
+.logo-colored-part
+	fill: $brand
+
+
+.side-dd-parent
+	a
+		position: relative
+		&:after
+			content: '\f054'
+			font-family: $font-icon
+			font-size: 20px
+			color: #fff
+			margin-left: auto
+			position: absolute
+			top: 50%
+			right: 10px
+			transform: translateY(-50%)
+

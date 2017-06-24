@@ -1,0 +1,23 @@
+<section class=''>
+        <div class="uk-container uk-container-center">
+                <div class="section-inner bordered pb15">
+                {% include "elements/section-title.twig" with {"title": "Линии белорусской косметики"} %}
+                <div class="lines-slider mb20 owl-carousel">
+                        {% for 1 in 8..%}
+                                <div class="lines-slider__item">
+                                        <div class="lines-slider__img mb15">
+                                                <img src="http://via.placeholder.com/104x104" alt="">
+                                        </div>
+                                        <div class="lines-slider__item-description fz16 uk-text-center">
+                                                <p>Color LUX с маслом <br/> 
+                                                        арганы и фитокератином</p>
+                                        </div>
+                                </div>
+                        {% endfor %}
+                </div>
+                <div class="uk-text-center">
+                        <a href="#" class="text-underline fz18 uk-display-inline-block">Все линии</a>
+                </div>
+                </div>
+        </div>
+</section>

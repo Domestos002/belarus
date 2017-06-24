@@ -1,0 +1,248 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Главная страница{% endblock %}
+
+
+{% block content %}
+
+    <main class="page-main">
+        <section class="page-hero-slider">
+        	<div class="uk-container uk-container-center">
+        		<div class="section-inner">
+        		<div class="page-hero-slider__list uk-position-relative owl-carousel" id="page-hero-slider">
+        			{% for 1 in 1..5 %}
+						<div class="page-hero-slider__item">
+							<img class="page-hero-slider__img" src="http://via.placeholder.com/940x400" alt="">
+							<div class="page-hero-slider__list-content uk-grid uk-grid-collapse">
+								<div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 uk-flex fx-column fx-justify lg-fx-middle">
+									<div class="page-hero-slider__title text-uppercase lh-normal bigtext">
+										<span>ИЗЛУЧАЙТЕ НАСТОЯЩУЮ <br/>
+										ПРИРОДНУЮ КРАСОТУ</span>
+									</div>
+									<div class="page-hero-slider__description text-uppercase lh-normal">
+										<p>
+											ПРИМИТЕ ОТ НАС <br/>
+											В ПОДАРОК СКИДКУ <br/>
+											20% НА ВТОРОЙ ЗАКАЗ
+										</p>
+									</div>
+                                    <div class="page-hero-slider__btn">
+                                        <a href="#" class="btn btn-primary fz20 md-fz18">КУПИТЬ СЕЙЧАС</a>
+                                    </div>
+									
+								</div>
+								<div class="uk-width-1-2">
+									
+								</div>
+							</div>
+						</div>
+        			{% endfor %}
+        		</div>
+        		</div>
+        	</div>
+        </section>
+        <section class="grey-bg">
+        	<div class="uk-container uk-container-center">
+        		<div class="section-inner">
+        		{% include "elements/section-title.twig" with {"title": "белорусскАЯ косметикА"} %}
+        		<div class="underlined-list " >
+                    <div class="uk-grid uk-grid-match" data-uk-grid-margin="">
+        			{% for 1 in 1..4 %}
+						<div class="underlined-list__item uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
+        					<div class="underlined-list__img">
+        						<img src="http://via.placeholder.com/220x200" alt="" />
+        					</div>
+        					<div class="underlined-list__caption">
+        						<p>для тела</p>
+        					</div>
+        				</div>
+                    {% endfor %}
+                    </div>
+        			</div>
+        		</div>
+    		</div>
+        </section>
+        <section>
+        	<div class="uk-container uk-container-center">
+        		<div class="section-inner">
+                    <div class="products-slider-tabs">
+                          <div class="toggleOwl">
+                            <!-- Nav tabs -->
+                            <div class="mb25">
+                            <ul class="nav nav-tabs tabs-nav uk-tab product-tabs" role="tablist" data-uk-grid-margin="">
+                              <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">хиты продаж</a></li>
+                              <li role="presentation"><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab">новинки</a></li>
+                              <li role="presentation"><a href="#tab3" aria-controls="profile" role="tab" data-toggle="tab">распродажа</a></li>
+                            </ul>
+                            </div>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                              <div role="tabpanel" class="tab-pane active" id="tab1">
+                                <div class="owl-carousel">
+                                    {% for 1 in 1..8 %}
+                                        {% include "elements/products-item.twig" %}
+                                    {% endfor %}
+                                </div>
+                              </div>
+                              <div role="tabpanel" class="tab-pane" id="tab2">
+                                <div class="owl-carousel">
+                                    {% for 1 in 1..8 %}
+                                        {% include "elements/products-item.twig" %}
+                                    {% endfor %}
+                                </div>
+                              </div>
+                              <div role="tabpanel" class="tab-pane" id="tab3">
+                                <div class="owl-carousel">
+                                    {% for 1 in 1..8 %}
+                                            {% include "elements/products-item.twig" %}
+                                    {% endfor %}
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                    </div>
+
+				</div>
+        	</div>
+        </section>
+        <section class=''>
+    <div class="uk-container uk-container-center">
+        <div class="section-inner bordered pb15">
+        {% include "elements/section-title.twig" with {"title": "Линии белорусской косметики"} %}
+        <div class="lines-slider mb20 owl-carousel">
+            {% for 1 in 8..%}
+                <div class="lines-slider__item">
+                    <div class="lines-slider__img mb15">
+                        <img src="http://via.placeholder.com/104x104" alt="">
+                    </div>
+                    <div class="lines-slider__item-description fz16 uk-text-center">
+                        <p>Color LUX с маслом <br/> 
+                            арганы и фитокератином</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="uk-text-center">
+            <a href="#" class="text-underline fz18 uk-display-inline-block">Все линии</a>
+        </div>
+        </div>
+    </div>
+</section>
+        {% include "widgets/block-delivery.twig"%}
+        {% include "widgets/block-advantages.twig"%}
+        {% include "widgets/block-contacts.twig"%}
+        <section class="grey-bg">
+        	<div class="uk-container uk-container-center">
+        		<div class="section-inner pb15">
+        		{% include "elements/section-title.twig" with {"title": "Отзывы  о магазине"} %}
+        		<div class="reviews-slider owl-carousel mb20">
+        			{% for 1 in 1..8 %}
+						<div class="reviews-slider__item uk-position-relative d-fx fx-column fx-middle">
+								<a class="reviews-slider__social-icon uk-icon uk-icon-vk" href="#"></a>
+							<div class="reviews-slider__img mb20">
+								<img src="http://via.placeholder.com/80x80" alt="">
+							</div>
+							<div class="reviews-slider__name mb15 fz20 text-uppercase text-brand">
+								<p>Светлана Булеева</p>
+							</div>
+							<div class="reviews-slider__description fz16">
+								<p>Здравствуйте! Заказ получен. Большое спасибо. Косметика очень понравилась.</p>
+							</div>
+						</div>
+        			{% endfor %}
+        		</div>
+        		<div class="uk-text-center">
+        			<a href="#" class="text-underline uk-display-inline-block">Все отзывы</a>
+        		</div>
+				</div>
+        	</div>				
+        </section>
+        <section>
+        	<div class="uk-container uk-container-center">
+    		<div class="section-inner">
+    			<div class="centered-limitation-block">
+        		<div class="mb60">
+        			<div class="fz30 mb10 uk-text-center lh-normal">
+        				<p>Интернет-магазин белорусской косметики</p>
+        			</div>
+        			<div class="text-paragraph">
+        				<p>В нашем каталоге нет случайных товаров: сделав главный акцент на исключительном качестве, мы отобрали для вас только самую лучшую косметику для ухода за волосами, кожей лица и тела. Органическая косметика, которую мы реализуем на эксклюзивных условиях, не содержит синтетических консервантов и красителей, SLS, парабенов и продуктов нефтехимии, что подтверждается соответствующими сертификатами. В магазине вы также найдете обширный раздел под названием. Белорусская косметика. В нем можно найти косметику известных Белорусских брендов: Белита (Belita), Маркелл, Витекс (Vitex), Белкосмекс и многие другие бренды Белоруской косметики.</p>
+        			</div>
+        		</div>
+                <div class="advantages-list">
+        		<div class=" uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-3" data-uk-grid-margin="">
+        			<div class="">
+        				<div class="uk-text-center">
+        					<div class="mb20">
+        						
+        					<object class="advantages-icon" type="image/svg+xml" data="images/baloons.svg" width="100%" height="100%"></object>
+        					</div>
+        					<div class="fz22 font-semibold text-uppercase mb15">
+        						<p>
+    								Акции и скидки <br/>
+									для клиентов	
+        						</p>
+        					</div>
+        					<div class="text-underline">
+        						<a href="#">Узнать подробности</a>
+        					</div>
+        				</div>
+        				
+        			</div>
+        			<div class="">
+        				<div class="uk-text-center">
+        					<div class="mb20">
+        						<object class="advantages-icon" type="image/svg+xml" data="images/support.svg" width="100%" height="100%"></object>
+        					</div>
+        					<div class="fz22 font-semibold text-uppercase mb15">
+        						<p>
+    								Оперативная <br/>
+									поддержка и консультация
+        						</p>
+        					</div>
+        					<div class="text-underline">
+        						<a href="#">Узнать подробности</a>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="">
+        				<div class="uk-text-center">
+        					<div class="mb20">
+        					<object class="advantages-icon" type="image/svg+xml" data="images/stopwatch.svg" width="100%" height="100%"></object>
+        						
+        					</div>
+        					<div class="fz22 font-semibold text-uppercase mb15">
+        						<p>
+        							Быстрая и удобная <br/>
+									доставка в срок
+        						</p>
+        					</div>
+        					<div class="text-underline">
+        						<a href="#">Узнать подробности</a>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+</div>
+        		</div>
+    		</div>
+        	</div>
+        </section>
+        <section>
+        	<div class="uk-container uk-container-center">
+        		<div class="section-inner">
+        		{% include "elements/section-title.twig" with {"type": "bottom", "title": "Производители"} %}	
+        		<div class="partners-slider owl-carousel">
+        			{% for 1 in 1..15 %}
+						<div class="partners-slider__item">
+							<img src="http://via.placeholder.com/131x74" alt="" />
+						</div>
+        			{% endfor %}
+        		</div>
+        		</div>
+        	</div>
+        </section>
+    </main>
+
+{% endblock %}

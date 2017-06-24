@@ -1,0 +1,326 @@
+
+@media (max-width: $breakpoint-large-max) //large - 1200px
+
+
+@media (max-width: $breakpoint-medium-max) //large - 960px
+	.category
+		.sidebar
+			width: 100%
+		.content
+			width: 100%
+
+
+	.card-reviews .tabs-content
+		padding: 15px
+
+	.breadcrumb
+		margin-top: 0
+
+	.lg-text-left
+		text-align: left
+
+	.lg-row-mr10 > *
+		&:not(:last-child)
+			margin-right: 10px
+
+	.lg-fx-row
+		flex-direction: row
+
+	.lg-fx-around
+		justify-content: space-around
+	
+	.page-hero-slider__list-content-half
+		margin: 0
+
+	.page-hero-slider__list-content
+		padding: 0
+
+	.page-hero-slider__list-content-half
+		padding: 30px 0 30px 0 
+
+
+
+	.page-hero-slider__title, .page-hero-slider__description
+		text-align: center
+
+
+	%navs
+		.owl-prev
+			transform: translate(-50%, -50%)
+
+		.owl-next
+			transform: translate(50%, -50%)
+
+	%navs-arrows
+		.owl-prev::before
+			transform: translate(0, -50%)
+			font-size: 30px
+
+		.owl-next::before
+			transform: translate(0, -50%)
+			font-size: 30px
+
+
+	
+	.mobile-menu-btn
+		font-size: 40px
+
+	.page-header__destination
+		margin-left: 7px
+
+	.page-header__search-panel
+		background-color: #f2eeef
+
+	.page-header__navbar
+		background-color: #eae2e5
+
+	.page-hero-slider
+		margin-bottom: 0 !important		
+
+	.underlined-list
+		max-width: 460px
+		margin: 0 auto
+
+	.page-main
+		padding: 0 0 30px 0
+
+	.page-hero-slider
+		.uk-container
+			padding: 0
+
+	.page-hero-slider__list .owl-next, .page-hero-slider__list .owl-prev
+		transform: translate(0%, -50%)
+	
+
+	a[class*="__phone"]
+		cursor: pointer
+		pointer-events: initial
+		&:hover
+			text-decoration: underline
+			color: $brand * 0.8
+
+	@each $fz in (14)
+		.lg-fz#{$fz}
+			font-size: $fz + px
+
+	.lg-fx-around
+		justify-content: space-around
+
+	body
+		font-size: 16px
+
+	.lg-d-fx
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+
+	.lg-fx-column
+		flex-direction: column
+
+	.lg-fx-column-reverse
+		flex-direction: column-reverse
+
+	.lg-fx-center
+		justify-content: center
+
+	.lg-fx-middle
+		align-items: center
+
+	.lg-fx-right
+		justify-content: flex-end
+
+	.lg-text-center
+		text-align: center
+
+	.page-header__logo-panel
+		order: 3
+
+	@each $mb in (0, 15)
+		.lg-mb#{$mb}
+			margin-bottom: $mb + px
+
+
+@media (min-width: $breakpoint-small-max)
+
+
+@media (max-width: $breakpoint-small-max) //medium - 768px
+	
+
+
+	.card-slider__item-wrapper
+		padding: 0
+
+	.card-slider
+		padding: 0
+
+
+	.page-hero-slider__title
+		font-size: 25px
+
+	.page-hero-slider__description
+		font-size: 20px
+
+
+	.uk-offcanvas-bar
+		width: 100%
+	
+	.uk-container
+		padding: 0 15px ////dw/dwdwdwd
+
+	.md-order2
+		order: 2
+
+	.md-order1
+		order: 1
+
+	.page-main
+		section
+			&:not(:last-child)
+				margin-bottom: 30px
+
+	.md-d-fx
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+
+	.md-fx-column
+		flex-direction: column
+
+	.md-fx-center
+		justify-content: center
+
+	.md-fx-middle
+		align-items: center
+
+	.md-text-center
+		text-align: center
+
+
+	@each $mb in (0, 30)
+		.md-mb#{$mb}
+			margin-bottom: $mb + px
+
+	@each $fz in (14, 35, 18)
+		.md-fz#{$fz}
+			font-size: $fz + px
+
+	
+	.footer-logo__wrapper
+		max-width: initial
+		margin-bottom: 0
+	
+	.reviews-slider__item
+		min-height: 250px
+
+
+
+@media (max-width: 630px)
+	.card-reviews .tabs-nav .uk-tab
+		justify-content: center
+	.lines-item
+		flex-direction: column
+		max-width: 630px
+		margin: 0 auto
+
+	.lines-item__img
+		width: 100%
+		margin: 0 auto
+		max-width: 200px
+		margin-bottom: 25px
+
+	.lines-item__text
+		width: 100%
+
+ 
+
+@media (max-width: $breakpoint-mini-max) //small - 480pxw
+	.uk-comment-header
+		justify-content: center
+
+	.lines-item__img
+		max-width: 145px
+
+	.card-main
+		background-color: transparent
+		padding: 0
+
+	.section-title
+		font-size: 25px
+		&::before
+			margin-bottom: 10px
+
+	.lines-slider__item
+		max-width: 160px
+		margin: 0 auto
+
+	.underlined-list__item
+		max-width: 220px
+		margin: 0 auto
+
+	.page-footer__inner
+		padding: 30px 0 30px 0
+
+	.page-title
+		font-size: 20px
+	
+	.sm-hidden
+		display: none !important
+
+	.sm-visible
+		display: block
+
+	.phone-mobile
+		font-size: 0
+		border: 1px solid $brand
+		border-radius: 5px
+		height: 45px
+		width: 45px
+		line-height: 45px
+		text-align: center
+		&:hover
+			text-decoration: none !important
+		&::before
+			content: '\f095'
+			font-family: $font-icon
+			font-size: 30px
+			&:hover
+				border-color: $brand * 0.8
+				color: $brand * 0.8
+				text-decoration: none
+
+
+	.sm-d-fx
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+
+	.sm-fx-column
+		flex-direction: column
+
+	.sm-fx-center
+		justify-content: center
+
+	.products-slider__item
+		margin: 0 auto
+
+	@each $mb in (0, 30)
+		.sm-mb#{$mb}
+			margin-bottom: $mb + px
+
+	@each $fz in (14, 20)
+		.sm-fz#{$fz}
+			font-size: $fz + px
+
+
+
+
+
+
+
+

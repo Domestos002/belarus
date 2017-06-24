@@ -1,0 +1,97 @@
+=trans($trans: all 0.3s ease 0s)
+    transition: $trans
+
+@import _retina_sprites
+
+=pos($var)
+    @if $var == tm
+        +transform(translateY(-50%))
+        top: 50%
+    @if $var == lm
+        +transform(translateX(-50%))
+        left: 50%
+    @if $var == m
+        +transform(translate3d(-50%, -50%, 0))
+        top: 50%
+        left: 50%
+
+=phc($color)
+    &::-webkit-input-placeholder
+        color: $color !important
+        opacity: 1 !important
+    &::-moz-placeholder
+        color: $color !important
+        opacity: 1 !important
+    &:-moz-placeholder
+        color: $color !important
+        opacity: 1 !important
+    &:-ms-input-placeholder
+        color: $color !important
+        opacity: 1 !important
+
+
+=fluid-columns($columns, $spaces, $mb)
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    margin-right: calc(#{$spaces}/2 * (-1))
+    margin-left: calc(#{$spaces}/2 * (-1))
+    position: relative
+    top: -$mb
+    & > div
+        box-sizing: border-box
+        padding-top: $mb
+        width: calc(1/#{$columns}*100%)
+        padding-left: calc(#{$spaces}/2)
+        padding-right: calc(#{$spaces}/2)
+
+=hoverActiveFocus($property, $value)
+    &:hover, &:active, &:focus
+        #{$property}: $value
+
+
+
+
+=arr($size, $border-size, $direction, $color)
+    z-index: 1
+    content: ''
+    display: inline-block
+    width: $size
+    height: $size
+    background: transparent
+    transform: rotate(45deg)
+    @if $direction == t
+        border: transparent
+        border-top: $border-size solid $color
+        border-left: $border-size solid $color
+    @else if $direction == r
+        border: transparent
+        border-top: $border-size solid $color
+        border-right: $border-size solid $color
+    @else if $direction == b
+        border: transparent
+        border-bottom: $border-size solid $color
+        border-right: $border-size solid $color
+    @else if $direction == l
+        border: transparent
+        border-bottom: $border-size solid $color
+        border-left: $border-size solid $color
+
+
+=box
+    +box-sizing(border-box)
+
+=font($alias, $name)
+    @font-face
+        font-family: $alias
+        src: url("fonts/" + $name + ".eot")
+        src: url("fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("fonts/" + $name + ".woff") format("woff"), url("fonts/" + $name + ".ttf") format("truetype")
+        font-weight: normal
+        font-style: normal
+
+
+
+
+
+
+

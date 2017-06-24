@@ -1,0 +1,311 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Карточка товара{% endblock %}
+
+
+{% block content %}
+
+    <main class="page-main">
+        {% include "widgets/bredcrumbs.twig" with {"title": " Сыворотка с кератином для волос Глубокое восстановление <br/>
+			несмываемая Белита - Витекс
+ 			"} %}
+        <section>
+        	<div class="uk-container uk-container-center">
+        		<div class="section-inner">
+    			<div class="card ">
+        				<div class="uk-grid mb30" data-uk-grid-margin="">
+        				<div class="uk-width-1-1 uk-width-large-7-10">
+        					<div class="card-main">
+							<div class="uk-grid mb25">
+								<div class="uk-width-medium-1-2 d-fx fx-middle">
+									<div class="card-main__sertificate">
+										
+                                        <div class="d-fx fx-left mb15">
+                                            <p class="text-uppercase text-bold text-brand">EAC</p>
+                                        <p class="fz16 ml10">
+                                            Товар сертифицирован
+                                        </p>
+                                        </div>
+                                        <div class="d-fx fx-left">
+                                            <div class="card-valuation">
+                                                <i class="uk-icon uk-icon-star"></i>
+                                                <i class="uk-icon uk-icon-star"></i>
+                                                <i class="uk-icon uk-icon-star"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                            </div>
+                                            <span class="products-number fz16 ml10">
+                                                897
+                                            </span>
+                                        </div>
+										
+									</div>
+								</div>
+								<div class="uk-width-medium-1-2 df-x fx-middle">
+									<div class="d-fx fx-justify fx-middle">
+
+										<div class="">
+											<p class="text-semibold text-uppercase mb10">Производитель</p>
+											<div class="card__manufacturer text-brand fz16 text-underline">
+												<p>Белита - Витекс</p>
+											</div>
+										</div>
+										<div class="card-manufacturer__img">
+											<img src="http://via.placeholder.com/131x70" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+                            <div class="card-slider-wrapper">
+							<div class="card-slider owl-carousel mb20">
+								{% for 1 in 1..8 %}
+                                    <div class="card-slider__item-wrapper">
+									   <div class="card-slider__item">
+									       <img src="http://via.placeholder.com/410x380" alt="">
+									   </div>
+                                    </div>
+								{% endfor %}
+							</div>
+                            <div class="card-carousel owl-carousel">
+                                {% for 1 in 1..8 %}
+                                       <div class="card-carousel__item">
+                                           <img src="http://via.placeholder.com/410x380" alt="">
+                                       </div>
+                                {% endfor %}
+                            </div>
+                            </div>
+        				</div>
+        				</div>
+        				<div class="uk-width-1-1 uk-width-large-3-10">
+        					<div class="card-sidebar">
+        					<div class="sidebar-item">
+								<div class="mb20 d-fx fx-left">
+									<p>Артикул:</p>
+									<p class="card-code">
+										34419
+									</p>
+								</div>
+								<div class="mb20">
+									<p class="text-brand mb10" >Линия:</p>
+									<div class="text-uppercase">
+										<p>STUDIO STYLE
+										Professional HAIR CARE</p>
+									</div>
+								</div>
+								<div class="">
+									<p class="text-brand mb10">Тип:</p>
+                                    <div class="list-mb-10 d-fx fx-column text-underline lg-fx-row lg-fx-left lg-row-mr10">
+                                        <a href="">Тоник</a>
+                                        <a href="">Для сухих волос</a>
+                                    </div>
+									
+								</div>
+        					</div>
+        					<div class="sidebar-item">
+        						<div class="sidebar-title mb15">
+									<p>цена</p>
+        						</div>
+                                <div class="uk-text-center lg-d-fx lg-fx-around fx-wrap" data-uk-grid-margin="">
+        						<div class="mb20 lg-mb0">
+                                    <div class="lg-text-left">
+                                        <div class="card__old-price mb10">
+                                            <p>3350Р</p>
+                                        </div>
+                                        <div class="card__new-price">
+                                            <p>2 296</p>
+                                            <svg class="icon-ruble" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256.86401 440" width="256.864" height="440"><path d="M140.954 242.428c63.913 0 115.91-54.382 115.91-121.227 0-66.83-51.997-121.2-115.91-121.2H29v282.428H0v30h29V440h30V312.428h101.955v-30H59v-40zM59 30h81.955c47.37 0 85.91 40.912 85.91 91.2 0 50.304-38.54 91.228-85.91 91.228H59z"/></svg>
+                                        </div>
+                                    </div>
+        							
+        						</div>
+        						<div class="list-mb-10">
+        							<a href="#" class="btn btn-primary">
+        							 КУПИТЬ</a>
+                                     <span href="#" class="btn checkbox-btn">
+                                        <input type="checkbox" />
+                                        Отложить</span>
+        						</div>
+                                </div>
+        					</div>
+        					<div class="sidebar-item">
+        						<div class="sidebar-title mb40 lg-mb15">
+									<p>Доставка</p>
+        						</div>
+                                <div class="uk-text-center lg-d-fx lg-fx-around fx-middle fx-wrap" data-uk-grid-margin="">
+            						<a href="#" class="btn btn-primary lg-mb0">
+            							  ЗАДАТЬ ВОПРОС</a>
+
+            						<div class="card-socials">
+                                        <a href="" class="uk-icon uk-icon-google-plus-square"></a>
+                                        <a href="" class="uk-icon uk-icon-google-plus-square"></a>
+                                        <a href="" class="uk-icon uk-icon-linkedin-square"></a>
+                                        <a href="" class="uk-icon uk-icon-odnoklassniki-square"></a>
+                                        <a href="" class="uk-icon uk-icon-facebook-square"></a>
+            						</div>
+                                </div>
+        					</div>
+        				</div>
+        				</div>
+        				</div>
+    			<div class="card-reviews">
+    				<div class="tabs">
+        			<div class="tabs-nav">
+        				<ul class="uk-tab full-width" data-uk-tab="{connect:'#card-tab'}" data-uk-grid-margin="">
+    						<li class="uk-active">
+    							<a href="">О товаре</a>
+    						</li>
+    						<li>
+    							<a href="">Отзывы <div class="card-reviews__counter">
+                                    <p>75</p>
+                                </div>
+                                </a>
+                                
+    						</li>
+						</ul>
+        			</div>
+        			<div class="tabs-content">
+        				<ul id="card-tab" class="uk-switcher uk-margin">
+                            <li>
+                                <div class="text-paragraph">
+    								<p>В нашем каталоге нет случайных товаров: сделав главный акцент на исключительном качестве, мы отобрали для вас только самую лучшую косметику для ухода за волосами, кожей лица и тела. Органическая косметика, которую мы реализуем на эксклюзивных условиях, не содержит синтетических консервантов и красителей, SLS, парабенов и продуктов нефтехимии, что подтверждается соответствующими сертификатами. В магазине вы также найдете обширный раздел под названием. Белорусская косметика. В нем можно найти косметику известных Белорусских брендов: Белита (Belita), Маркелл, Витекс (Vitex), Белкосмекс и многие другие бренды Белоруской косметики.</p>
+    							</div>
+
+                            </li>
+                            <li>
+                                <ul class="uk-comment-list">
+                                    <li>
+                                        <article class="uk-comment">
+                                            <header class="uk-comment-header">
+                                                <div class="uk-comment-avatar">
+                                                            <i class="uk-icon uk-icon-user"></i>
+                                                        </div>
+                                                        <div class="fx fx-column">
+                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
+                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
+                                                </div>
+                                            </header>
+                                            <div class="uk-comment-body">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum dignissimos numquam eveniet ratione veritatis odio vel totam molestias adipisci dolorem velit reprehenderit, atque non tenetur porro magni. In, tenetur.
+                                                </p>
+                                            </div>
+                                        </article>
+                                        <ul>
+                                            <li>
+                                                    
+                                                <article class="uk-comment">
+                                                    <header class="uk-comment-header">
+                                                        <div class="uk-comment-avatar">
+                                                            <i class="uk-icon uk-icon-user"></i>
+                                                        </div>
+                                                        <div class="fx fx-column">
+                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
+                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
+                                                        </div>
+                                                    </header>
+                                                    <div class="uk-comment-body">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi eligendi incidunt odio iure alias ab ipsa labore nisi recusandae! Consectetur fuga aut optio vel odit praesentium numquam accusamus, sequi beatae?
+                                                        </p>
+                                                    </div>
+                                                </article>
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <article class="uk-comment">
+                                            <header class="uk-comment-header">
+                                                <div class="uk-comment-avatar">
+                                                            <i class="uk-icon uk-icon-user"></i>
+                                                        </div>
+                                                        <div class="fx fx-column">
+                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
+                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
+                                                </div>
+                                            </header>
+                                            <div class="uk-comment-body">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum dignissimos numquam eveniet ratione veritatis odio vel totam molestias adipisci dolorem velit reprehenderit, atque non tenetur porro magni. In, tenetur.
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li>
+                                        <article class="uk-comment">
+                                            <header class="uk-comment-header">
+                                                <div class="uk-comment-avatar">
+                                                            <i class="uk-icon uk-icon-user"></i>
+                                                        </div>
+                                                        <div class="fx fx-column">
+                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
+                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
+                                                </div>
+                                            </header>
+                                            <div class="uk-comment-body">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum dignissimos numquam eveniet ratione veritatis odio vel totam molestias adipisci dolorem velit reprehenderit, atque non tenetur porro magni. In, tenetur.
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+						
+        			</div>
+
+        		</div>
+    			</div>
+
+    			</div>
+
+        		</div>
+        	</div>
+        </section>
+        <section>
+            <div class="uk-container uk-container-center">
+                <div class="section-inner">
+                    <div class="uk-grid d-fx fx-middle fx-strech" data-uk-grid-margin="">
+                    <div class="uk-width-medium-3-10">
+                        <div class="card-description-product d-fx fx-center fx-middle">
+                            <img src="http://via.placeholder.com/104x104" alt="">
+                        </div>
+                    </div>
+                    <div class="uk-width-medium-7-10 d-fx fx-center fx-column">
+                        <div class="mb25 fz24">
+                            <p>
+                                Товары колекции Color LUX с маслом 
+                                арганы и фитокератином
+                            </p>
+                        </div>
+                        <div class="text-paragraph">
+                            <p>
+                                Незаменимое средство для обработки рук в условиях отсутствия воды. Очищает кожу рук, одновременно увлажняя ее. Масло чайного дерева и "Tetranyl® U" оказывают бактерицидное и фунгицидное действие. Экстракт вербены тонизирует и освежает кожу. Применение: нанести 
+                                фунгицидное действие. Экстракт вербены тонизирует и освежает кожу. 
+                                Tetranyl® U" оказывают бактерицидное и фунгицидное действие. Экстракт 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="uk-container uk-container-center">
+                <div class="section-inner">
+                    <div class="products-slider owl-carousel">
+                        {% for 1 in 1..8 %}
+                                {% include "elements/products-item.twig" %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% include "widgets/block-delivery.twig"%}
+        {% include "widgets/block-advantages.twig"%}
+        {% include "widgets/block-contacts.twig"%}
+
+    </main>
+
+{% endblock %}
