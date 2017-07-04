@@ -1,14 +1,45 @@
-
-@media (max-width: $breakpoint-large-max) //large - 1200px
-
-
-@media (max-width: $breakpoint-medium-max) //large - 960px
+@media (max-width: $breakpoint-medium-max)
+	.bag-order__body
+		padding: 15px 80px 15px 80px
+		
+	.bag-order__body .bag-order-radio-list
+		margin-right: -80px
+		
+	.lg-full-width
+		width: 100%
+		
+	.bag-order__head-input
+		max-width: initial
+	
+	.bag-order-radio__block
+		padding: 0 80px 0 30px
+		
+	.bag-order__body-input-list>*
+		padding-top: 10px
+	
+	.card-order-footer
+		padding: 15px 80px
+		
+	.bag-order__head
+		border-bottom: none
+	
+	.bag-order-item, .bag-goods
+		border-bottom: 1px solid $bag-border-color
+		box-shadow: none
+		margin-bottom: 0
+		&:not(:last-child)
+			margin-bottom: 0
+			
 	.category
 		.sidebar
 			width: 100%
 		.content
 			width: 100%
-
+			
+	.bag
+		background-color: $beige
+		& > .uk-container
+			padding: 0
 
 	.card-reviews .tabs-content
 		padding: 15px
@@ -28,7 +59,7 @@
 
 	.lg-fx-around
 		justify-content: space-around
-	
+
 	.page-hero-slider__list-content-half
 		margin: 0
 
@@ -36,7 +67,7 @@
 		padding: 0
 
 	.page-hero-slider__list-content-half
-		padding: 30px 0 30px 0 
+		padding: 30px 0 30px 0
 
 
 
@@ -61,7 +92,7 @@
 			font-size: 30px
 
 
-	
+
 	.mobile-menu-btn
 		font-size: 40px
 
@@ -75,7 +106,7 @@
 		background-color: #eae2e5
 
 	.page-hero-slider
-		margin-bottom: 0 !important		
+		margin-bottom: 0 !important
 
 	.underlined-list
 		max-width: 460px
@@ -90,7 +121,7 @@
 
 	.page-hero-slider__list .owl-next, .page-hero-slider__list .owl-prev
 		transform: translate(0%, -50%)
-	
+
 
 	a[class*="__phone"]
 		cursor: pointer
@@ -137,17 +168,74 @@
 	.page-header__logo-panel
 		order: 3
 
-	@each $mb in (0, 15)
+	@each $mb in (0, 15, 10)
 		.lg-mb#{$mb}
 			margin-bottom: $mb + px
 
-
-@media (min-width: $breakpoint-small-max)
-
-
-@media (max-width: $breakpoint-small-max) //medium - 768px
+@media (max-width: $breakpoint-small-max)
+	.bag-order
+		.btn
+			font-size: 15px
+	.bag-radio
+		left: 37px
 	
-
+	.radio-pic
+		display: table-cell
+		text-align: right
+		vertical-align: middle
+		
+	.radio-text-wrap
+		display: table
+	
+	.radio-text
+		display: table-cell
+		text-align: left
+		vertical-align: middle
+		
+	.bag-order-radio__block-right
+		justify-content: flex-start
+		
+	.bag-order__body-delivery-right
+		justify-content: flex-start
+	
+	.card-order-footer
+		padding: 15px 80px
+		
+	.bag-order-finish
+		.card-order-footer
+			padding: 15px 30px
+		
+	.bag-order__head
+		padding: 15px 20px 0 30px
+		.bag-num
+			width: 30px
+			height: 30px
+	
+	.bag-order-finish
+		.bag-order__body
+			padding: 15px 30px 15px 30px
+			
+	.bag-result-mobile
+		padding: 0 30px
+	
+	.bag-title
+		font-size: 18px
+	
+	.bag-order__head-title, .bag-order__head-input
+		padding-left: 45px
+		
+	.bag-order-radio__field
+		padding-left: 80px
+		
+	.bag-order-radio__block-label
+		pl35
+		
+	.bag-next-btn
+		width: 100%
+		
+	.card-order-footer
+		flex-direction: column
+		align-items: center
 
 	.card-slider__item-wrapper
 		padding: 0
@@ -165,9 +253,9 @@
 
 	.uk-offcanvas-bar
 		width: 100%
-	
+
 	.uk-container
-		padding: 0 15px ////dw/dwdwdwd
+		padding: 0 15px
 
 	.md-order2
 		order: 2
@@ -186,7 +274,13 @@
 		display: -ms-flex
 		display: -o-flex
 		display: flex
-
+	
+	.bag-order__head-change-text
+		display: none
+		
+	.bag-order__result-notification
+		margin-bottom: 5px
+		
 	.md-fx-column
 		flex-direction: column
 
@@ -195,12 +289,15 @@
 
 	.md-fx-middle
 		align-items: center
+	
+	.md-full-width
+		width: 100%
 
 	.md-text-center
 		text-align: center
 
 
-	@each $mb in (0, 30)
+	@each $mb in (0, 30, 15)
 		.md-mb#{$mb}
 			margin-bottom: $mb + px
 
@@ -208,11 +305,11 @@
 		.md-fz#{$fz}
 			font-size: $fz + px
 
-	
+
 	.footer-logo__wrapper
 		max-width: initial
 		margin-bottom: 0
-	
+
 	.reviews-slider__item
 		min-height: 250px
 
@@ -234,10 +331,46 @@
 
 	.lines-item__text
 		width: 100%
+		
+		
+@media (max-width: 550px)
+	.bag-order__head
+		padding: 15px 30px 0 30px
+	.bag-order-radio__field
+		padding: 15px 30px 0 80px
+		
+	.bag-order__head-input
+		padding-right: 0
+		
+	.bag-order__body
+		padding: 15px 30px 15px 30px
+		
+	.card-order-footer
+		padding: 15px 30px
+	
+	.bag-order__body .bag-order-radio-list
+		margin-left: -30px
+		margin-right: -30px
+		
+	.bag-order-radio__block
+		padding: 0 30px 0 30px
+		
+	.bag-goods__item-count-plus
+		margin-left: 0
+		
+	.bag-goods__item-count-minus, .bag-goods__item-count-plus
+		background-color: $beige
+		&::before, &::after
+			background-color: $brand
+		&:hover
+			background-color: $beige
+			&::before, &::after
+				background-color: $brand * 0.8
+				
+	.bag-goods__item-count-minus
+		margin-right: 0
 
- 
-
-@media (max-width: $breakpoint-mini-max) //small - 480pxw
+@media (max-width: $breakpoint-mini-max)
 	.uk-comment-header
 		justify-content: center
 
@@ -259,14 +392,13 @@
 
 	.underlined-list__item
 		max-width: 220px
-		margin: 0 auto
 
 	.page-footer__inner
 		padding: 30px 0 30px 0
 
 	.page-title
 		font-size: 20px
-	
+
 	.sm-hidden
 		display: none !important
 

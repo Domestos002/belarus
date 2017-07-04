@@ -4,92 +4,133 @@
 $(function(){
 
 
-function cardSlider(){
+    function cardSlider(){
 
-  var sync1 = $(".card-slider");
-  var sync2 = $(".card-carousel");
-  var slidesPerPage = 3; //globaly define number of elements per page
-  var syncedSecondary = true;
+        var sync1 = $(".card-slider");
+        var sync2 = $(".card-carousel");
+        var slidesPerPage = 3; //globaly define number of elements per page
+        var syncedSecondary = true;
 
-  sync1.owlCarousel({
-    items : 1,
-    slideSpeed : 900,
-    nav: false,
-    autoplay: true,
-    dots: false,
-    loop: true,
-    responsiveRefreshRate : 200,
-  }).on('changed.owl.carousel', syncPosition);
+        sync1.owlCarousel({
+            items : 1,
+            slideSpeed : 900,
+            nav: false,
+            autoplay: true,
+            dots: false,
+            loop: true,
+            responsiveRefreshRate : 200,
+        }).on('changed.owl.carousel', syncPosition);
 
-  sync2
-    .on('initialized.owl.carousel', function () {
-      sync2.find(".owl-item").eq(0).addClass("current");
-    })
-    .owlCarousel({
-    items : slidesPerPage,
-    dots: true,
-    nav: true,
-    loop: false,
-    margin: 20,
-    smartSpeed: 200,
-    slideSpeed : 500,
-    slideBy: slidesPerPage,
-    responsiveRefreshRate : 100
-  }).on('changed.owl.carousel', syncPosition2);
+        sync2
+            .on('initialized.owl.carousel', function () {
+                sync2.find(".owl-item").eq(0).addClass("current");
+            })
+            .owlCarousel({
+                items : slidesPerPage,
+                dots: true,
+                nav: true,
+                loop: false,
+                margin: 20,
+                smartSpeed: 200,
+                slideSpeed : 500,
+                slideBy: slidesPerPage,
+                responsiveRefreshRate : 100
+            }).on('changed.owl.carousel', syncPosition2);
 
 
-    if (sync1.find(".owl-item:not(.cloned)").length == 1) {
+        if (sync1.find(".owl-item:not(.cloned)").length == 1) {
 
-        sync2.css({"display" : "none"});
+            sync2.css({"display" : "none"});
+        }
+
+        function syncPosition(el) {
+            //if you set loop to false, you have to restore this next line
+            //var current = el.item.index;
+
+            //if you disable loop you have to comment this block
+            var count = el.item.count-1;
+            var current = Math.round(el.item.index - (el.item.count/2) - .5);
+
+            if(current < 0) {
+                current = count;
+            }
+            if(current > count) {
+                current = 0;
+            }
+
+            //end block
+
+            sync2
+                .find(".owl-item")
+                .removeClass("current")
+                .eq(current)
+                .addClass("current");
+            var onscreen = sync2.find('.owl-item.active').length - 1;
+            var start = sync2.find('.owl-item.active').first().index();
+            var end = sync2.find('.owl-item.active').last().index();
+
+            if (current > end) {
+                sync2.data('owl.carousel').to(current, 100, true);
+            }
+            if (current < start) {
+                sync2.data('owl.carousel').to(current - onscreen, 100, true);
+            }
+        }
+
+        function syncPosition2(el) {
+            if(syncedSecondary) {
+                var number = el.item.index;
+                sync1.data('owl.carousel').to(number, 100, true);
+            }
+        }
+
+        sync2.on("click", ".owl-item", function(e){
+            e.preventDefault();
+            var number = $(this).index();
+            sync1.data('owl.carousel').to(number, 300, true);
+        });
+
+
     }
 
-  function syncPosition(el) {
-    //if you set loop to false, you have to restore this next line
-    //var current = el.item.index;
-    
-    //if you disable loop you have to comment this block
-    var count = el.item.count-1;
-    var current = Math.round(el.item.index - (el.item.count/2) - .5);
-    
-    if(current < 0) {
-      current = count;
-    }
-    if(current > count) {
-      current = 0;
-    }
-    
-    //end block
+    function bag() {
+        var item = $(".bag-order-item");
+        var next = $(".bag-next-btn");
+        var change = $(".bag-order__head-title-change");
 
-    sync2
-      .find(".owl-item")
-      .removeClass("current")
-      .eq(current)
-      .addClass("current");
-    var onscreen = sync2.find('.owl-item.active').length - 1;
-    var start = sync2.find('.owl-item.active').first().index();
-    var end = sync2.find('.owl-item.active').last().index();
-    
-    if (current > end) {
-      sync2.data('owl.carousel').to(current, 100, true);
-    }
-    if (current < start) {
-      sync2.data('owl.carousel').to(current - onscreen, 100, true);
-    }
-  }
-  
-  function syncPosition2(el) {
-    if(syncedSecondary) {
-      var number = el.item.index;
-      sync1.data('owl.carousel').to(number, 100, true);
-    }
-  }
-  
-  sync2.on("click", ".owl-item", function(e){
-    e.preventDefault();
-    var number = $(this).index();
-    sync1.data('owl.carousel').to(number, 300, true);
-  });
+        // $(".bag-goods__item-count-plus").click(function () {
+        //     var input = $(this).siblings("input");
+        //     $(this).siblings("input").css({"background-color" : "tomato"});
+        //     // console.log(input.attr("value")());
+        //
+        // });
 
+        (function () {
+            var i = 1;
+            var j = 0;
+            $(".bag_main").find(".bag-num span").each(function () {
+                $(this).append(i);
+                j++;
+                if (j % 2 == 0){
+                    i++;
+                }
+            });
+        })();
+
+        next.click(function () {
+            var next = $(this).parents(".bag-order-item").next(".bag-order-item-result");
+            var parent = $(this).parents(".bag-order-item");
+
+            next.stop().slideDown(300);
+            next.removeClass('hidden');
+            parent.stop().slideUp(300);
+        });
+
+        change.click(function () {
+            var parent = $(this).parents(".bag-order-item");
+            parent.stop().slideUp(300);
+            parent.prev(".bag-order-item").stop().slideDown(300);
+        })
 
     }
 
@@ -103,25 +144,25 @@ function cardSlider(){
         loop: true,
         margin: 120,
         autoheight: true,
-            responsive: {
-                        0: {
-                            items: 1
-                        },
+        responsive: {
+            0: {
+                items: 1
+            },
 
-                        480: {
-                            items: 2
-                        },
+            480: {
+                items: 2
+            },
 
-                        650: {
-                            items: 3
-                        },
+            650: {
+                items: 3
+            },
 
-                        870: {
-                            items: 4
-                        }
+            870: {
+                items: 4
+            }
 
 
-                    }
+        }
     });
 
 
@@ -134,29 +175,29 @@ function cardSlider(){
         loop: true,
         margin: 20,
         autoheight: true,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
+        responsive: {
+            0: {
+                items: 1
+            },
 
-                        480: {
-                            items: 2
-                        },
+            480: {
+                items: 2
+            },
 
-                        650: {
-                            items: 3
-                        },
+            650: {
+                items: 3
+            },
 
-                        870: {
-                            items: 4
-                        },
+            870: {
+                items: 4
+            },
 
-                        960: {
-                            items: 5
-                        }
+            960: {
+                items: 5
+            }
 
 
-                    }
+        }
     });
 
     $(".partners-slider.owl-carousel").owlCarousel({
@@ -166,42 +207,42 @@ function cardSlider(){
         loop: true,
         margin: 10,
         autoheight: true,
-            responsive: {
-                0: {
-                    items: 2
-                },
+        responsive: {
+            0: {
+                items: 2
+            },
 
-                400: {
-                    items: 3
-                },
+            400: {
+                items: 3
+            },
 
-                550: {
-                    items: 4
-                },
+            550: {
+                items: 4
+            },
 
-                650: {
-                    items: 5
-                },
+            650: {
+                items: 5
+            },
 
-                850: {
-                    items: 6
-                },
+            850: {
+                items: 6
+            },
 
-                1100: {
-                    items: 7
-                },
+            1100: {
+                items: 7
+            },
 
-                1200: {
-                    items: 8
-                }
-
-
-
+            1200: {
+                items: 8
             }
+
+
+
+        }
     });
 
 
-     $("#page-hero-slider").owlCarousel({
+    $("#page-hero-slider").owlCarousel({
         items: 1,
         nav: true,
         autoplay: false,
@@ -209,15 +250,15 @@ function cardSlider(){
         margin: 10,
         autoheight: true,
         responsive: {
-                0: {
-                    nav: false
-                },
+            0: {
+                nav: false
+            },
 
-                768: {
-                    nav: true
-                }
-
+            768: {
+                nav: true
             }
+
+        }
     });
 
 
@@ -262,12 +303,12 @@ function cardSlider(){
             body.appendTo(".dp-panel#dp-" + i);
         };
 
-         $(".uk-offcanvas").find(".uk-parent").click(function() {
+        $(".uk-offcanvas").find(".uk-parent").click(function() {
             var number = $(this).attr('id');
             number = number.split("-")[1];
 
             $(".dp-panel#dp-" + number).addClass("dp-panel-open");
-            
+
         });
 
         $(".dp-panel > a").click(function() {
@@ -275,15 +316,15 @@ function cardSlider(){
             number = number.split("-")[1];
             $(".dp-panel#dp-" + number).removeClass("dp-panel-open");
             $(".uk-offcanvas-bar .uk-nav .uk-parent").removeClass("uk-open");
-            
+
         });
 
     }
 
-     
 
 
-   
+
+
     function sliderHeight(){
         $(".page-hero-slider__list-content").css({"height" : $(".page-hero-slider__img").height()});
     }
@@ -296,15 +337,15 @@ function cardSlider(){
         catalog.on('hide.uk.dropdown', function(){
 
             var hamburger = $(".hamburger-desktop");
-                 hamburger.removeClass("is-active");
-             if (b.height() > $(window).height()) {
-                    $('html').removeClass("uk-modal-page");
-                     b.css({paddingRight:'0'});
-                }
-            
+            hamburger.removeClass("is-active");
+            if (b.height() > $(window).height()) {
+                $('html').removeClass("uk-modal-page");
+                b.css({paddingRight:'0'});
+            }
 
 
-            
+
+
         });
         if (b.height() > $(window).height()) {
             catalog.on('show.uk.dropdown', function(){
@@ -313,26 +354,26 @@ function cardSlider(){
                 $('html').addClass("uk-modal-page");
                 b.css({paddingRight:scrollbar+'px'});
 
-            
+
             });
-            }
+        }
     }
 
 
     $(document).ready(function () {
 
-        
+        bag();
         catalogDD();
-        
-        
 
 
-      $(".hamburger-desktop").on('click', function(e) {
+
+
+        $(".hamburger-desktop").on('click', function(e) {
             var hamburger = $(this);
 
             if (hamburger.hasClass("is-active")) {
-                 hamburger.removeClass("is-active");
-                 console.log("blyad");
+                hamburger.removeClass("is-active");
+
             }
 
             else{
@@ -345,93 +386,95 @@ function cardSlider(){
 
 
 
-jQuery.fn.extend({
-  toggleOwl: function(selector, options, destroy){
-    return this.each(function(){
-      $(this).find(selector).filter(function(){
-        return $(this).parent().is(':visible');
-      }).owlCarousel(options);
-      
-      $(this).on('shown.bs.tab', function(event){
-        var target = $(event.target.getAttribute('href')).find(selector);
-        if(!target.data('owlCarousel')){
-          var owl = target.owlCarousel(options).data("owlCarousel");
-        }
-      });
-      if(destroy === true){
-        $(this).on('hide.bs.tab', function(event){
-          var target = $(event.target.getAttribute('href')).find(selector);
-          if(target.data('owl.carousel')){
-            target.data('owl.carousel').destroy();
-          }
-        });        
-      }
-    });
-  }
-});
+        jQuery.fn.extend({
+            toggleOwl: function(selector, options, destroy){
+                return this.each(function(){
+                    $(this).find(selector).filter(function(){
+                        return $(this).parent().is(':visible');
+                    }).owlCarousel(options);
 
-  $('.toggleOwl').toggleOwl('.owl-carousel', {
-    loop: true,
-    items: 4,
-    margin: 25,
-    nav: true,
-    touchDrag: false,
-    responsive: {
-                        0: {
-                            items: 1
-                        },
-
-                        480: {
-                            items: 2
-                        },
-
-                        650: {
-                            items: 3
-                        },
-
-                        870: {
-                            items: 4
+                    $(this).on('shown.bs.tab', function(event){
+                        var target = $(event.target.getAttribute('href')).find(selector);
+                        if(!target.data('owlCarousel')){
+                            var owl = target.owlCarousel(options).data("owlCarousel");
                         }
-
-
+                    });
+                    if(destroy === true){
+                        $(this).on('hide.bs.tab', function(event){
+                            var target = $(event.target.getAttribute('href')).find(selector);
+                            if(target.data('owl.carousel')){
+                                target.data('owl.carousel').destroy();
+                            }
+                        });
                     }
-  });
+                });
+            }
+        });
 
-  $('.products-slider').owlCarousel({
-    loop: true,
-    items: 4,
-    margin: 25,
-    nav: true,
-    touchDrag: false,
-    responsive: {
-                        0: {
-                            items: 1
-                        },
+        $('.toggleOwl').toggleOwl('.owl-carousel', {
+            loop: true,
+            items: 4,
+            margin: 25,
+            nav: true,
+            touchDrag: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
 
-                        480: {
-                            items: 2
-                        },
+                480: {
+                    items: 2
+                },
 
-                        650: {
-                            items: 3
-                        },
+                650: {
+                    items: 3
+                },
 
-                        870: {
-                            items: 4
-                        }
-
-
-                    }
-  });
+                870: {
+                    items: 4
+                }
 
 
+            }
+        });
 
-        sliderHeight();
+        $('.products-slider').owlCarousel({
+            loop: true,
+            items: 4,
+            margin: 25,
+            nav: true,
+            touchDrag: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+
+                480: {
+                    items: 2
+                },
+
+                650: {
+                    items: 3
+                },
+
+                870: {
+                    items: 4
+                }
+
+
+            }
+        });
+
+
+
+        $(".page-hero-slider__item img").on('load', function() {
+            sliderHeight();
+        });
         slideMenu();
         cardSlider();
 
         $(".uk-parent").click(function() {
-             $(this).find(".uk-nav").css({"height" : $(".uk-offcanvas-bar").outerHeight()});
+            $(this).find(".uk-nav").css({"height" : $(".uk-offcanvas-bar").outerHeight()});
 
         });
 
@@ -439,13 +482,13 @@ jQuery.fn.extend({
 
             if ($(this).hasClass("active")){
                 $(this).removeClass("active");
-             
-             $(this).parent("div").siblings(".slide-toggle-content").stop().slideDown(400);
+
+                $(this).parent("div").siblings(".slide-toggle-content").stop().slideDown(400);
             }
             else {
                 $(this).addClass("active");
-             
-             $(this).parent("div").siblings(".slide-toggle-content").stop().slideUp(400);
+
+                $(this).parent("div").siblings(".slide-toggle-content").stop().slideUp(400);
             }
 
         });
@@ -460,8 +503,8 @@ jQuery.fn.extend({
             $('#offcanvas')[0].click();
         });
 
-      
-         hmobile.on('click', function(e) {
+
+        hmobile.on('click', function(e) {
             $(this).addClass('is-active');
         });
 
@@ -508,16 +551,16 @@ jQuery.fn.extend({
         });
     });
 
- });
+});
 
 
 
-$(window).on('load', function() { 
-    
+$(window).on('load', function() {
+
 
     $('input, select').styler({
 
 
     });
 
- });
+});

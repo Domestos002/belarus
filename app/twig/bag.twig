@@ -1,0 +1,572 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Карточка товара{% endblock %}
+
+
+{% block content %}
+
+    <main class="page-main">
+        {% include "widgets/bredcrumbs.twig" with {"title": "Корзина"} %}
+        <section class="bag">
+            <div class="uk-container uk-container-center">
+                <div class="section-inner">
+                    <div class="uk-grid" >
+                        <div class="bag_main uk-width-1-1 uk-width-large-7-10">
+                            <div class="bag-goods">
+                                <div class="bag-goods__head fx fx-right">
+                                    <span class="bag-goods__head-btn">
+                                        Удалить всё
+                                    </span>
+                                </div>
+                                <div class="bag-goods__list">
+                                    {% for 1 in 1..3 %}
+                                        <div class="bag-goods__item">
+                                            <div class="uk-grid bag-goods__item-inner">
+                                                <div class="uk-width-1-1 uk-width-medium-5-10 ">
+                                                    <a href="#" class="bag-goods__item-link fx fx-left fx-middle">
+                                                        <div class="bag-goods__item-img uk-hidden-small">
+                                                            <img src="http://via.placeholder.com/80x75" alt="">
+                                                        </div>
+                                                        <div class="bag-goods__item-text">
+                                                            <div class="bag-goods__item-art">
+                                                                <p>арт. 328</p>
+                                                            </div>
+                                                            <div class="bag-goods__item-name">
+                                                                <p>Комплект 3G интернет для дачи и загородного дома</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </a>
+                                                </div>
+                                                <div class="uk-width-1-1 uk-width-medium-5-10 fx fx-justify fx-middle">
+                                                    <div class="bag-goods__item-price">
+                                                        <p>12205</p>
+                                                    </div>
+                                                    <div class="bag-goods__item-count fx fx-center fx-middle">
+                                                        <button type="button" class="bag-goods__item-count-minus">
+                                                        </button>
+                                                        <div class="input-wrapper">
+                                                            <input class="" autocomplete="false" data-max="5" type="tel"
+                                                                   value="1">
+                                                        </div>
+                                                        <button type="button" class="bag-goods__item-count-plus">
+                                                        </button>
+                                                    </div>
+                                                    <div class="bag-goods__item-price-sum">
+                                                        <p>10232</p>
+                                                    </div>
+                                                    <div class="bag-goods__item-del">
+                                                        <span class="bag-goods__item-del-icon"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="bag-mobile-result uk-hidden-large" data-uk-sticky="boundary:true">
+                                <div class="fx fx-justify">
+                                    <div class="fz20">
+                                        <p>Всего к оплате</p>
+                                    </div>
+
+                                    <div class="bag_sidebar-result-price">45 750</div>
+                                </div>
+                            </div>
+                            <div class="bag-order">
+                                <div class="bag-order-item">
+                                    <div class="bag-order__head">
+                                        <div class="bag-order__head-title">
+                                            <div class="bag-num">
+                                                <span></span>
+                                            </div>
+                                            <div class="bag-title">
+                                                <p>Выберите город и способ доставки </p>
+                                            </div>
+                                        </div>
+                                        <div class="bag-order__head-input lg-full-width input-wrapper">
+                                            <input type="text"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="bag-order__body">
+                                        <div class="bag-order-radio-list">
+                                            <div class="bag-order-radio-item">
+                                                <div class="bag-order-radio__block">
+                                                    <div class="bag-radio">
+                                                        <input type="radio">
+                                                    </div>
+                                                    <div class="bag-order-radio__block-label uk-grid ">
+                                                        <div class="bag-order-radio__block-left md-mb15 uk-width-1-1 uk-width-medium-7-10">
+                                                            <p>Посылка склад-склад</p>
+                                                        </div>
+                                                        <div class="bag-order-radio__block-right uk-width-1-1 uk-width-medium-3-10">
+                                                            <div class="bag-delivery__day">
+                                                                <p>7 - 14 дней</p>
+                                                            </div>
+                                                            <div class="bag-delivery__price">
+                                                                <p>323</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bag-order-radio-item">
+                                                    <div class="bag-order-radio__block">
+                                                        <div class="bag-radio">
+                                                            <input type="radio">
+                                                        </div>
+                                                        <div class="bag-order-radio__block-label uk-grid ">
+                                                            <div class="bag-order-radio__block-left md-mb15 uk-width-1-1 uk-width-medium-7-10">
+                                                                <p>Почта России</p>
+                                                            </div>
+                                                            <div class="bag-order-radio__block-right uk-width-1-1 uk-width-medium-3-10">
+                                                                <div class="bag-delivery__day">
+                                                                    <p>7 - 14 дней</p>
+                                                                </div>
+                                                                <div class="bag-delivery__price">
+                                                                    <p>323</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <div class="bag-order-radio__field uk-grid">
+                                                        <div class="bag-order-radio__field-left md-mb15 uk-width-1-1 uk-width-medium-3-10">
+                                                            <div class="input-wrapper">
+                                                                <input type="text" placeholder="Индекс *" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="bag-order-radio__field-right uk-width-1-1 uk-width-medium-7-10">
+                                                            <div class="input-wrapper">
+                                                                <input type="text" placeholder="Улица, дом, квартира" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <div class="bag-order-radio-item">
+                                                <div class="bag-order-radio__block">
+                                                    <div class="bag-radio">
+                                                        <input type="radio">
+                                                    </div>
+                                                    <div class="bag-order-radio__block-label uk-grid ">
+                                                        <div class="bag-order-radio__block-left md-mb15 uk-width-1-1 uk-width-medium-7-10">
+                                                            <p>Экспресс лайт склад-дверь</p>
+                                                        </div>
+                                                        <div class="bag-order-radio__block-right uk-width-1-1 uk-width-medium-3-10">
+                                                            <div class="bag-delivery__day">
+                                                                <p>7 - 14 дней</p>
+                                                            </div>
+                                                            <div class="bag-delivery__price">
+                                                                <p>323</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bag-order-radio__field uk-grid">
+                                                    <div class="input-wrapper full-width">
+                                                        <input type="text" placeholder="Улица, дом, квартира" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    <div class="card-order-footer">
+                                        <span class="btn btn-primary bag-next-btn">
+                                            Далее
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bag-order-item bag-order-item-result">
+                                        <div class="bag-order__head">
+                                            <div class="bag-order__head-title">
+                                                <div class="bag-num">
+                                                    <span></span>
+                                                </div>
+                                                <div class="bag-title">
+                                                    <p>Выбран город и способ доставки </p>
+                                                </div>
+                                                <div class="bag-order__head-title-change">
+                                                    <span class="bag-order__head-change-text">
+                                                        Изменить
+                                                    </span>
+                                                    <i class="uk-icon uk-icon-check-square-o fz30"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bag-order__body">
+                                            <div class="bag-order__body-delivery uk-grid">
+                                                <div class="bag-order__body-delivery-left md-mb15 uk-width-1-1 uk-width-medium-7-10">
+                                                    <div class="bag-delivery-result__executor">
+                                                        <p>Почта России</p>
+                                                    </div>
+                                                    <div class="bag-delivery-result__address">
+                                                        <p>394051 Санкт-петербург ул. Никитинская 42 оф. 212</p>
+                                                    </div>
+                                                </div>
+                                                <div class="bag-order__body-delivery-right uk-width-1-1 uk-width-medium-3-10">
+                                                    <div class="bag-delivery-result__days">
+                                                        <p>7 - 14 дней</p>
+                                                    </div>
+                                                    <div class="bag-delivery-result__price">
+                                                        <p>124</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                </div>
+                                <div class="bag-order-item">
+                                    <div class="bag-order__head">
+                                        <div class="bag-order__head-title">
+                                            <div class="bag-num">
+                                                <span></span>
+                                            </div>
+                                            <div class="bag-title">
+                                                <p>Контактные данные</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bag-order__body">
+                                        <div class="bag-order__body-contacts">
+                                            <form action="">
+                                                <div class="bag-order__body-input-list uk-grid mb20 lg-mb10">
+                                                    <div class="uk-width-1-1 uk-width-medium-1-2">
+                                                        <div class="input-wrapper">
+                                                            <input type="text" placeholder="ФИО *" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-1-1 uk-width-medium-1-2">
+                                                        <div class="input-wrapper">
+                                                            <input type="text" placeholder="Организация" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-1-1 uk-width-medium-1-2">
+                                                        <div class="input-wrapper">
+                                                            <input type="text" placeholder="Телефон *" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-1-1 uk-width-medium-1-2">
+                                                        <div class="input-wrapper">
+                                                            <input type="text" placeholder="Email *" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-wrapper">
+                                                    <textarea name="" id="" cols="30" rows="10" placeholder="Комментарий к заказу" ></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="card-order-footer">
+                                        <span class="btn btn-primary bag-next-btn">
+                                            Далее
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bag-order-item bag-order-item-result">
+                                        <div class="bag-order__head">
+                                            <div class="bag-order__head-title">
+                                                <div class="bag-num">
+                                                    <span></span>
+                                                </div>
+                                                <div class="bag-title">
+                                                    <p>Контактные данные</p>
+                                                </div>
+                                                <div class="bag-order__head-title-change">
+                                                    <span class="bag-order__head-change-text">
+                                                        Изменить
+                                                    </span>
+                                                    <i class="uk-icon uk-icon-check-square-o fz30"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bag-order__body">
+                                            <div class="bag-order__body-contacts uk-grid">
+                                                <div class="uk-width-1-1 uk-width-small-1-2 uk-width-medium-1-3">
+                                                    <div class="bag-contacts__firm">
+                                                        <div class="bag-contacts__firm-name">
+                                                            <p>ООО «АРТатом»</p>
+                                                        </div>
+                                                        <div class="bag-contacts__contact-person">
+                                                            <p>Иванов Иван Ивнович</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-width-1-1 uk-width-small-1-2 uk-width-medium-1-3">
+                                                    <div class="bag-contacts__data">
+                                                        <div class="bag-contacts__phone">
+                                                            <p>+7 (473) 277 82 84</p>
+                                                        </div>
+                                                        <div class="bag-contacts__mail">
+                                                            <p>mail@artatom.ru</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-width-1-1 uk-width-small-1-1 uk-width-medium-1-3">
+                                                    <div class="bag-contacts__comment">
+                                                        <p class="text-grey bag-contacts__comment-title">
+                                                            Комментарий
+                                                        </p>
+                                                        <div class="bag-contacts__comment-text">
+                                                            <p>
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                                elit. Ea fuga id, iure iusto mollitia nesciunt obcaecati
+                                                                quae qui unde veniam!
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="bag-order-item">
+                                    <div class="bag-order__head">
+                                        <div class="bag-order__head-title">
+                                            <div class="bag-num">
+                                                <span></span>
+                                            </div>
+                                            <div class="bag-title">
+                                                <p>Способы оплаты</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bag-order__body">
+                                        <div class="bag-order-radio-list">
+                                            <div class="bag-order-payment-list">
+                                                <div class="bag-order-radio-item">
+                                                    <div class="bag-order-radio__block">
+                                                        <div class="bag-radio">
+                                                            <input type="radio">
+                                                        </div>
+                                                        <div class="bag-order-radio__block-label uk-grid">
+                                                            <div class="fx fx-left fx-middle fx-wrap radio-text-wrap">
+                                                                <div class="radio-text">
+                                                                    <p>Яндекс.Деньги</p>
+                                                                </div>
+
+                                                                <span class="radio-pic">
+                                                                    <img src="images/yandex.svg" alt="">
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bag-order-radio-item">
+                                                    <div class="bag-order-radio__block">
+                                                        <div class="bag-radio">
+                                                            <input type="radio">
+                                                        </div>
+                                                        <div class="bag-order-radio__block-label uk-grid">
+                                                            <div class="fx fx-left fx-middle fx-wrap radio-text-wrap">
+                                                                <div class="radio-text"><p>Перевод с карты VISA или MasterCard</p></div>
+                                                                <span class="radio-pic">
+                                                                    <img src="images/master.svg" alt="">
+                                                                    <img src="images/visa.svg" alt="">
+                                                                </span>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bag-order-radio-item">
+                                                    <div class="bag-order-radio__block">
+                                                        <div class="bag-radio">
+                                                            <input type="radio">
+                                                        </div>
+                                                        <div class="bag-order-radio__block-label uk-grid">
+                                                            <div class="fx fx-left fx-middle fx-wrap radio-text-wrap">
+                                                                <div class="radio-text"><p>Банковский перевод для физических лиц (Форма
+                                                                    ПД-4)</p></div>
+                                                                <span class="radio-pic">
+                                                                     <img src="images/sber.svg" alt="">
+                                                                </span>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bag-order-radio-item">
+                                                    <div class="bag-order-radio__block">
+                                                        <div class="bag-radio">
+                                                            <input type="radio">
+                                                        </div>
+                                                        <div class="bag-order-radio__block-label uk-grid">
+                                                            <div class="fx fx-left fx-middle fx-wrap radio-text-wrap">
+                                                                <div class="radio-text"><p>Безналичная оплата</p></div>
+                                                                <span class="radio-pic">
+                                                                    <img src="images/withoutcash.svg" alt="">
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-order-footer">
+                                        <span class="btn btn-primary bag-next-btn">
+                                            Далее
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bag-order-item bag-order-item-result">
+                                    <div class="bag-order__head">
+                                        <div class="bag-order__head-title">
+                                            <div class="bag-num">
+                                                <span></span>
+                                            </div>
+                                            <div class="bag-title">
+                                                <p>Способы оплаты</p>
+                                            </div>
+                                            <div class="bag-order__head-title-change">
+                                            <span class="bag-order__head-change-text">
+                                                Изменить
+                                            </span>
+                                                <i class="uk-icon uk-icon-check-square-o fz30"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bag-order__body">
+                                        <div class="bag-order__body-contacts-result">
+                                            <div class="fx fx-left fx-middle">
+                                                <p>Перевод с карты VISA или MasterCard</p>
+                                                <img src="images/yandex.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bag-order-item bag-order-finish">
+                                    <div class="bag-order__head">
+                                        <div class="bag-order__head-title">
+                                            <div class="bag-num">
+                                                <span></span>
+                                            </div>
+                                            <div class="bag-title">
+                                                <p>Завершение оформления</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bag-order__body">
+                                        <div class="bag-order__result">
+                                            <p>Нажатием кнопки «Завершить оформление» я даю свое согласие на обработку
+                                                персональных данных в соответствии с указанными здесь условиями.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bag-result-mobile uk-hidden-large">
+                                        <div class="mb20">
+                                            <div class="fx-justify fx mb20">
+                                                <div class="fz16">
+                                                    <p>Товаров на</p>
+                                                </div>
+                                                <span class="bag_sidebar-goods-price">45 400</span>
+                                            </div>
+                                            <div class="fx-justify fx">
+                                                <div class="fx fx-column">
+                                                    <div class="fz16"></div>
+                                                    <div class="bag_sidebar-delivery-type">
+                                                        <p>Экспресс лайт склад-дверь</p>
+                                                    </div>
+                                                    <div class="bag_sidebar-delivery-days">
+                                                        <p>7 - 14 дней</p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="bag_sidebar-delivery-price">350</div>
+                                            </div>
+                                        </div>
+                                        <div class="bag_sidebar-result">
+                                            <div class="fx fx-justify mb20">
+                                                <div class="fz20">
+                                                    <p>Всего к оплате</p>
+                                                </div>
+
+                                                <div class="bag_sidebar-result-price">45 750</div>
+                                            </div>
+                                            <div class="bag-promo">
+                                                <div class="input-wrapper">
+                                                    <input type="text">
+                                                </div>
+                                                <a href="#" class="btn btn-promo">Активировать</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-order-footer">
+                                        <span class="bag-order__result-notification">
+                                            минимальная сумма заказа 1 500 <i class="rub">a</i>
+                                        </span>
+
+                                        <span class="btn btn-primary md-full-width">
+                                            Завершить оформление и оплатить
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bag_sidebar uk-width-1-1 uk-width-large-3-10 uk-visible-large">
+                            <div class="bag_sidebar-item bag-result-block" data-uk-sticky="boundary:true">
+                                <div class="bag_sidebar-head">
+                                    <div class="bag_sidebar-title">
+                                        <p>Итого</p>
+                                    </div>
+                                </div>
+                                <div class="bag_sidebar-body">
+                                    <div class="mb20">
+                                        <div class="fx-justify fx mb20">
+                                            <div class="fz16">
+                                                <p>Товаров на</p>
+                                            </div>
+                                            <span class="bag_sidebar-goods-price">45 400</span>
+                                        </div>
+                                        <div class="fx-justify fx">
+                                            <div class="fx fx-column">
+                                                <div class="fz16"></div>
+                                                <div class="bag_sidebar-delivery-type">
+                                                    <p>Экспресс лайт склад-дверь</p>
+                                                </div>
+                                                <div class="bag_sidebar-delivery-days">
+                                                    <p>7 - 14 дней</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="bag_sidebar-delivery-price">350</div>
+                                        </div>
+                                    </div>
+                                <div class="bag_sidebar-result">
+                                    <div class="fx fx-justify mb20">
+                                        <div class="fz20">
+                                            <p>Всего к оплате</p>
+                                        </div>
+
+                                        <div class="bag_sidebar-result-price">45 750</div>
+                                    </div>
+                                    <div class="bag-promo">
+                                        <div class="input-wrapper">
+                                            <input type="text">
+                                        </div>
+                                        <a href="#" class="btn btn-promo">Активировать</a>
+                                    </div>
+
+                                    <div class="bag_sidebar-notification">
+                                        <p>минимальная сумма заказа 1 500 <i class="rub">a</i></p>
+                                    </div>
+                                    <button class="btn btn-primary full-width">
+                                        Оформить заказ
+                                    </button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

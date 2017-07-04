@@ -1,0 +1,63 @@
+
+$icon-font-path:                                 "../fonts" !default;
+
+$icon-small-font-size:                           150% !default;
+$icon-medium-font-size:                          200% !default;
+$icon-large-font-size:                           250% !default;
+
+$icon-small-vertical-align:                      -10% !default;
+$icon-medium-vertical-align:                     -16% !default;
+$icon-large-vertical-align:                      -22% !default;
+
+$icon-hover-color:                               #999 !default;
+$icon-hover-hover-color:                         #444 !default;
+
+$icon-button-width:                              35px !default;
+$icon-button-height:                             $icon-button-width !default;
+$icon-button-border-radius:                      100% !default;
+$icon-button-background:                         #eee !default;
+$icon-button-font-size:                          round(($icon-button-width * 0.5)) !default;
+$icon-button-color:                              #444 !default;
+
+$icon-button-hover-background:                   #f5f5f5 !default;
+$icon-button-hover-color:                        #444 !default;
+
+$icon-button-active-background:                  #ddd !default;
+$icon-button-active-color:                       #444 !default;
+
+[class*='uk-icon-'],
+[class*='uk-icon-']:hover,
+[class*='uk-icon-']:focus { text-decoration: none; }
+
+
+[class*='uk-icon-'] {
+  font-family: FontAwesome;
+  /* 1 */
+  display: inline-block;
+  /* 2 */
+  font-weight: normal;
+  font-style: normal;
+  /* 4 */
+  line-height: 1;
+  /* 5 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.uk-icon-check-square-o:before { content: "\f046"; }
+.uk-icon-envelope-open:before { content: "\f2b6"; }
+.uk-icon-envelope-open-o:before { content: "\f2b7"; }
+.uk-icon-envelope:before { content: "\f0e0"; }
+.uk-icon-odnoklassniki:before { content: "\f263"; }
+.uk-icon-odnoklassniki-square:before { content: "\f264"; }
+.uk-icon-vk:before { content: "\f189"; }
+.uk-icon-google-plus-square:before { content: "\f0d4"; }
+.uk-icon-google-plus:before { content: "\f0d5"; }
+.uk-icon-linkedin:before { content: "\f0e1"; }
+.uk-icon-facebook-official:before { content: "\f230"; }
+.uk-icon-facebook-f:before,
+.uk-icon-facebook:before { content: "\f09a"; }
+.uk-icon-twitter-square:before { content: "\f081"; }
+.uk-icon-facebook-square:before { content: "\f082"; }
+.uk-icon-user:before { content: "\f007"; }
+.uk-icon-star:before { content: "\f005"; }
+.uk-icon-star-o:before { content: "\f006"; }

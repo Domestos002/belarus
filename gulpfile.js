@@ -15,8 +15,8 @@ var gulp         = require('gulp'),
     notify       = require('gulp-notify'),
     browserSync  = require('browser-sync'),
     compass      = require('gulp-compass');
-    purify      = require('gulp-purifycss');
-    cssnano =       require('gulp-cssnano');
+purify            = require('gulp-purifycss');
+cssnano =       require('gulp-cssnano');
 
 /* PRODUCTION PLUGINS ----------------------------------------------------------
  ---------------------------------------------------------------------------- */
@@ -155,7 +155,7 @@ gulp.task('sass', ["compass"], function() {
             cascade: false
         }))
         .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write())
+        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(sources.css.dist))
         .pipe(browserSync.reload({stream: true}));
     // .pipe(notify('SASS was compiled'));
@@ -210,7 +210,7 @@ gulp.task('build_dist', function(){
     gulp.src(sources.html.src)
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
-        //.pipe(gulpif('*.css', minifyCss()))
+        // .pipe(gulpif('*.css', minifyCss()))
         .pipe(useref())
         .pipe(gulp.dest('dist'));
 });

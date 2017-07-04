@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="bower_components/reset-css/reset.css">
-
-
     <!--bower:css-->
     <!--endbower-->
     <!--endbuild-->
@@ -34,16 +32,7 @@
                     <div class="page-header__navbar-inner uk-position-relative">
                         <div class="page-header__nav-wrapper">
                             <ul class="page-header__nav p-rel">
-                                <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
-                                    <a class="b-page-header__navbar-link fz15 ttu">Гарантия и возврат</a>
-                                    <div class="uk-dropdown uk-dropdown-navbar list-dd-wrapper">
-                                        <ul>
-                                            <li><a href="category.html">Категория</a></li>
-                                            <li><a href="equipment.html">Оборудование</a></li>
-                                            <li><a href="services-category.html">Уcлуги-категория</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                <li><a href="services.html">Гарантия и возврат</a></li>
                                 <li><a href="services.html">Доставка и оплата</a></li>
                                 <li><a href="partners.html">Отзывы</a></li>
                                 <li><a href="contacts.html">Контакты</a></li>
@@ -93,7 +82,10 @@
                                     <a class="page-header__actions-bar__heart svg" href="#">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302.90082 267.70001" width="302.901" height="267.7"><path d="M216.2 0c-23.2 0-44.9 9-61.3 25.4l-3.6 3.6-3.6-3.6C131.3 9 109.5 0 86.4 0 63.3 0 41.6 9 25.3 25.3 8.9 41.7-.1 63.5 0 86.5c0 23.2 9.1 44.8 25.4 61.2l115.7 115.7c2.8 2.8 6.5 4.3 10.2 4.3 3.6 0 7.4-1.4 10.2-4.2l116-115.6c16.4-16.4 25.4-38.2 25.4-61.2 0-23.2-9-44.9-25.3-61.3C261 9.1 239.2 0 216.2 0zm40.6 127.5L151.1 232.8 45.6 127.3c-10.9-10.9-16.9-25.4-16.9-40.9s6-29.9 16.8-40.7c10.8-10.8 25.3-16.8 40.7-16.8 15.4 0 29.9 6 40.9 16.9L141 59.7c5.7 5.7 14.8 5.7 20.5 0l13.8-13.8C186.2 35 200.7 29 216.2 29c15.3 0 29.8 6 40.7 16.9 10.9 10.9 16.9 25.4 16.8 40.7 0 15.5-6 30-16.9 40.9z" fill="#933ec5"/></svg>
 						</a>
-                                    <a class="page-header__actions-bar__bag svg" href="#">
+                                    <a class="page-header__actions-bar__bag svg uk-position-relative" href="#">
+							<span class="page-header__actions-bar-goods-count">
+                                2
+                            </span>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.10001 459.10001" width="439.1" height="459.1"><path d="M262.4 301.8l-29.7 28.4V210.7c0-7-6-12.7-13.3-12.7-7.3 0-13.3 5.7-13.3 12.7v119.5l-29.7-28.4c-5.2-5-13.6-5-18.8 0-5.2 5-5.2 13 0 18l52.2 50c2.5 2.4 6 3.7 9.4 3.7 3.4 0 6.7-1.3 9.4-3.7l52.4-50.2c5.2-5 5.2-13 0-18-5-4.8-13.4-4.8-18.6.2z" class="path" fill="#933ec5"/><path d="M408.3 117.1c-.9-9.7-9.1-16.9-19.2-16.9h-59C326.6 44.4 278.3 0 219.5 0S112.4 44.4 109 100.2H50c-10 0-18.3 7.3-19.2 16.9L0 384.1v1.9c0 40.3 38.2 73.1 85.1 73.1H354c46.9 0 85.1-32.8 85.1-73.1v-1.5zM219.5 37.4c37.5 0 68.5 27.6 71.8 62.7H147.7c3.3-35 34.3-62.7 71.8-62.7zm-91.4 157.5c10.6 0 19.3-8.4 19.3-18.7v-38.6h144.2v38.6c0 10.3 8.6 18.7 19.3 18.7 10.7 0 19.3-8.4 19.3-18.7v-38.6h41.3l29 249.1c-.5 19.2-21.3 34.7-46.5 34.7H85.1c-25.2 0-46-15.6-46.5-34.8l29-249h41.3v38.6c-.1 10.3 8.6 18.7 19.2 18.7z" class="path" fill="#933ec5"/></svg>
 						</a>
                                 </div>
@@ -102,7 +94,7 @@
                     </div>
                 </div>
             </section>
-            <section class="page-header__search-panel">
+            <section class="page-header__search-panel" data-uk-sticky="">
                 <div class="uk-container uk-container-center">
                     <div class="page-header__search-panel-inner uk-position-relative" id="search-panel">
                         <div class="uk-grid d-fx fx-middle">
@@ -214,14 +206,14 @@
 
                                     </div>
 
-                                    <p class=" text-uppercase text-white fz26 uk-display-inline ml25">
+                                    <p class=" text-uppercase text-white fz26 uk-display-inline side-dd-text">
                                         каталог
                                     </p>
                                 </div>
 
                                 <div class="uk-hidden-large">
                                     <i class="uk-icon uk-icon-map-marker uk-display-inline text-brand fz25"></i>
-                                    <a href="#" class="page-header__destination fz20 text-underline text-brand uk-text-center uk-display-inline">
+                                    <a href="#" class="page-header__destination fz20 text-underline text-brand text-center uk-display-inline">
         					Воронеж
         				</a>
                                 </div>
@@ -244,7 +236,7 @@
                                     </div>
                                     <div class="text-white uk-visible-large">
 
-                                        <a href="#" class="text-white ">Узнать стоимость <br/>
+                                        <a href="#" class="text-white header-delivery-icon-link">Узнать стоимость <br/>
 						доставки в ваш город</p>
 						</div>		
 						
@@ -272,7 +264,7 @@
                             <div class="page-hero-slider__item">
                                 <img class="page-hero-slider__img" src="http://via.placeholder.com/940x400" alt="">
                                 <div class="page-hero-slider__list-content uk-grid uk-grid-collapse">
-                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 uk-flex fx-column fx-justify lg-fx-middle">
+                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 d-fx fx-column fx-justify lg-fx-middle">
                                         <div class="page-hero-slider__title text-uppercase lh-normal bigtext">
                                             <span>ИЗЛУЧАЙТЕ НАСТОЯЩУЮ <br/>
 										ПРИРОДНУЮ КРАСОТУ</span>
@@ -295,7 +287,7 @@
                             <div class="page-hero-slider__item">
                                 <img class="page-hero-slider__img" src="http://via.placeholder.com/940x400" alt="">
                                 <div class="page-hero-slider__list-content uk-grid uk-grid-collapse">
-                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 uk-flex fx-column fx-justify lg-fx-middle">
+                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 d-fx fx-column fx-justify lg-fx-middle">
                                         <div class="page-hero-slider__title text-uppercase lh-normal bigtext">
                                             <span>ИЗЛУЧАЙТЕ НАСТОЯЩУЮ <br/>
 										ПРИРОДНУЮ КРАСОТУ</span>
@@ -318,7 +310,7 @@
                             <div class="page-hero-slider__item">
                                 <img class="page-hero-slider__img" src="http://via.placeholder.com/940x400" alt="">
                                 <div class="page-hero-slider__list-content uk-grid uk-grid-collapse">
-                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 uk-flex fx-column fx-justify lg-fx-middle">
+                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 d-fx fx-column fx-justify lg-fx-middle">
                                         <div class="page-hero-slider__title text-uppercase lh-normal bigtext">
                                             <span>ИЗЛУЧАЙТЕ НАСТОЯЩУЮ <br/>
 										ПРИРОДНУЮ КРАСОТУ</span>
@@ -341,7 +333,7 @@
                             <div class="page-hero-slider__item">
                                 <img class="page-hero-slider__img" src="http://via.placeholder.com/940x400" alt="">
                                 <div class="page-hero-slider__list-content uk-grid uk-grid-collapse">
-                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 uk-flex fx-column fx-justify lg-fx-middle">
+                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 d-fx fx-column fx-justify lg-fx-middle">
                                         <div class="page-hero-slider__title text-uppercase lh-normal bigtext">
                                             <span>ИЗЛУЧАЙТЕ НАСТОЯЩУЮ <br/>
 										ПРИРОДНУЮ КРАСОТУ</span>
@@ -364,7 +356,7 @@
                             <div class="page-hero-slider__item">
                                 <img class="page-hero-slider__img" src="http://via.placeholder.com/940x400" alt="">
                                 <div class="page-hero-slider__list-content uk-grid uk-grid-collapse">
-                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 uk-flex fx-column fx-justify lg-fx-middle">
+                                    <div class="page-hero-slider__list-content-half uk-width-1-1 uk-width-large-1-2 d-fx fx-column fx-justify lg-fx-middle">
                                         <div class="page-hero-slider__title text-uppercase lh-normal bigtext">
                                             <span>ИЗЛУЧАЙТЕ НАСТОЯЩУЮ <br/>
 										ПРИРОДНУЮ КРАСОТУ</span>
@@ -1679,7 +1671,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1687,7 +1679,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1695,7 +1687,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1703,7 +1695,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1711,7 +1703,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1719,7 +1711,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1727,7 +1719,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1735,7 +1727,7 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
@@ -1743,13 +1735,31 @@
                                 <div class="lines-slider__img mb15">
                                     <img src="http://via.placeholder.com/104x104" alt="">
                                 </div>
-                                <div class="lines-slider__item-description fz16 uk-text-center">
+                                <div class="lines-slider__item-description fz16 text-center">
                                     <p>Color LUX с маслом <br/> арганы и фитокератином</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="uk-text-center">
+                        <div class="text-center">
                             <a href="#" class="text-underline fz18 uk-display-inline-block">Все линии</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="">
+                <div class="uk-container uk-container-center">
+                    <div class="section-inner bordered content-padding pb15">
+                        <div class="section-title ">
+                            <p>белорусскАЯ косметикА</p>
+                        </div>
+                        <div class="fz50 text-brand text-uppercase mb25 text-center lh-normal md-fz35">
+                            <p>Доставка в Нижний Новгород</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="uk-icon uk-icon-map-marker uk-display-inline text-brand fz30"></i>
+                            <a href="#" class="fz20 text-underline text-center uk-display-inline">
+        				Выбрать город
+        			</a>
                         </div>
                     </div>
                 </div>
@@ -1759,7 +1769,7 @@
                     <div class="section-inner content-padding">
                         <div class="conditions">
                             <div class="uk-grid  uk-grid-width-1-1 uk-grid-width-medium-1-3 mb40" data-uk-grid-margin="">
-                                <div class="uk-text-center">
+                                <div class="text-center">
                                     <div class="mb20 ">
                                         <object class="conditions-icon" type="image/svg+xml" data="images/0ruble.svg" width="100%" height="100%"></object>
                                     </div>
@@ -1773,7 +1783,7 @@
                                     </div>
                                 </div>
 
-                                <div class="uk-text-center">
+                                <div class="text-center">
                                     <div class="mb20">
                                         <object class="conditions-icon" type="image/svg+xml" data="images/mail-russia.svg" width="100%" height="100%"></object>
 
@@ -1790,7 +1800,7 @@
                                     </div>
                                 </div>
 
-                                <div class="uk-text-center">
+                                <div class="text-center">
                                     <div class="mb20">
                                         <object class="conditions-icon" type="image/svg+xml" data="images/delivery.svg" width="100%" height="100%"></object>
                                     </div>
@@ -1806,7 +1816,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="uk-text-center">
+                        <div class="text-center">
                             <p>Возможна оплата заказа при получении</p>
                         </div>
                     </div>
@@ -1815,7 +1825,7 @@
             <section class="contacts ">
                 <div class="uk-container uk-container-center">
                     <div class="section-inner bordered pb15 top-line-dec content-padding">
-                        <div class="uk-text-center">
+                        <div class="text-center">
                             <div class="mb15">
                                 <a href="tel:88008888868" class="contacts__phone fz50 text-brand text-semibold md-fz35 lh">8-800-888-8868</a>
                             </div>
@@ -1826,7 +1836,7 @@
                             <div class="contacts__expectation-time mb15">
                                 <p>Мы будем на связи через 4 часа 25 мин</p>
                             </div>
-                            <div class="uk-text-center">
+                            <div class="text-center">
                                 <a href="#" class="text-underline fz18 uk-display-inline-block">Служба поддержки</a>
                             </div>
                         </div>
@@ -1937,7 +1947,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="uk-text-center">
+                        <div class="text-center">
                             <a href="#" class="text-underline uk-display-inline-block">Все отзывы</a>
                         </div>
                     </div>
@@ -1948,7 +1958,7 @@
                     <div class="section-inner">
                         <div class="centered-limitation-block">
                             <div class="mb60">
-                                <div class="fz30 mb10 uk-text-center lh-normal">
+                                <div class="fz30 mb10 text-center lh-normal">
                                     <p>Интернет-магазин белорусской косметики</p>
                                 </div>
                                 <div class="text-paragraph">
@@ -1960,7 +1970,7 @@
                             <div class="advantages-list">
                                 <div class=" uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-3" data-uk-grid-margin="">
                                     <div class="">
-                                        <div class="uk-text-center">
+                                        <div class="text-center">
                                             <div class="mb20">
 
                                                 <object class="advantages-icon" type="image/svg+xml" data="images/baloons.svg" width="100%" height="100%"></object>
@@ -1977,7 +1987,7 @@
 
                                     </div>
                                     <div class="">
-                                        <div class="uk-text-center">
+                                        <div class="text-center">
                                             <div class="mb20">
                                                 <object class="advantages-icon" type="image/svg+xml" data="images/support.svg" width="100%" height="100%"></object>
                                             </div>
@@ -1992,7 +2002,7 @@
                                         </div>
                                     </div>
                                     <div class="">
-                                        <div class="uk-text-center">
+                                        <div class="text-center">
                                             <div class="mb20">
                                                 <object class="advantages-icon" type="image/svg+xml" data="images/stopwatch.svg" width="100%" height="100%"></object>
 
@@ -2074,7 +2084,7 @@
         <!-- Block content end -->
 
         <!-- Footer block -->
-        <footer class="page-footer">
+        <footer class="page-footer" id="footer">
             <div class="page-footer__inner">
                 <div class="uk-container uk-container-center">
 
@@ -2140,27 +2150,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="page-footer__payment-variants uk-hidden-small">
-                        <div class="mr20">
-                            <p>Принимаем к оплате:</p>
-                        </div>
 
-                        <div class="page-footer__payment-variants-list">
-                            <div class="page-footer__payment-variants-item">
-                                <object type="image/svg+xml" data="images/yandex-money.svg" width="100%" height="100%"></object>
+
+                </div>
+                <div class="page-footer__payment-variants-wrapper">
+                    <div class="uk-container uk-container-center">
+
+
+                        <div class="page-footer__payment-variants uk-hidden-small">
+                            <div class="mr20">
+                                <p>Принимаем к оплате:</p>
                             </div>
-                            <div class="page-footer__payment-variants-item">
-                                <object type="image/svg+xml" data="images/mastercard.svg" width="100%" height="100%"></object>
-                            </div>
-                            <div class="page-footer__payment-variants-item">
-                                <object type="image/svg+xml" data="images/visa.svg" width="100%" height="100%"></object>
-                            </div>
-                            <div class="page-footer__payment-variants-item">
-                                <object type="image/svg+xml" data="images/maestro.svg" width="100%" height="100%"></object>
+
+                            <div class="page-footer__payment-variants-list">
+                                <div class="page-footer__payment-variants-item yandex">
+                                </div>
+                                <div class="page-footer__payment-variants-item sber">
+                                </div>
+                                <div class="page-footer__payment-variants-item visa">
+                                </div>
+                                <div class="page-footer__payment-variants-item mastercard">
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -2192,15 +2205,14 @@
         <script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
         <script src="bower_components/jquery-form-styler/jquery.formstyler.min.js"></script>
         <script src="bower_components/uikit/js/uikit.js"></script>
-
+        <script src="bower_components/uikit/js/components/sticky.min.js"></script>
         <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
         <!--bower:js-->
         <!--endbower-->
+
         <!--endbuild-->
 
         <!--build:js js/common.js-->
-
-
         <script src="js/app.js"></script>
         <!--endbuild-->
         <div id="offcanvas" class="uk-offcanvas" aria-hidden="false">
@@ -2246,7 +2258,7 @@
                         <li class=""><a href="">Отзывы</a></li>
                         <li class=""><a href="">Контакты</a></li>
                     </ul>
-                    <div class="uk-text-center">
+                    <div class="text-center">
                         <a href="tel:84732783896" class="offcanvas-phone uk-display-inline-block fz25 text-brand text-semibold">8 (473) 278-38-96</a>
                     </div>
 
@@ -2258,7 +2270,7 @@
             <div class="uk-modal-dialog modal-login">
                 <a class="uk-modal-close uk-close"></a>
                 <form class="uk-form">
-                    <div class="uk-text-center fz24 text-uppercase mb40">
+                    <div class="text-center fz24 text-uppercase mb40">
                         <p>Вход</p>
                     </div>
                     <div class="modal-login__socials mb15">
@@ -2266,10 +2278,10 @@
                         <a href="" class="modal-login__socials-vk uk-icon uk-icon-vk"></a>
                         <a href="" class="modal-login__socials-fb k-icon uk-icon-facebook"></a>
                     </div>
-                    <div class="fz14 text-grey uk-text-center mb20">
+                    <div class="fz14 text-grey text-center mb20">
                         <p>Мы не будем делать публикации <br/> от вашего имени</p>
                     </div>
-                    <div class="fz14 text-grey uk-text-center mb20 modal-login__divider">
+                    <div class="fz14 text-grey text-center mb20 modal-login__divider">
                         <p>или</p>
                     </div>
                     <div class="uk-form-row">
@@ -2286,7 +2298,7 @@
 
                     </div>
 
-                    <div class="modal-login__footer uk-text-center">
+                    <div class="modal-login__footer text-center">
                         <a class='blue-link fz16' data-uk-modal="{target:'#reg', center:true} " href="#">Регистрация нового пользователя</a>
                     </div>
                 </form>
@@ -2298,7 +2310,7 @@
             <div class="uk-modal-dialog modal-login">
                 <a class="uk-modal-close uk-close"></a>
                 <form class="uk-form">
-                    <div class="uk-text-center fz24 text-uppercase mb40">
+                    <div class="text-center fz24 text-uppercase mb40">
                         <p>Регистрация</p>
                     </div>
                     <div class="uk-form-row">
@@ -2325,7 +2337,7 @@
 
                     </div>
 
-                    <div class="modal-login__footer uk-text-center d-fx fx-center fx-middles">
+                    <div class="modal-login__footer text-center d-fx fx-center fx-middles">
                         <div class="mr40 d-fx fx-middle">
                             <p class=''>Войти</p>
                         </div>
