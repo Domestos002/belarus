@@ -130,7 +130,7 @@
 			text-decoration: underline
 			color: $brand * 0.8
 
-	@each $fz in (14)
+	@each $fz in (14, 33)
 		.lg-fz#{$fz}
 			font-size: $fz + px
 
@@ -311,7 +311,6 @@
 
 	.footer-logo__wrapper
 		max-width: initial
-		margin-bottom: 0
 
 	.reviews-slider__item
 		min-height: 250px
@@ -407,26 +406,6 @@
 	.sm-visible
 		display: block
 
-	.phone-mobile
-		font-size: 0
-		border: 1px solid $brand
-		border-radius: 5px
-		height: 45px
-		width: 45px
-		line-height: 45px
-		text-align: center
-		&:hover
-			text-decoration: none !important
-		&::before
-			content: '\f095'
-			font-family: $font-icon
-			font-size: 30px
-			&:hover
-				border-color: $brand * 0.8
-				color: $brand * 0.8
-				text-decoration: none
-
-
 	.sm-d-fx
 		display: -webkit-flex
 		display: -moz-flex
@@ -447,7 +426,7 @@
 		.sm-mb#{$mb}
 			margin-bottom: $mb + px
 
-	@each $fz in (14, 20)
+	@each $fz in (14, 20, 30)
 		.sm-fz#{$fz}
 			font-size: $fz + px
 

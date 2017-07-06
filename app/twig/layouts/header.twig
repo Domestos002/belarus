@@ -23,7 +23,7 @@
         <div class="uk-container uk-container-center">
             <div class="page-header__logo-panel-inner">
                 <div class="uk-grid" data-uk-grid-margin="">
-                    <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-2-10 d-fx fx-middle fx-column fx-left md-order2 lg-fx-center">
+                    <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-3-10 d-fx fx-middle fx-column fx-left md-order2 lg-fx-center">
                         <div class="full-width mb10 uk-visible-large hide-on-scroll">
                             <a href="#" class="text-underline text-brand fz24  uk-display-block" data-uk-modal="{target:'#city', center:true}">Воронеж</a>
                         </div>
@@ -128,7 +128,7 @@
                             {#</div>#}
                         {#</div>#}
                     </div>
-                    <div class="uk-width-1-1 uk-width-small-1-1 uk-width-medium-6-10 d-fx fx-middle fx-center md-order1">
+                    <div class="uk-width-1-1 uk-width-small-1-1 uk-width-medium-4-10 d-fx fx-middle fx-center md-order1">
                         <div class="fx-middle fx-column d-fx">
                             <a href="" class="header-logo svg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="58.775mm" height="7.944mm"
@@ -144,10 +144,10 @@
                             <p class="text-brand hide-on-scroll"> косметика и парфюмерия</p>
                         </div>
                     </div>
-                    <div class="uk-width-1-2  uk-width-small-1-2  uk-width-medium-2-10 d-fx fx-middle fx-right md-order2 ">
-                        <div class="page-header__actions-bar d-fx fx-bottom">
-                            <div data-uk-dropdown="{mode:'click'}" class="uk-position-relative page-header__actions-bar-login">
-                                <a class="page-header__actions-bar__key svg uk-display-inline-block uk-position-relative" href="#">
+                    <div class="uk-width-1-2  uk-width-small-1-2  uk-width-medium-3-10 d-fx fx-middle fx-right md-order2" id="actions">
+                        <div class="page-header__actions-bar d-fx fx-bottom uk-position-relative">
+                            <div data-uk-dropdown="{mode:'hover', delay:100, justify:'#actions', pos:'bottom-left', boundary:'#page-hero-slider'}" class="uk-position-relative page-header__actions-bar-login">
+                                <a class="page-header__actions-bar__key svg uk-display-inline-block" href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.98709 464.55313"
                                          width="511.987" height="464.553">
                                         <path d="M491.875 95.34c-14.9-14.9-34.4-21.2-56.6-18.6 2.7-22.2-3.7-41.7-18.6-56.6-28.7-28.7-73.1-25.8-101.6 2.8-35.6 35.7-22.3 87.3-15.7 165.9l-117 117-59.2-59.2c-6.5-6.5-17.1-6.5-23.7 0l-94.6 94.6c-6.5 6.5-6.5 17.1 0 23.7l59.2 59.2-11.8 11.8c-6.5 6.5-6.5 17.1 0 23.7 6.5 6.6 17.1 6.5 23.7 0l247-247c78.6 6.6 130.5 20.1 166.2-15.6 28.5-28.8 31.3-73.1 2.7-101.7zm-404.2 305.1l-47.3-47.3 23.7-23.7 11.8 11.8c6.5 6.5 17.1 6.5 23.7 0 6.5-6.5 6.5-17.1 0-23.7l-11.8-11.8 23.7-23.7 47.3 47.3zm377.7-227.2c-22 22-60.6 13-133.2 6.5-6.5-72.6-15.4-111.3 6.5-133.2 13.8-13.8 37.5-19.5 54.3-2.8 19.1 19.1 3.3 48.5 2.6 49.8-3.6 6.5-2.5 14.7 2.8 20 5.3 5.3 13.5 6.5 20 2.8 1.2-.7 30.8-16.5 49.8 2.6 16.7 16.8 11.1 40.5-2.8 54.3z"
@@ -170,7 +170,7 @@
                                 </div>
                             </div>
 
-                            <a class="page-header__actions-bar__key svg uk-position-relative" href="#"
+                            <a class="page-header__actions-bar__key svg " href="#"
                                data-uk-modal="{target:'#login', center:true}">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.98709 464.55313"
                                      width="511.987" height="464.553">
@@ -179,7 +179,7 @@
                                 </svg>
                                 <p class="page-header__actions-bar__key-text text-underline text-brand hide-on-scroll uk-visible-large">Войти</p>
                             </a>
-                            <a class="page-header__actions-bar__heart svg uk-position-relative" href="#">
+                            <a class="page-header__actions-bar__heart svg" href="#">
                                 <span class="page-header__actions-bar-favorite-count">
                                     22
                                 </span>
@@ -190,8 +190,8 @@
                                 </svg>
 
                             </a>
-                            <div data-uk-dropdown="{mode:'click'}" class="uk-position-relative page-header__actions-bar-bag">
-                                <a class="page-header__actions-bar__key svg uk-display-inline-block uk-position-relative" href="#">
+                            <div data-uk-dropdown="{mode:'click', delay:100, justify:'#actions', pos:'bottom-left', boundary:'#page-hero-slider'}" class="uk-position-relative page-header__actions-bar-bag">
+                                <a class="page-header__actions-bar__key svg uk-display-inline-block" href="#">
                                       <span class="page-header__actions-bar-goods-count">
                                         2
                                     </span>
@@ -215,7 +215,7 @@
                                     </div>
                                     <div class="mb15">
                                         <div class="dropdown-footer">
-                                            <a href="#" class="btn btn-primary">перейти в корзину</a>
+                                            <a href="#" class="btn btn-primary">Перейти в корзину</a>
                                         </div>
                                     </div>
                                     <div class="uk-text-left">
@@ -232,8 +232,8 @@
     <section class="page-header__search-panel">
         <div class="uk-container uk-container-center">
             <div class="page-header__search-panel-inner uk-position-relative" id="search-panel">
-                <div class="uk-grid d-fx fx-middle">
-                    <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-3-10 d-fx fx-left fx-baseline">
+                <div class="uk-grid d-fx fx-middle full-width">
+                    <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-3-10 d-fx fx-left fx-middle">
                         <div class="d-fx fx-left uk-visible-large ">
                             <div data-uk-dropdown="{mode:'click'}" class="side-dd-wrapper catalog-dd fx-baseline d-fx ">
                                 <div class="catalog-dd-overlay"></div>
@@ -326,13 +326,11 @@
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="uk-hidden-large">
                             <i class="uk-icon uk-icon-map-marker uk-display-inline text-brand fz25"></i>
                             <a href="#"
-                               class="page-header__destination fz20 text-underline text-brand text-center uk-display-inline">
+                               class="page-header__destination fz19 text-underline text-brand text-center uk-display-inline">
                                 Воронеж
                             </a>
                         </div>
@@ -360,7 +358,7 @@
                             </div>
 
 
-                            <div class="d-fx fx-middle  uk-hidden-large">
+                            <div class="d-fx fx-middle sm-hidden  uk-hidden-large ">
                                 <a href="tel:88008888868"
                                    class="page-header__phone phone-mobile fz25 text-brand text-semibold">8-800-888-8868</a>
                             </div>

@@ -366,10 +366,19 @@ $(function(){
         }
     }
 
+    function actions() {
+        if ($(window).width() <= 500){
+            $(".page-header__actions-bar .uk-dropdown").addClass("hidden-imp");
+        }
+        if ($(window).width() >= 500){
+            $(".page-header__actions-bar .uk-dropdown").removeClass("hidden-imp");
+        }
+    }
 
     $(document).ready(function () {
 
         bag();
+        actions();
         catalogDD();
 
         // $(".side-dd-text").click(function () {
@@ -563,6 +572,7 @@ $(function(){
         $(window).resize(function () {
             sliderHeight();
             catalogDD();
+            actions();
         });
 
     });
