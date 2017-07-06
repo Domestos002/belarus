@@ -10,7 +10,8 @@
     "object-fit": "^0.4.2",
     "css-hamburgers": "^0.8.1",
     "owl.carousel": "2.1.5",
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "sticky-kit": "^1.1.2"
   },
   "devDependencies": {
     "uikit": "^2.27.2",

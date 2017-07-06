@@ -80,6 +80,9 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover
 
 .fx-bottom
 	align-items: flex-end
+	
+.fx-top
+	align-items: flex-start
 
 .fx-left
 	justify-content: flex-start
@@ -125,6 +128,9 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover
 
 .text-brand
 	color: $brand
+	
+a.text-brand:hover
+	color: $brand2
 
 .text-through
 	text-decoration: line-through
@@ -156,8 +162,7 @@ a[class*="__phone"]
 
 a[class*="__mail"]
 	text-decoration: underline
-	&:hover
-		color: initial
+
 
 .lh-normal
 	line-height: 1.2em
@@ -222,9 +227,9 @@ a[class*="__mail"]
 			transform: translate(-50%, -50%)
 
 .blue-link
-	color: #4d75a3
+	color: $brand2
 	&:hover
-		color: #4d75a3 * 0.8
+		color: $brand2 * 0.8
 
 %navs-arrows
 	.owl-nav

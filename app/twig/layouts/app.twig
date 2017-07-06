@@ -24,149 +24,173 @@
     <!-- Footer block -->
     {% include "footer.twig" %}
     <!-- Footer block end -->
+    <div id="offcanvas" class="uk-offcanvas" aria-hidden="false">
+        <div class="uk-position-relative">
+            <div class="uk-offcanvas-bar uk-offcanvas-bar-show" mode="push">
+                <i class="uk-offcanvas-bar__close uk-icon uk-icon-close" id="offcanvas-close"></i>
+                <div class="uk-offcanvas-bar__search">
+                    <input type="text" />
+                </div>
+                <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon mb40" data-uk-nav="">
+                    <li class="uk-parent">
+                        <a class="" href="#">Уход за телом</a>
+                        <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+                            <li><a href="#">Защита от пота</a></li>
+                            <li><a href="#">Для загара</a></li>
+                            <li><a href="#">Интимная гигиена</a></li>
+                            <li><a href="#">Против растяжек</a></li>
+                            <li><a href="#">Для очищения кожи</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent">
+                        <a class="" href="#">Уход за волосами</a>
+                        <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+                            <li><a href="#">Для всех типов волос</a></li>
+                            <li><a href="#">Для жирных волос</a></li>
+                            <li><a href="#">Для нормальных волос</a></li>
+                            <li class="uk-parent">
+                                <a class="" href="#">sdsdsdsd</a>
+                                <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+                                    <li><a href="#">fbdfbdfbdf</a></li>
+                                    <li><a href="#">bdfbfdbdfbd</a></li>
+                                    <li><a href="#">dbebdfb</a></li>
+                                    <li><a href="#">reerrrg</a></li>
+                                    <li><a href="#">egergergrgRGFWEF</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Для сухих и поврежденных волос</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="">Гарантия и возврат</a></li>
+                    <li class=""><a href="">Доставка и оплата</a></li>
+                    <li class=""><a href="">Отзывы</a></li>
+                    <li class=""><a href="">Контакты</a></li>
+                </ul>
+                <div class="text-center">
+                    <a href="tel:84732783896" class="offcanvas-phone uk-display-inline-block fz25 text-brand text-semibold">8 (473) 278-38-96</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="login" class="uk-modal">
+        <div class="uk-modal-dialog modal-login">
+            <a class="uk-modal-close uk-close"></a>
+            <form class="uk-form">
+                <div class="text-center fz24 text-uppercase mb40">
+                    <p>Вход</p>
+                </div>
+                <div class="modal-login__socials mb15">
+                    <a href="" class="modal-login__socials-gp uk-icon uk-icon-google-plus"></a>
+                    <a href="" class="modal-login__socials-vk uk-icon uk-icon-vk"></a>
+                    <a href="" class="modal-login__socials-fb k-icon uk-icon-facebook"></a>
+                </div>
+                <div class="fz14 text-grey text-center mb20">
+                    <p>Мы не будем делать публикации <br/>
+                        от вашего имени</p>
+                </div>
+                <div class="fz16 text-grey text-center mb20 modal-login__divider">
+                    <p>или</p>
+                </div>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Email">
+                </div>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Пароль">
+                </div>
+                <div class="uk-form-row">
+                    <a class="uk-width-1-1 uk-button uk-button-large login-btn" href="#">Войти</a>
+                </div>
+                <div class="uk-form-row uk-text-small fz18 mb20">
+                    <label class="uk-float-left"><input type="checkbox"> Запомнить меня</label>
+                    {# <a class="uk-float-right uk-link uk-link-muted" href="#">Забыли пароль</a> #}
+                </div>
+
+                <div class="modal-login__footer text-center">
+                    <a class='blue-link fz16' data-uk-modal="{target:'#reg', center:true} " href="#">Регистрация нового пользователя</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="city" class="uk-modal">
+        <div class="uk-modal-dialog modal-login">
+            <a class="uk-modal-close uk-close"></a>
+            <form class="uk-form">
+                <div class="text-center fz24 text-uppercase mb40 lh-normal">
+                    <p>укажите регион доставки</p>
+                </div>
+                <div class="uk-form-row mb20">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="г. Воронеж">
+                </div>
+                <div class="fz16 text-grey text-center mb20 modal-login__divider">
+                    <p>например</p>
+                </div>
+                <div class="text-left list-mb-10 fx fx-column mb20">
+                    <a href="#">Москва</a>
+                    <a href="#">Санкт-Петербург</a>
+                    <a href="#">Новосибирск</a>
+                </div>
+                <div class="text-left mb20">
+                    <p>* Минимальная сумма заказа 500 <i class="rub">a</i> </p>
+                </div>
+                <div class="modal-login__footer text-center d-fx fx-center fx-middles">
+                    <a href="#" class="btn btn-primary">Сохранить</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div id="reg" class="uk-modal">
+        <div class="uk-modal-dialog modal-login">
+            <a class="uk-modal-close uk-close"></a>
+            <form class="uk-form">
+                <div class="text-center fz24 text-uppercase mb40">
+                    <p>Регистрация</p>
+                </div>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Email">
+                </div>
+                <div class="uk-form-row uk-text-small fz18 mb20">
+                    <label class="uk-float-left"><input type="checkbox">Подписаться на новости</label>
+                    {# <a class="uk-float-right uk-link uk-link-muted" href="#">Забыли пароль</a> #}
+                </div>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Придумайте пароль">
+                </div>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Пароль">
+                </div>
+                <div class="uk-form-row">
+                    <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Ваше имя">
+                </div>
+                <div class="uk-form-row">
+                    <a class="uk-width-1-1 uk-button uk-button-large login-btn" href="#">Зарегистрироваться</a>
+                </div>
+                <div class="uk-form-row uk-text-small fz18 mb20">
+                    <label class="uk-float-left"><input type="checkbox"> Запомнить меня</label>
+                    {# <a class="uk-float-right uk-link uk-link-muted" href="#">Забыли пароль</a> #}
+                </div>
+
+                <div class="modal-login__footer text-center d-fx fx-center fx-middles">
+                    <div class="mr40 d-fx fx-middle">
+                        <p class=''>Войти</p>
+                    </div>
+
+                    <div class="modal-reg__socials">
+                        <a href="#" class="modal-reg__socials-gp uk-icon uk-icon-google-plus"></a>
+                        <a href="#" class="modal-reg__socials-vk uk-icon uk-icon-vk"></a>
+                        <a href="#" class="modal-reg__socials-fb k-icon uk-icon-facebook"></a>
+                        <a href="#" class="modal-reg__socials-link k-icon uk-icon-envelope" data-uk-modal="{target:'#login', center:true}"></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Scripts -->
     {% include "scripts.twig" %}
 {#     <a id="button-up" class="js-scrollScreen button-up" href="#logo"></a> #}
-    <div id="offcanvas" class="uk-offcanvas" aria-hidden="false">
-        <div class="uk-position-relative">
-        <div class="uk-offcanvas-bar uk-offcanvas-bar-show" mode="push">
-            <i class="uk-offcanvas-bar__close uk-icon uk-icon-close" id="offcanvas-close"></i>
-            <div class="uk-offcanvas-bar__search">
-                <input type="text" />
-            </div>
-            <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon mb40" data-uk-nav="">
-                <li class="uk-parent">
-                    <a class="" href="#">Уход за телом</a>
-                        <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
-                                <li><a href="#">Защита от пота</a></li>
-                                <li><a href="#">Для загара</a></li>
-                                <li><a href="#">Интимная гигиена</a></li>
-                                <li><a href="#">Против растяжек</a></li>
-                                <li><a href="#">Для очищения кожи</a></li>
-                        </ul>
-                </li>
-                <li class="uk-parent">
-                    <a class="" href="#">Уход за волосами</a>
-                        <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
-                                <li><a href="#">Для всех типов волос</a></li>
-                                <li><a href="#">Для жирных волос</a></li>
-                                <li><a href="#">Для нормальных волос</a></li>
-                                <li class="uk-parent">
-                                    <a class="" href="#">sdsdsdsd</a>
-                                    <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
-                                        <li><a href="#">fbdfbdfbdf</a></li>
-                                        <li><a href="#">bdfbfdbdfbd</a></li>
-                                        <li><a href="#">dbebdfb</a></li>
-                                        <li><a href="#">reerrrg</a></li>
-                                        <li><a href="#">egergergrgRGFWEF</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Для сухих и поврежденных волос</a></li>
-                        </ul>
-                </li>
-                 <li class="">
-                    <a href="">Гарантия и возврат</a></li>
-                    <li class=""><a href="">Доставка и оплата</a></li>
-                    <li class=""><a href="">Отзывы</a></li>
-                    <li class=""><a href="">Контакты</a></li>
-            </ul>
-            <div class="text-center">
-                <a href="tel:84732783896" class="offcanvas-phone uk-display-inline-block fz25 text-brand text-semibold">8 (473) 278-38-96</a>
-            </div>
-
-        </div>
-        </div>
-    </div>
-
-<div id="login" class="uk-modal">
-    <div class="uk-modal-dialog modal-login">
-        <a class="uk-modal-close uk-close"></a>
-                <form class="uk-form">
-                    <div class="text-center fz24 text-uppercase mb40">
-                        <p>Вход</p>   
-                    </div>
-                    <div class="modal-login__socials mb15">
-                        <a href="" class="modal-login__socials-gp uk-icon uk-icon-google-plus"></a>
-                        <a href="" class="modal-login__socials-vk uk-icon uk-icon-vk"></a>
-                        <a href="" class="modal-login__socials-fb k-icon uk-icon-facebook"></a>
-                    </div>
-                    <div class="fz14 text-grey text-center mb20">
-                        <p>Мы не будем делать публикации <br/>
-                        от вашего имени</p>
-                    </div>
-                    <div class="fz14 text-grey text-center mb20 modal-login__divider">
-                        <p>или</p>
-                    </div>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Email">
-                    </div>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Пароль">
-                    </div>
-                    <div class="uk-form-row">
-                        <a class="uk-width-1-1 uk-button uk-button-large login-btn" href="#">Войти</a>
-                    </div>
-                    <div class="uk-form-row uk-text-small fz18 mb20">
-                        <label class="uk-float-left"><input type="checkbox"> Запомнить меня</label>
-                        {# <a class="uk-float-right uk-link uk-link-muted" href="#">Забыли пароль</a> #}
-                    </div>
-
-                    <div class="modal-login__footer text-center">
-                        <a class='blue-link fz16' data-uk-modal="{target:'#reg', center:true} " href="#">Регистрация нового пользователя</a>
-                    </div>
-                </form>
-    </div>
-</div>
-
-
-<div id="reg" class="uk-modal">
-    <div class="uk-modal-dialog modal-login">
-        <a class="uk-modal-close uk-close"></a>
-                <form class="uk-form">
-                    <div class="text-center fz24 text-uppercase mb40">
-                        <p>Регистрация</p>   
-                    </div>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Email">
-                    </div>
-                    <div class="uk-form-row uk-text-small fz18 mb20">
-                        <label class="uk-float-left"><input type="checkbox">Подписаться на новости</label>
-                        {# <a class="uk-float-right uk-link uk-link-muted" href="#">Забыли пароль</a> #}
-                    </div>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Придумайте пароль">
-                    </div>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Пароль">
-                    </div>
-                    <div class="uk-form-row">
-                        <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Ваше имя">
-                    </div>
-                    <div class="uk-form-row">
-                        <a class="uk-width-1-1 uk-button uk-button-large login-btn" href="#">Зарегистрироваться</a>
-                    </div>
-                    <div class="uk-form-row uk-text-small fz18 mb20">
-                        <label class="uk-float-left"><input type="checkbox"> Запомнить меня</label>
-                        {# <a class="uk-float-right uk-link uk-link-muted" href="#">Забыли пароль</a> #}
-                    </div>
-
-                    <div class="modal-login__footer text-center d-fx fx-center fx-middles">
-                        <div class="mr40 d-fx fx-middle">
-                            <p class=''>Войти</p>
-                        </div>
-                        
-                        <div class="modal-reg__socials">
-                            <a href="#" class="modal-reg__socials-gp uk-icon uk-icon-google-plus"></a>
-                            <a href="#" class="modal-reg__socials-vk uk-icon uk-icon-vk"></a>
-                            <a href="#" class="modal-reg__socials-fb k-icon uk-icon-facebook"></a>
-                            <a href="#" class="modal-reg__socials-link k-icon uk-icon-envelope" data-uk-modal="{target:'#login', center:true}"></a>
-                        </div>
-                    </div>
-                </form>
-    </div>
-</div>
-
 </div>
 </body>
 </html>

@@ -44,10 +44,6 @@ $(function(){
         }
 
         function syncPosition(el) {
-            //if you set loop to false, you have to restore this next line
-            //var current = el.item.index;
-
-            //if you disable loop you have to comment this block
             var count = el.item.count-1;
             var current = Math.round(el.item.index - (el.item.count/2) - .5);
 
@@ -57,8 +53,6 @@ $(function(){
             if(current > count) {
                 current = 0;
             }
-
-            //end block
 
             sync2
                 .find(".owl-item")
@@ -266,22 +260,38 @@ $(function(){
 
         var sub = $(".side-dd-sub");
         var main = $(".side-dd");
+        var subList = $('.side-dd-sub-list');
+        var mainHeight = main.outerHeight();
+        var max = mainHeight / 50 - 1;
+        console.log(max + "- max");
+        $(subList).each(function () {
+            var j = 0;
+            var list = $(this);
+            $(this).find('a').each(function (index) {
+                if ( (j % max) == true && !(j === 0) ) {
+                    list.find('a').slice(j-1,j+max+1).wrapAll('<div class="side-dd-sub-column"></div>');
+                }
+                j++;
+            });
+            list.find(".side-dd-sub-column").appendTo(list);
+        });
+
+
+
+        sub.css({"height" : main.outerHeight()});
 
         sub.css({"left" : main.outerWidth()});
 
         sub.parent("li").mouseenter(function(){
             sub.removeClass("active");
             $(this).find(".side-dd-sub").addClass("active");
-        })
+        });
 
-        sub.parent("li").mouseleave(function(){
-            sub.removeClass("active");
-        })
+        // sub.parent("li").mouseleave(function(){
+        //     sub.removeClass("active");
+        // });
 
     }
-
-
-
 
     function slideMenu(){
         var count = 0;
@@ -343,9 +353,6 @@ $(function(){
                 b.css({paddingRight:'0'});
             }
 
-
-
-
         });
         if (b.height() > $(window).height()) {
             catalog.on('show.uk.dropdown', function(){
@@ -365,7 +372,32 @@ $(function(){
         bag();
         catalogDD();
 
+        // $(".side-dd-text").click(function () {
+        //     $(".hamburger-desktop").toggleClass("is_active");
+        // });
 
+
+        $(".page-header__logo-panel").stick_in_parent({
+            parent: $(".site-wrapper")
+            .on("sticky_kit:stick", function(e) {
+                console.log("has stuck!", e.target);
+                logoHeight = $(".page-header__logo-panel").outerHeight();
+
+                $(".bag-result-block").stick_in_parent({
+                    offset_top: logoHeight
+                });
+                console.log("has fuck!", e.target);
+            })
+        });
+
+
+
+
+        $("#sticky_item").trigger("sticky_kit:detach");
+
+        $(".page-header__logo-panel").on('load', function() {
+            sliderHeight();
+        });
 
 
         $(".hamburger-desktop").on('click', function(e) {
@@ -518,7 +550,7 @@ $(function(){
 
 
         $(".hidden-tabs").on('click', function(e) {
-            var count
+            var count;
             $(this).find(".uk-tab li").each(function () {
                 count++;
                 $(this).attr('id', 'dd-' + count);

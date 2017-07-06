@@ -47,7 +47,7 @@
         		{% include "elements/section-title.twig" with {"title": "белорусскАЯ косметикА"} %}
         		<div class="underlined-list " >
                     <div class="uk-grid uk-grid-match" data-uk-grid-margin="">
-        			{% for 1 in 1..4 %}
+        			{% for 1 in 1..2 %}
 						<div class="underlined-list__item uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
         					<div class="underlined-list__img">
         						<img src="http://via.placeholder.com/220x200" alt="" />
@@ -57,6 +57,16 @@
         					</div>
         				</div>
                     {% endfor %}
+                        {% for 1 in 1..2 %}
+							<div class="underlined-list__item uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
+								<div class="underlined-list__img">
+									<img src="http://via.placeholder.com/220x200" alt="" />
+								</div>
+								<div class="underlined-list__caption">
+									<p>профессиональная косметика</p>
+								</div>
+							</div>
+                        {% endfor %}
                     </div>
         			</div>
         		</div>
@@ -137,20 +147,40 @@
         		<div class="section-inner pb15">
         		{% include "elements/section-title.twig" with {"title": "Отзывы  о магазине"} %}
         		<div class="reviews-slider owl-carousel mb20">
-        			{% for 1 in 1..8 %}
+        			{% for 1 in 1..4 %}
 						<div class="reviews-slider__item uk-position-relative d-fx fx-column fx-middle">
-								<a class="reviews-slider__social-icon uk-icon uk-icon-vk" href="#"></a>
+                            <div class="reviews-slider__item-header fx fx-center fx-column fx-justify fx-middle">
+                            <a class="reviews-slider__social-icon uk-icon uk-icon-vk" href="#"></a>
 							<div class="reviews-slider__img mb20">
-								<img src="http://via.placeholder.com/80x80" alt="">
+								<p>P</p>
 							</div>
 							<div class="reviews-slider__name mb15 fz20 text-uppercase text-brand">
 								<p>Светлана Булеева</p>
 							</div>
+                            </div>
+							<div class="reviews-slider__description fz16">
+								<p>Здравствуйте! Заказ получен. Большое спасибо. Косметика очень понравилась.
+                                    Здравствуйте! Заказ получен. Большое спасибо. Косметика очень понравилась
+                                </p>
+							</div>
+						</div>
+        			{% endfor %}
+                    {% for 1 in 1..4 %}
+						<div class="reviews-slider__item uk-position-relative d-fx fx-column fx-middle">
+                            <div class="reviews-slider__item-header fx fx-center fx-column fx-justify fx-middle">
+                                <a class="reviews-slider__social-icon uk-icon uk-icon-vk" href="#"></a>
+                                <div class="reviews-slider__img mb20">
+                                    <img src="http://via.placeholder.com/120x120" alt="">
+                                </div>
+                                <div class="reviews-slider__name mb15 fz20 text-uppercase text-brand">
+                                    <p>Светлана Булеева-Валуева</p>
+                                </div>
+                            </div>
 							<div class="reviews-slider__description fz16">
 								<p>Здравствуйте! Заказ получен. Большое спасибо. Косметика очень понравилась.</p>
 							</div>
 						</div>
-        			{% endfor %}
+                    {% endfor %}
         		</div>
         		<div class="text-center">
         			<a href="#" class="text-underline uk-display-inline-block">Все отзывы</a>
@@ -162,7 +192,7 @@
         	<div class="uk-container uk-container-center">
     		<div class="section-inner">
     			<div class="centered-limitation-block">
-        		<div class="mb60">
+        		<div class="mb60 md-mb30">
         			<div class="fz30 mb10 text-center lh-normal">
         				<p>Интернет-магазин белорусской косметики</p>
         			</div>

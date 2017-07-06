@@ -50,16 +50,13 @@
         #{$property}: $value
 
 
-
-
-=arr($size, $border-size, $direction, $color)
+=chevron($size, $border-size, $direction, $color)
     z-index: 1
     content: ''
     display: inline-block
     width: $size
     height: $size
     background: transparent
-    transform: rotate(45deg)
     @if $direction == t
         border: transparent
         border-top: $border-size solid $color

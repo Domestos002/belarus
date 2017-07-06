@@ -1,13 +1,32 @@
 body
 	color: $black
 	font-size: 18px
-	line-height: 1.2em
+	line-height: 1.2em !important
 	font-family: $font-base
 	font-weight: normal
+	
+p
+	line-height: 1.2em !important
 
 a
 	text-decoration: none
+	&:hover
+		color: $brand2
+		
+input, textarea
+	transition-property: border, background, color, box-shadow, padding
+	transition: all 0.2s linear
+	border: 1px solid #ddd
+	font-family: $font-base
+	&:focus
+		outline: 0
+		border-color: #cd96ff !important
+		background-color: #fff !important
 	
+textarea
+	font-family: $font-base
+
+
 .owl-nav
 	height: 0
 
@@ -30,10 +49,11 @@ a
 	padding-left: 30px
 	padding-right: 30px
 
-		
+	
 .products-slider-tabs
 	.owl-carousel
 		@extend %navs
+
 
 .products-slider
 	@extend %navs
@@ -77,7 +97,7 @@ a
 		&::before
 			transform: translate(-120%, -50%)
 			color: $text-black
-			font-size: 20px 
+			font-size: 20px
 
 	.owl-next
 		&::before
@@ -119,13 +139,27 @@ a
 		&:not(:last-child)
 			margin-right: 20px
 
-.page-header__logo-panel
-	padding: 20px 0 20px 0
-
-
 .page-header__search-panel
-	z-index: 200
-	background-color: $black ///sdsddsd
+	background-color: $black
+	
+.show-on-scroll
+	display: none
+	
+.page-header__logo-panel
+	z-index: 15
+	padding: 20px 0 20px 0
+	background-color: #fff
+	&.is_stuck
+		box-shadow:  0 0 20px rgba(0,0,0,0.15)
+		.hide-on-scroll
+			display: none
+		//.show-on-scroll
+		//	display: block
+		
+.footer-copyright::before
+	font-family: $font-icon
+	content: '\f1f9'
+	margin-right: 5px
 
 .page-header__search-panel-inner
 	padding: 10px 0 10px 0
@@ -149,13 +183,6 @@ a
 .side-dd-text
 	padding-left: 25px
 	
-//.tabpanel .owl-carousel .owl-stage
-//	display: flex
-//	align-items: stretch
-//	.owl-item
-//		display: flex
-//		align-items: stretch
-	
 .page-header__tovars-counter
 	margin-left: 35px
 	&::after
@@ -172,7 +199,7 @@ a
 		border: 1px solid $brand
 		padding: 0 40px 0 15px
 		color: #fff
-		font-size: 18px		
+		font-size: 18px
 		&:focus
 			outline: none !important
 
@@ -231,25 +258,41 @@ a
 
 .underlined-list__img
 	width: 100%
-	margin-bottom: 30px
+	margin-bottom: 10px
 	img
 		object-fit: cover
 		width: 100%
+		
+.underlined-list > .uk-grid
+	display: flex
+	justify-content: center
+
+.underlined-list__item
+	display: flex
+	flex-direction: column
+	justify-content: space-between
 
 .underlined-list__caption
 	position: relative
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
 	display: flex
 	align-items: center
+	justify-content: center
 	font-size: 25px
 	text-transform: uppercase
 	flex-direction: column
+	text-align: center
+	line-height: 1.2em
+	padding: 0 20px
 	&::after
 		@extend %line
 		margin-top: 20px
+		
+
+.page-header__logo-panel
+	&.is_stuck
+		padding: 10px 0
+		.hide-on-scroll
+			display: none
 
 .tabs-nav
 	li
@@ -287,7 +330,7 @@ a
 
 
 .tabs-nav .uk-tab
-	flex-wrap: wrap	
+	flex-wrap: wrap
 
 .tabs-nav
 	.uk-tab
@@ -309,17 +352,25 @@ a
 	img
 		width: initial !important
 		
-
+.products-slider__item-footer
+	margin-top: auto
+		
+.products-slider__item-description
+	height: 65px
 
 .products-item
-	padding: 40px 17px 15px 17px		
+	padding: 40px 17px 15px 17px
 	border: 1px solid #c1c1c1
 	max-width: 260px
 	margin: 0 auto
+	height: 620px
+	display: flex
+	justify-content: flex-start
+	flex-direction: column
 
-.ruble-icon, .delivery-icon 
+.ruble-icon, .delivery-icon
 	width: 60px
-	height: 60px ////ewfefwefwefwe
+	height: 60px
 
 .products-item__icon
 	width: 25px
@@ -328,14 +379,50 @@ a
 .products-item-footer
 	padding-top: 10px
 	border-top: 1px solid #c9c9c9
+	
+.reviews-slider__name
+	text-align: center
+	height: 50px
+	display: flex
+	align-items: center
 
 .page-footer__bottom-panel
 	background-color: #323232
 	padding: 15px 0 15px 0
 	font-size: 16px
+	display: flex
+	align-items: center
 	color: $brand
 	a
 		color: $brand
+		&:hover
+			color: #ebebeb
+	p
+		margin-left: 25px
+		
+.button-up
+	color: #fff !important
+	+trans()
+	&:before
+		+chevron(7px, 2px, t, #fff)
+		margin-right: 15px
+		position: relative
+		top: 1px
+		transform: rotate(45deg)
+		content: ''
+	&:hover
+		color: #ebebeb !important
+		&:before
+			border-top-color: #ebebeb !important
+			border-left-color: #ebebeb !important
+			
+
+.footer-site-map-btn
+	&::after
+		content: '|'
+		margin-left: 5px
+		margin-right: 5px
+		display: inline
 		
 .jq-radio.checked .jq-radio__div
 	margin: 0
@@ -352,7 +439,7 @@ a
 	
 .page-footer__inner
 	background-color: $lightgrey
-	padding: 30px 0 40px 0
+	padding: 30px 0 30px 0
 
 .page-footer__title
 	font-size: 23px
@@ -371,13 +458,10 @@ a
 	max-width: 185px
 
 .page-footer__hot-line
-	margin-bottom: 7px
+	margin-bottom: 38px
 
 .footer-logo__wrapper
 	margin-bottom: 20px
-
-.page-footer__mail
-	margin-left: 60px
 
 .page-footer__year
 	margin-right: 30px
@@ -387,21 +471,37 @@ a
 	max-width: 780px
 	margin: 0 auto  //efefefe
 
-.advantages-list		
+.advantages-list
 	&.uk-grid > *
 		padding-left: 20px
 
 .advantages-icon
 	width: 70px
 	height: 70px
-	display: inline-block			
+	display: inline-block
 
 .reviews-slider__img
 	border-radius: 100%
 	width: 80px
 	height: 80px
 	overflow: hidden
+	border: 2px solid $brand
+	display: flex
+	align-items: center
+	font-family: $font-base-bold
+	justify-content: center
+	font-size: 30px
+	color: #666
+	
+.reviews-slider__description
+	flex-grow: 1
 
+.reviews-slider
+	.owl-stage
+		display: flex
+		.owl-item
+			display: flex
+			align-items: stretch
 
 .reviews-slider__item
 	border: 1px solid #c1c1c1
@@ -409,6 +509,9 @@ a
 	padding: 25px 20px 25px 20px
 	min-height: 315px
 	max-width: 240px
+	display: flex
+	flex-direction: column
+	justify-content: space-around
 	margin: 0 auto
 
 .reviews-slider__social-icon
@@ -416,7 +519,9 @@ a
 	top: 15px
 	right: 15px
 	color: #6b6b6b
-	font-size: 30px	
+	font-size: 30px
+	
+
 
 .products-valuation
 	display: flex
@@ -437,20 +542,8 @@ svg
 	height: auto
 
 
-.products-price
-	display: flex
-	align-items: baseline
-	& > p
-		display: inline
-		vertical-align: middle
-		line-height: 1em
-	.icon-ruble
-		width: initial
-		height: 24px
-		display: inline
-		vertical-align: middle
-		margin-left: 3px
-		line-height: 1em
+
+	
 
 .header-delivery-icon
 	width: 40px
@@ -468,31 +561,49 @@ svg
 
 .page-header__actions-bar
 	height: 40px
+	.uk-dropdown
+		margin-top: 25px
+		border: 1px solid #dadada
+		
+	& > *
+		&:not(:last-child)
+			margin-right: 20px
 	a
 		position: relative
 		width: 35px
 		z-index: 20
-		&:not(:last-child)
-			margin-right: 20px
+		
 		&.page-header__actions-bar__key
 			width: 40px
-		svg 
+		svg
 			path
 				+trans()
 				fill: $brand
 		&:hover
-			svg 
+			svg
 				
 				path
 					fill: $brand * 0.9
 
 .products-item__icon
-	svg 
+	border-radius: 100%
+	padding: 10px
+	width: 50px
+	display: flex
+	justify-content: center
+	height: 50px
+	align-items: center
+	background-color: transparent
+	transition: all 0.3s ease 0s
+	
+	+trans()
+	svg
 		path
 			+trans()
 			fill: $brand
 	&:hover
-		svg 
+		background-color: $beige
+		svg
 			path
 				fill: $brand * 0.9
 
@@ -573,7 +684,7 @@ svg
 	background-color: $brand
 	position: relative
 	+trans()
-	cursor: pointer 
+	cursor: pointer
 	&:hover
 		background-color: $brand * 0.8
 	&::before
@@ -635,11 +746,11 @@ svg
 
 .list-mb-10
 	& > *:not(:last-child)
-		margin-bottom: 10px 
+		margin-bottom: 10px
 
 .list-mb-20
 	& > *:not(:last-child)
-		margin-bottom: 20px 
+		margin-bottom: 20px
 
 
 .card-manufacturer__img
@@ -650,7 +761,7 @@ svg
 .card-slider
 	padding: 0 25px 0 25px
 
-.sidebar-title 
+.sidebar-title
 	font-size: 20px
 	text-transform: uppercase
 	font-family: $font-base-semibold
@@ -713,7 +824,7 @@ svg
 
 	height: 100vh
 
-.dp-panel	
+.dp-panel
 	transform: translate(100%, 0)
 	transform: translate3d(100%, 0, 0)
 	transition: transform .4s ease
@@ -731,7 +842,7 @@ svg
 		display: block
 		text-align: center
 		line-height: 40px
-		font-size: 16px 
+		font-size: 16px
 		color: #000
 		position: relative
 		padding: 0 30px 0 30px
@@ -750,7 +861,7 @@ svg
 
 
 
-.dp-panel-open	
+.dp-panel-open
 	transform: translate(0, 0)
 	transform: translate3d(0, 0, 0)
 
@@ -773,7 +884,7 @@ svg
 			color: #000
 			line-height: 40px
 			
-				
+			
 
 .uk-nav-parent-icon > .uk-parent
 	& > a:after
@@ -799,7 +910,7 @@ svg
 		border: 1px solid $brand
 		padding: 0 40px 0 15px
 		color: #000
-		font-size: 18px		
+		font-size: 18px
 		&:focus
 			outline: none !important
 
@@ -819,20 +930,20 @@ svg
 
 .uk-breadcrumb
 	& > li > *
-		font-size: 17px 
+		font-size: 17px
 	& > li:not(.uk-active)
 		a
 			text-decoration: underline !important
 
-.card-reviews 
+.card-reviews
 	.tabs-content
 		background-color: $lightgrey
-		padding: 35px 80px 35px 
+		padding: 35px 80px 35px
 		border-top: 4px solid $brand
 		position: relative
 		z-index: 15
 
-	.tabs-nav 
+	.tabs-nav
 		.uk-tab
 			justify-content: flex-start
 			a
@@ -883,9 +994,6 @@ svg
 	&:focus
 		outline: none
 
-.side-dd-wrapper
-	margin-bottom: -3px
-
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
 	
 	background: $brand
@@ -894,16 +1002,16 @@ svg
 
 
 
-[class*='owl-'] 
+[class*='owl-']
 	+trans
 
 .card-carousel
 	padding: 0 25px 0 25px
-	.owl-prev  
+	.owl-prev
 		&::before
 			transform: translate(-50%, -50%) /////сысысысысысысаысысыс
 
-      
+   
 
 	.owl-next
 		&::before
@@ -950,6 +1058,9 @@ input[type="checkbox"], input[type="radio"]
 
 .uk-modal
 	transition: none !important
+	
+.side-dd-text
+	cursor: pointer
 
 .jq-checkbox
 	border-color: $brand
@@ -967,6 +1078,8 @@ input[type="checkbox"], input[type="radio"]
 			top: 50%
 			left: 50%
 			transform: translate(-50%, -50%)
+	&.focused
+		border-color: $brand
 
 
 .jq-checkbox__div
@@ -1020,10 +1133,10 @@ input[type="checkbox"], input[type="radio"]
 		background-color: $brand * 0.8
 		color: #fff
 
-a.svg 
+a.svg
 	position: relative
 	display: inline-block
-	&::after 
+	&::after
 		content: ""
 		position: absolute
 		top: 0
@@ -1042,7 +1155,7 @@ a.svg
 .modal-login
 	width: 100%
 	max-width: 330px
-	padding: 41px 38px 0
+	padding: 30px 40px 0
 
 .modal-login__socials
 	&-gp
@@ -1123,14 +1236,15 @@ a.svg
 		&:focus
 			outline: none
 
-.modal-login__divider
+.modal-login__divider, .dropdown-divider
+	
 	overflow: hidden
 	position: relative
 	z-index: 20
 	&::before
 		content: ''
-		border-top: 1px solid $lightgrey
-		position: absolute			
+		border-top: 1px solid #d6d6d6
+		position: absolute
 		top: 60%
 		z-index: 1
 		left: 0
@@ -1140,10 +1254,37 @@ a.svg
 	p
 		position: relative
 		display: inline
-		padding-left: 5px
-		padding-right: 5px
+		padding-left: 10px
+		padding-right: 10px
 		z-index: 2
 		background-color: #fff
+		
+.dropdown-footer
+	background-color: $beige
+	padding: 15px 0
+	text-align: center /////wdwdwdw
+	margin: 0 -15px
+	.btn-primary
+		text-transform: none !important
+
+.dropdown-divider
+	&-inner
+		position: relative
+		display: inline
+		padding-left: 10px
+		padding-right: 10px
+		z-index: 2
+		background-color: #fff
+	&::before
+		content: ''
+		border-top: 1px solid #d6d6d6
+		position: absolute
+		top: 60%
+		z-index: 1
+		left: 0
+		height: 1px
+		width: 100%
+		transform: translateY(-50%)
 
 .modal-login__footer
 	padding: 15px 0
@@ -1171,14 +1312,7 @@ a.svg
 
 .uk-icon-map-marker
 	margin-right: 7px
-
-.page-hero-slider
-	min-height: 400px
-
-.products-slider-tabs
-	.tabs-content
-
-		
+	
 .page-title
 	background-color: #FFF
 	margin-bottom: 30px
@@ -1195,16 +1329,20 @@ a.svg
 	display: none
 
 .side-dd-sub__title
-	margin-bottom: 20px
+	border-bottom: 1px solid $brand
+	font-family: $font-base-bold
+	height: 50px
+	align-items: center
+	display: flex
+	padding: 0 0 0 20px
 	a
-		text-transform: uppercase 
+		text-transform: uppercase
 		color: $black
 
 .side-dd-sub
+	overflow: hidden
 	position: absolute !important
 	top: 0
-	width: 700px
-	padding: 15px
 	display: none
 	background-color: #f5f5f5
 	.uk-nav ul a
@@ -1214,9 +1352,9 @@ a.svg
 
 .header-logo
 	height: 32px
-	object
-		width: 235px
-		height: auto
+	svg
+		height: 32px
+		width: 100%
 
 .catalog-dd.uk-open
 	.catalog-dd-overlay
@@ -1233,25 +1371,57 @@ a.svg
 		background: rgba(0,0,0,.4)
 		transform: translateZ(0)
 		transition: opacity .15s linear
+		
+.side-dd-sub-list, .side-dd-sub-column
+	& > a
+		height: 50px
+		display: flex
+		align-items: center
+		padding: 0 20px 0 20px !important
+		color: black !important
+		box-sizing: border-box
+		white-space: nowrap
+		border-bottom: 1px solid #e4e4e4
+		&:hover
+			color: $brand2 !important
+			text-decoration: underline
+			background-color: #e4e4e4
+		
+.side-dd-sub-list
+	display: flex
+	justify-content: flex-start
 
 .side-dd
 	font-size: 16px
 	background-color: $brand
-	.uk-nav-dropdown > li > a
-		text-transform: uppercase
-		color: #fff
+	.uk-nav ul
+		padding-left: 0
+	.uk-nav-dropdown > li
+		& > a
+			text-transform: uppercase
+			color: #fff
+			height: 50px
+			display: flex
+			align-items: center
+			padding: 0 30px 0 10px
+		&:not(:last-child)
+			& > a
+				border-bottom: 1px solid #fff
+		&.side-dd-parent > a::after
+			+chevron(10px, 3px, r, #fff)
+			content: ''
+			position: absolute
+			top: 50%
+			transform: translateY(-50%) rotate(45deg)
+			right: 12px
+	
+	&.uk-dropdown .uk-nav
+		margin: 0 !important
+		
 	.uk-nav-dropdown > li > a:hover, .uk-nav-dropdown > li > a:focus
 		background: $black
-
-.uk-nav-dropdown ul a
-	color: $black
-
-.side-dd-sub-column
-	padding: 0 15px 0 15px
-
-.side-dd-sub-column-wrapper
-	&:not(:last-child)
-		border-right: 1px solid #d6d6d6
+	&.uk-dropdown
+		padding: 0
 
 .card-reviews__counter
 	font-size: 22px
@@ -1320,20 +1490,7 @@ a.svg
 	display: flex
 	justify-content: flex-start
 	align-items: center
-	
-.page-header__actions-bar-goods-count
-	border-radius: 100%
-	width: 20px
-	height: 20px
-	font-size: 15px
-	display: flex
-	justify-content: center
-	align-items: center
-	position: absolute
-	right: -10px
-	top: 0
-	background-color: $brand
-	color: #fff
+
 
 .fx-b220
 
@@ -1383,16 +1540,6 @@ a.svg
 .side-dd-parent
 	a
 		position: relative
-		&:after
-			content: '\f054'
-			font-family: $font-icon
-			font-size: 20px
-			color: #fff
-			margin-left: auto
-			position: absolute
-			top: 50%
-			right: 10px
-			transform: translateY(-50%)
 
 //BAG
 
@@ -1590,11 +1737,14 @@ a.svg
 	justify-content: flex-end
 	align-items: center
 	
+.hamburger-box
+	width: 35px
+	
 .bag-order__result-notification
 	margin-right: 20px
 	
 .bag-result-block
-	z-index: 2000
+	z-index: 10
 	
 .bag-order__head-title-change
 	margin-left: auto
@@ -1699,7 +1849,7 @@ a.svg
 		
 .bag_sidebar-title
 	font-size: 30px
-		
+	
 .bag-goods
 	background-color: $beige
 	line-height: 20px
@@ -1709,13 +1859,14 @@ a.svg
 	background-color: $beige
 	box-shadow: 0 0.3em 0 #dadada
 
-.bag-goods__item-price-sum, .bag-goods__item-price, .bag-delivery__price,.bag-delivery-result__price
-	& > p::after
-		content: 'a'
-		font-family: $font-ruble
-		display: inline
-		margin-left: 5px
-		
+.bag-goods__item-price-sum, .bag-goods__item-price, .bag-delivery__price, .bag-delivery-result__price
+	& > p
+		&::after
+			content: 'a'
+			font-family: $font-ruble
+			display: inline
+			margin-left: 5px
+			
 .bag_sidebar-goods-price, .bag_sidebar-delivery-price, .bag_sidebar-result-price
 	font-family: $font-base-bold
 	&::after
@@ -1724,9 +1875,17 @@ a.svg
 		display: inline
 		margin-left: 5px
 		
+.products-price
+	& > p
+		&::after
+			content: 'a'
+			font-family: $font-ruble
+			display: inline
+			margin-left: 5px
+		
 .bag_sidebar-result-price
 	font-size: 20px
-		
+	
 .bag_sidebar-delivery-type, .bag_sidebar-delivery-days
 	font-size: 16px
 
@@ -1800,3 +1959,44 @@ a.svg
 
 .bag-contacts__comment
 	font-size: 16px
+	
+.page-footer__payment-variants-wrapper
+	background-color: #dcd4d7
+	padding: 15px 0
+	
+.page-header__actions-bar__key-text
+	position: absolute
+	bottom: 0
+	transform: translateY(100%)
+	+trans()
+	&:hover
+		text-decoration: none
+	
+.page-header__actions-bar-goods-count, .page-header__actions-bar-favorite-count
+	font-size: 15px
+	display: flex
+	justify-content: center
+	align-items: center
+	position: absolute
+	right: -10px
+	top: 0
+	color: #fff
+	font-family: $font-base-bold
+	width: 27px
+	height: 22px
+	border-radius: 10px
+	background-color: $brand2
+	
+.page-header__actions-bar-favorite-count
+	top: -10px
+
+	
+.page-header__actions-bar
+	.uk-dropdown
+		width: 280px
+		background-color: #fff
+		a
+			width: initial
+			
+.pb15
+	padding-bottom: 25px
