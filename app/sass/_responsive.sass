@@ -1,4 +1,14 @@
+@media (max-width: 1100px)
+	.page-header__tovars-counter
+		display: none
+
 @media (max-width: $breakpoint-medium-max)
+	.page-header__nav
+		justify-content: center
+		
+	.page-header__destination-mobile
+		display: block
+		
 	.bag-order__body
 		padding: 15px 80px 15px 80px
 		
@@ -56,6 +66,9 @@
 
 	.lg-fx-row
 		flex-direction: row
+		
+	.lg-fx-bottom
+		align-items: flex-end
 
 	.lg-fx-around
 		justify-content: space-around
@@ -90,8 +103,6 @@
 		.owl-next::before
 			transform: translate(0, -50%)
 			font-size: 30px
-
-
 
 	.mobile-menu-btn
 		font-size: 40px
@@ -167,12 +178,30 @@
 
 	.page-header__logo-panel
 		order: 3
-
+		
+	.page-title
+		margin-bottom: 0
+		padding: 25px 0
+	
 	@each $mb in (0, 15, 10)
 		.lg-mb#{$mb}
-			margin-bottom: $mb + px
+			margin-bottom: $mb + px !important
+			
+	.lg-list-mb-0
+		& > *
+			margin-bottom: 0 !important
 
 @media (max-width: $breakpoint-small-max)
+	.page-header__logo-panel
+		&.is_stuck
+			.hide-on-scroll-mobile
+				display: none
+			.uk-grid-margin
+				margin-top: 0
+				
+	.page-header__logo-panel
+		background-color: $beige
+		
 	.bag-order
 		.btn
 			font-size: 15px
@@ -259,6 +288,9 @@
 
 	.md-order2
 		order: 2
+		
+	.breadcrumb
+		display: none
 
 	.md-order1
 		order: 1
@@ -289,6 +321,9 @@
 
 	.md-fx-center
 		justify-content: center
+		
+	.md-fx-justify
+		justify-content: space-between
 
 	.md-fx-middle
 		align-items: center
@@ -332,8 +367,13 @@
 	.lines-item__text
 		width: 100%
 		
+	.sidebar-title
+		display: none
+		
 		
 @media (max-width: 550px)
+	
+	
 	.bag-order__head
 		padding: 15px 30px 0 30px
 	.bag-order-radio__field
@@ -371,6 +411,27 @@
 		margin-right: 0
 
 @media (max-width: $breakpoint-mini-max)
+	.sm-list-mb-10
+		& > *
+			margin-bottom: 10px !important
+			
+	
+
+		
+		.page-header__actions-bar
+			.uk-dropdown
+				margin-top: 14px
+			
+			
+	.page-header__destination-mobile
+		display: none
+			
+	.header-logo
+		height: 28px
+		svg
+			height: 28px
+			width: 100%
+			
 	.uk-comment-header
 		justify-content: center
 
@@ -415,6 +476,9 @@
 
 	.sm-fx-column
 		flex-direction: column
+	
+	.sm-fx-baseline
+		align-items: baseline
 
 	.sm-fx-center
 		justify-content: center

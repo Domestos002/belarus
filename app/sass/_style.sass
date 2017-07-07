@@ -109,14 +109,9 @@ textarea
 .page-header__navbar-inner
 
 .page-header__nav
-
 	align-items: center
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
 	display: flex
-	justify-content: center
+	justify-content: flex-start
 	li
 		&:not(:last-child)
 			margin-right: 20px
@@ -145,6 +140,9 @@ textarea
 .show-on-scroll
 	display: none
 	
+.page-header__destination-mobile
+	display: none
+	
 .page-header__logo-panel
 	z-index: 15
 	padding: 20px 0 20px 0
@@ -153,12 +151,14 @@ textarea
 		box-shadow:  0 0 20px rgba(0,0,0,0.15)
 		.hide-on-scroll
 			display: none
-		//.show-on-scroll
-		//	display: block
+		.show-on-scroll
+			display: block
 	
 		.page-header__actions-bar
 			.uk-dropdown
 				margin-top: 14px
+		.scroll-mb0
+			margin-bottom: 0
 		
 .footer-copyright::before
 	font-family: $font-icon
@@ -223,19 +223,13 @@ textarea
 	object-fit: cover
 	max-height: 400px
 
-
-
 .page-hero-slider__list-content
 	position: relative
 	z-index: 200
 	padding: 30px 0 20px 50px
 
-
-
 .grey-bg
 	background-color: $lightgrey
-
-
 
 .section-title
 	text-transform: uppercase
@@ -317,6 +311,7 @@ textarea
 			font-family: $font-base-bold
 			background-color: $lightgrey
 			white-space: nowrap
+			height: 100%
 		&:hover > a
 			color: $darker-black
 		&.uk-active , &.active
@@ -348,7 +343,16 @@ textarea
 		li.uk-grid-margin
 			margin-top: 15px
 			margin-right: 20px
-
+			
+			
+.side-dd-wrapper-scroll
+	position: absolute
+	top: 50%
+	left: 15px
+	transform: translateY(-50%)
+	.uk-dropdown-bottom
+		margin-top: 15px
+		
 .products-img
 	max-height: 200px
 	overflow: hidden
@@ -362,6 +366,7 @@ textarea
 		
 .products-slider__item-description
 	height: 65px
+	display: block
 
 .products-item
 	padding: 40px 17px 15px 17px
@@ -428,6 +433,9 @@ textarea
 		margin-left: 5px
 		margin-right: 5px
 		display: inline
+	&:hover
+		&::after
+			color: $brand
 		
 .jq-radio.checked .jq-radio__div
 	margin: 0
@@ -575,11 +583,10 @@ svg
 			margin-right: 20px
 	a
 		position: relative
-		width: 35px
 		z-index: 20
 		
 		&.page-header__actions-bar__key
-			width: 40px
+			width: 47px
 		svg
 			path
 				+trans()
@@ -589,6 +596,15 @@ svg
 				
 				path
 					fill: $brand * 0.9
+					
+					
+.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__bag, .page-header__actions-bar__person
+	width: 42px
+	z-index: 20
+	//background-color: $beige
+	border-radius: 100%
+	padding: 7px
+	background-color: transparent
 
 .products-item__icon
 	border-radius: 100%
@@ -619,6 +635,21 @@ svg
 	left: 0
 	right: 0
 	bottom: 0
+	
+ul.markered-list
+	position: relative
+	li
+		padding-left: 20px
+		
+		&::before
+			content: '\f111'
+			font-family: $font-icon
+			font-size: 10px
+			position: absolute
+			color: $brand
+			left: 0
+		&:not(:last-child)
+			margin-bottom: 10px
 
 
 .page-hero-slider__list-content
@@ -784,6 +815,7 @@ svg
 	white-space: nowrap
 	p
 		display: inline
+		line-height: 1em !important
 	h3
 		display: inline
 	i
@@ -796,7 +828,7 @@ svg
 .advantages-ruble
 	display: flex
 	align-items: baseline
-	justify-content: center //////wdwdwdwd
+	justify-content: center
 	.icon-ruble
 		height: 17px
 		margin-left: 3px
@@ -939,6 +971,12 @@ svg
 	& > li:not(.uk-active)
 		a
 			text-decoration: underline !important
+			
+.uk-breadcrumb>li, .uk-breadcrumb>li>a, .uk-breadcrumb>li>span
+	font-size: 16px
+			
+.uk-breadcrumb>li:nth-child(n+2):before
+	content: "|"
 
 .card-reviews
 	.tabs-content
@@ -946,7 +984,6 @@ svg
 		padding: 35px 80px 35px
 		border-top: 4px solid $brand
 		position: relative
-		z-index: 15
 
 	.tabs-nav
 		.uk-tab
@@ -991,7 +1028,11 @@ svg
 		height: 145px
 		&:not(:last-child)
 			margin-right: 25px
-
+			
+.card
+	.sidebar-item
+		.uk-grid-margin
+			margin-top: 15px
 
 .hamburger
 	padding: 0
@@ -1071,6 +1112,7 @@ input[type="checkbox"], input[type="radio"]
 	border-color: $brand
 	border-radius: 0
 	position: relative
+	flex-shrink: 0
 	margin: 0 10px 0 0
 	text-align: initial !important
 	&.checked
@@ -1347,6 +1389,7 @@ a.svg
 	top: 0
 	display: none
 	background-color: #f5f5f5
+	height: initial !important
 	.uk-nav ul a
 		padding: 5px 15px
 	&.active
@@ -1880,10 +1923,10 @@ a.svg
 .products-price
 	& > p
 		&::after
-			content: 'a'
-			font-family: $font-ruble
+			content: 'Р'
 			display: inline
 			margin-left: 5px
+			
 		
 .bag_sidebar-result-price
 	font-size: 20px
@@ -1968,8 +2011,10 @@ a.svg
 	
 .page-header__actions-bar__key-text
 	position: absolute
+	font-size: 16px
 	bottom: 0
-	transform: translateY(100%)
+	transform: translate(-50%, 100%)
+	left: 50%
 	+trans()
 	&:hover
 		text-decoration: none

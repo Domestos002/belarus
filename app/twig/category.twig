@@ -16,7 +16,7 @@
                 <div class="sidebar-item">
                     <div class="category-filter">
                         {% for 1 in 1..9 %}
-                            <a href="#" class="category-filter__item d-fx fx-justify fx-bottom">
+                            <a href="#" class="category-filter__item d-fx fx-justify fx-middle">
                                 <div class="category-filter__item-name">
                                     <p>Дневной крем</p>
                                 </div>
@@ -24,9 +24,7 @@
                                     424
                                 </span>
                             </a>
-
                         {% endfor %}
-                        
                     </div>
                 </div>
                 <div class="sidebar-item">
@@ -85,7 +83,7 @@
                     </div>
                 </div>
                 <div class="category-content mb40">
-                    <div class="uk-grid mb15" data-uk-grid-margin="">
+                    <div class="uk-grid mb30" data-uk-grid-margin="">
                         {% for 1 in 1..9 %}
                             <div class="uk-width-1-1 uk-width-small-1-2 uk-width-medium-1-3">
                                 {% include "elements/products-item.twig" %}

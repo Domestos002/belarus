@@ -12,8 +12,8 @@
         <section>
         	<div class="uk-container uk-container-center">
         		<div class="section-inner">
-    			<div class="card ">
-        				<div class="uk-grid mb30" data-uk-grid-margin="">
+    			<div class="card">
+        				<div class="uk-grid mb30 uk-grid-match" data-uk-grid-margin="">
         				<div class="uk-width-1-1 uk-width-large-7-10">
         					<div class="card-main">
 							<div class="uk-grid mb25">
@@ -46,9 +46,9 @@
 
 										<div class="">
 											<p class="text-semibold text-uppercase mb10">Производитель</p>
-											<div class="card__manufacturer text-brand fz16 text-underline">
-												<p>Белита - Витекс</p>
-											</div>
+											<a href="" class="card__manufacturer text-brand fz16 text-underline uk-display-block">
+												Белита - Витекс
+											</a>
 										</div>
 										<div class="card-manufacturer__img">
 											<img src="http://via.placeholder.com/131x70" alt="">
@@ -61,7 +61,7 @@
 								{% for 1 in 1..8 %}
                                     <div class="card-slider__item-wrapper">
 									   <div class="card-slider__item">
-									       <img src="http://via.placeholder.com/410x380" alt="">
+									       <img src="http://via.placeholder.com/410x410" alt="">
 									   </div>
                                     </div>
 								{% endfor %}
@@ -69,7 +69,7 @@
                             <div class="card-carousel owl-carousel">
                                 {% for 1 in 1..8 %}
                                        <div class="card-carousel__item">
-                                           <img src="http://via.placeholder.com/410x380" alt="">
+                                           <img src="http://via.placeholder.com/410x410" alt="">
                                        </div>
                                 {% endfor %}
                             </div>
@@ -105,26 +105,35 @@
         						<div class="sidebar-title mb15">
 									<p>цена</p>
         						</div>
-                                <div class="text-center lg-d-fx lg-fx-around fx-wrap" data-uk-grid-margin="">
-        						<div class="mb20 lg-mb0">
+                                <div class="text-center lg-d-fx lg-fx-around fx-wrap lg-fx-bottom md-fx-justify" data-uk-grid-margin="">
+
+        						<div class=" lg-mb0">
                                     <div class="lg-text-left">
-                                        <div class="card__old-price mb10">
+                                        <div class="card__old-price mb10 lg-mb0">
                                             <p>3350Р</p>
                                         </div>
                                         <div class="card__new-price">
-                                            <p>2 296</p>
-                                            <svg class="icon-ruble" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256.86401 440" width="256.864" height="440"><path d="M140.954 242.428c63.913 0 115.91-54.382 115.91-121.227 0-66.83-51.997-121.2-115.91-121.2H29v282.428H0v30h29V440h30V312.428h101.955v-30H59v-40zM59 30h81.955c47.37 0 85.91 40.912 85.91 91.2 0 50.304-38.54 91.228-85.91 91.228H59z"/></svg>
+                                            <p>2 296 P</p>
                                         </div>
                                     </div>
-        							
         						</div>
-        						<div class="list-mb-10">
+
+                                    <div class="bag-goods__item-count fx fx-center fx-middle">
+                                        <button type="button" class="bag-goods__item-count-minus">
+                                        </button>
+                                        <div class="input-wrapper">
+                                            <input class="" autocomplete="false" data-max="5" type="tel" value="1">
+                                        </div>
+                                        <button type="button" class="bag-goods__item-count-plus">
+                                        </button>
+                                    </div>
+        						<div class="list-mb-10 lg-list-mb-0 sm-list-mb-10 md-full-width {# md-fx-justify md-d-fx#}">
         							<a href="#" class="btn btn-primary">
         							 КУПИТЬ</a>
                                      <span href="#" class="btn checkbox-btn">
                                         <input type="checkbox" />
                                         Отложить</span>
-        						</div>
+        						    </div>
                                 </div>
         					</div>
         					<div class="sidebar-item">
@@ -167,7 +176,73 @@
         				<ul id="card-tab" class="uk-switcher uk-margin">
                             <li>
                                 <div class="text-paragraph">
-    								<p>В нашем каталоге нет случайных товаров: сделав главный акцент на исключительном качестве, мы отобрали для вас только самую лучшую косметику для ухода за волосами, кожей лица и тела. Органическая косметика, которую мы реализуем на эксклюзивных условиях, не содержит синтетических консервантов и красителей, SLS, парабенов и продуктов нефтехимии, что подтверждается соответствующими сертификатами. В магазине вы также найдете обширный раздел под названием. Белорусская косметика. В нем можно найти косметику известных Белорусских брендов: Белита (Belita), Маркелл, Витекс (Vitex), Белкосмекс и многие другие бренды Белоруской косметики.</p>
+                                    <h2>В нашем каталоге нет случайных товаров</h2>
+    								<p>В нашем каталоге нет случайных товаров: сделав главный  на исключительном качестве, мы отобрали для вас только самую лучшую косметику для ухода за волосами, кожей лица и тела. Органическая косметика, которую мы реализуем на эксклюзивных условиях, не содержит синтетических консервантов и красителей, SLS, парабенов и продуктов нефтехимии, что подтверждается соответствующими сертификатами. В магазине вы также найдете обширный раздел под названием. Белорусская косметика. В нем можно найти косметику известных Белорусских брендов: Белита (Belita), Маркелл, Витекс (Vitex), Белкосмекс и многие другие бренды Белоруской косметики.</p>
+                                    <h3>Lorem ipsum dolor sit.</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolores earum harum modi nam, quod?</p>
+                                    <ul class="markered-list">
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum
+                                            ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing el
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum
+                                            ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delenit
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum
+                                            ducimus et e
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum
+                                            ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum
+                                            ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            te
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum
+                                            ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consec
+                                            tenetur.
+                                        </li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum
+                                            ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.Lorem ipsum dolor sit amet, consecteturDeleniti
+                                            dolorum ducimus et eum illuOffici
+                                            dolorum ducimus et eum illum quae recusandae ullam voluptates! Officia,
+                                            tenetur.
+                                        </li>
+                                    </ul>
     							</div>
 
                             </li>
@@ -352,6 +427,7 @@
                                    </div>
                                </div>
                                <div class="bag-delivery-result__body">
+                               <div class="bag-delivery-result__body">
                                    <div class="uk-grid" data-uk-grid-margin="">
                                        <div class="uk-width-1-1 uk-width-small-1-2 uk-width-medium-1-3">
                                            <div class="bag-delivery-result__firm">
@@ -441,10 +517,6 @@
                 </div>
             </div>
         </section>
-        {% include "widgets/block-delivery.twig"%}
-        {% include "widgets/block-advantages.twig"%}
-        {% include "widgets/block-contacts.twig"%}
-
     </main>
 
 {% endblock %}

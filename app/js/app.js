@@ -8,7 +8,7 @@ $(function(){
 
         var sync1 = $(".card-slider");
         var sync2 = $(".card-carousel");
-        var slidesPerPage = 3; //globaly define number of elements per page
+        var slidesPerPage = 3;
         var syncedSecondary = true;
 
         sync1.owlCarousel({
@@ -83,8 +83,6 @@ $(function(){
             var number = $(this).index();
             sync1.data('owl.carousel').to(number, 300, true);
         });
-
-
     }
 
     function bag() {
@@ -264,7 +262,7 @@ $(function(){
         var mainHeight = main.outerHeight();
         var max = mainHeight / 50 - 1;
         console.log(max + "- max");
-        $(subList).each(function () {
+        subList.each(function () {
             var j = 0;
             var list = $(this);
             $(this).find('a').each(function (index) {
@@ -375,34 +373,37 @@ $(function(){
         }
     }
 
+    function scroll() {
+
+        // if ($(window).width <=768) {
+        //
+        //
+        // }
+        if ($(window).scrollTop() > $("#page-header").outerHeight()) {
+            $(".page-header__logo-panel").stick_in_parent({
+                parent: $(".site-wrapper")
+
+                    .on("sticky_kit:stick", function(e) {
+                        logoHeight = $(".page-header__logo-panel").outerHeight();
+                        $(".bag-result-block").stick_in_parent({
+                            offset_top: logoHeight
+                        });
+                    })
+            });
+        }
+        else
+        {
+            $(".page-header__logo-panel").trigger("sticky_kit:detach");
+        }
+
+    }
+
     $(document).ready(function () {
 
         bag();
         actions();
         catalogDD();
-
-        // $(".side-dd-text").click(function () {
-        //     $(".hamburger-desktop").toggleClass("is_active");
-        // });
-
-
-        $(".page-header__logo-panel").stick_in_parent({
-            parent: $(".site-wrapper")
-            .on("sticky_kit:stick", function(e) {
-                console.log("has stuck!", e.target);
-                logoHeight = $(".page-header__logo-panel").outerHeight();
-
-                $(".bag-result-block").stick_in_parent({
-                    offset_top: logoHeight
-                });
-                console.log("has fuck!", e.target);
-            })
-        });
-
-
-
-
-        $("#sticky_item").trigger("sticky_kit:detach");
+        scroll();
 
         $(".page-header__logo-panel").on('load', function() {
             sliderHeight();
@@ -575,6 +576,9 @@ $(function(){
             actions();
         });
 
+        $(window).scroll(function() {
+            scroll();
+        });
     });
 
     $(function () {
