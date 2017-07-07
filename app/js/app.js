@@ -15,6 +15,7 @@ $(function(){
             items : 1,
             slideSpeed : 900,
             nav: false,
+            lazyload: true,
             autoplay: true,
             dots: false,
             loop: true,
@@ -34,7 +35,7 @@ $(function(){
                 smartSpeed: 200,
                 slideSpeed : 500,
                 slideBy: slidesPerPage,
-                responsiveRefreshRate : 100
+                responsiveRefreshRate : 200
             }).on('changed.owl.carousel', syncPosition2);
 
 
@@ -255,40 +256,64 @@ $(function(){
 
 
     function siteDD(){
+        var par = $(".side-dd-wrapper");
+        par.each(function () {
+            var par = $(this);
+            console.log(par + "- dwfr,letgprlmefA");
+            var sub = par.find(".side-dd-sub");
+            var main = par.find(".side-dd");
+            var subList = par.find('.side-dd-sub-list');
+            var mainHeight = main.outerHeight();
+            console.log(mainHeight + "- mainheight");
+            var max = mainHeight / 50 - 1 ;
+            console.log(max + "- max");
 
-        var sub = $(".side-dd-sub");
-        var main = $(".side-dd");
-        var subList = $('.side-dd-sub-list');
-        var mainHeight = main.outerHeight();
-        var max = mainHeight / 50 - 1;
-        console.log(max + "- max");
-        subList.each(function () {
-            var j = 0;
-            var list = $(this);
-            $(this).find('a').each(function (index) {
-                if ( (j % max) == true && !(j === 0) ) {
-                    list.find('a').slice(j-1,j+max+1).wrapAll('<div class="side-dd-sub-column"></div>');
+            subList.each(function () {
+                var j = 0;
+                var last = 0;
+                var list = $(this);
+                var listLinks = list.find('a');
+                // console.log(listLinks.length + "- length");
+                if (listLinks.length <= max)
+                {
+                    listLinks.wrapAll('<div class="side-dd-sub-column"></div>');
+                    // console.log("ne dotyanul");
                 }
-                j++;
+                else
+                {
+                    listLinks.each(function () {
+                        // console.log(j + "- j");
+                        // console.log(max+ "- max2");
+
+                        if ( (j % max) == 0 && !(j === 0) ) {
+                            listLinks.slice(last, last+max).wrapAll('<div class="side-dd-sub-column"></div>');
+                            // console.log("if");
+                            // console.log(last + "- last");
+                            // console.log(max + "- max2");
+                            // console.log(last+max + "- max+last");
+                            last = j;
+
+                            if ((listLinks.length - j) <= max) {
+                                listLinks.slice(j, j+max).wrapAll('<div class="side-dd-sub-column"></div>');
+                            }
+                        }
+                        j++;
+                    });
+                    list.find(".side-dd-sub-column").appendTo(list);
+                }
+
+
             });
-            list.find(".side-dd-sub-column").appendTo(list);
+
+            sub.css({"height" : mainHeight});
+
+            sub.css({"left" : main.outerWidth()});
+
+            sub.parent("li").mouseenter(function(){
+                sub.removeClass("active");
+                $(this).find(".side-dd-sub").addClass("active");
+            });
         });
-
-
-
-        sub.css({"height" : main.outerHeight()});
-
-        sub.css({"left" : main.outerWidth()});
-
-        sub.parent("li").mouseenter(function(){
-            sub.removeClass("active");
-            $(this).find(".side-dd-sub").addClass("active");
-        });
-
-        // sub.parent("li").mouseleave(function(){
-        //     sub.removeClass("active");
-        // });
-
     }
 
     function slideMenu(){
@@ -404,6 +429,7 @@ $(function(){
         actions();
         catalogDD();
         scroll();
+        siteDD();
 
         $(".page-header__logo-panel").on('load', function() {
             sliderHeight();
@@ -422,11 +448,6 @@ $(function(){
                 hamburger.addClass("is-active");
             }
         });
-
-
-        siteDD();
-
-
 
         jQuery.fn.extend({
             toggleOwl: function(selector, options, destroy){

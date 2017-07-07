@@ -67,6 +67,9 @@
 	.lg-fx-row
 		flex-direction: row
 		
+	.lg-fx-left
+		flex-direction: flex-start
+		
 	.lg-fx-bottom
 		align-items: flex-end
 
@@ -285,6 +288,15 @@
 
 	.uk-container
 		padding: 0 15px
+		
+	.page-title h1, .page-title h2, .page-title h3, .page-title p, .card-good-title
+		font-size: 25px
+		
+	h1, h2, h3
+		font-size: 25px
+		
+	.card-reviews__form
+		padding: 30px
 
 	.md-order2
 		order: 2
@@ -318,6 +330,9 @@
 		
 	.md-fx-column
 		flex-direction: column
+		
+	.md-fx-left
+		justify-content: flex-start
 
 	.md-fx-center
 		justify-content: center
@@ -411,12 +426,19 @@
 		margin-right: 0
 
 @media (max-width: $breakpoint-mini-max)
+	.page-title h1, .page-title h2, .page-title h3, .page-title p, .card-good-title
+		font-size: 22px
+		
+	.card-reviews__form label
+		display: none
+		
+	h1, h2, h3
+		font-size: 22px
+		
 	.sm-list-mb-10
 		& > *
 			margin-bottom: 10px !important
 			
-	
-
 		
 		.page-header__actions-bar
 			.uk-dropdown
@@ -463,7 +485,10 @@
 
 	.sm-hidden
 		display: none !important
-
+		
+	.sm-fx-left
+		justify-content: flex-start
+	
 	.sm-visible
 		display: block
 

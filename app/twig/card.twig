@@ -15,11 +15,10 @@
     			<div class="card">
         				<div class="uk-grid mb30 uk-grid-match" data-uk-grid-margin="">
         				<div class="uk-width-1-1 uk-width-large-7-10">
-        					<div class="card-main">
-							<div class="uk-grid mb25">
-								<div class="uk-width-medium-1-2 d-fx fx-middle">
+        					<div class="card-main" >
+							<div class="uk-grid mb25" data-uk-grid-margin="">
+								<div class="uk-width-1-1 uk-width-small-1-2 d-fx fx-middle sm-fx-left">
 									<div class="card-main__sertificate">
-										
                                         <div class="d-fx fx-left mb15">
                                             <p class="text-uppercase text-bold text-brand">EAC</p>
                                         <p class="fz16 ml10">
@@ -41,16 +40,15 @@
 										
 									</div>
 								</div>
-								<div class="uk-width-medium-1-2 df-x fx-middle">
-									<div class="d-fx fx-justify fx-middle">
-
+								<div class="uk-width-1-1 uk-width-small-1-2 df-x fx-middle">
+									<div class="d-fx fx-justify fx-middle lg-fx-right sm-fx-left">
 										<div class="">
 											<p class="text-semibold text-uppercase mb10">Производитель</p>
 											<a href="" class="card__manufacturer text-brand fz16 text-underline uk-display-block">
 												Белита - Витекс
 											</a>
 										</div>
-										<div class="card-manufacturer__img">
+										<div class="card-manufacturer__img uk-visible-large">
 											<img src="http://via.placeholder.com/131x70" alt="">
 										</div>
 									</div>
@@ -59,11 +57,9 @@
                             <div class="card-slider-wrapper">
 							<div class="card-slider owl-carousel mb20">
 								{% for 1 in 1..8 %}
-                                    <div class="card-slider__item-wrapper">
 									   <div class="card-slider__item">
 									       <img src="http://via.placeholder.com/410x410" alt="">
 									   </div>
-                                    </div>
 								{% endfor %}
 							</div>
                             <div class="card-carousel owl-carousel">
@@ -137,19 +133,19 @@
                                 </div>
         					</div>
         					<div class="sidebar-item">
-        						<div class="sidebar-title mb40 lg-mb15">
-									<p>Доставка</p>
-        						</div>
+
                                 <div class="text-center lg-d-fx lg-fx-around fx-middle fx-wrap" data-uk-grid-margin="">
-            						<a href="#" class="btn btn-primary lg-mb0">
-            							  ЗАДАТЬ ВОПРОС</a>
+
+                                    <div class="list-mb-10 text-underline text-left mb20">
+                                        <a href="#" class="uk-display-block">Уведомить о поступлении товара </a>
+                                        <a href="#" class="uk-display-block">Узнать стоимость доставки</a>
+                                    </div>
 
             						<div class="card-socials">
-                                        <a href="" class="uk-icon uk-icon-google-plus-square"></a>
-                                        <a href="" class="uk-icon uk-icon-google-plus-square"></a>
-                                        <a href="" class="uk-icon uk-icon-linkedin-square"></a>
-                                        <a href="" class="uk-icon uk-icon-odnoklassniki-square"></a>
-                                        <a href="" class="uk-icon uk-icon-facebook-square"></a>
+                                        <i class="uk-icon uk-icon-vk"></i>
+                                        <i class="uk-icon uk-icon-odnoklassniki"></i>
+                                        <i class="uk-icon uk-icon-google-plus"></i>
+                                        <i class="uk-icon uk-icon-vk"></i>
             						</div>
                                 </div>
         					</div>
@@ -244,87 +240,146 @@
                                         </li>
                                     </ul>
     							</div>
-
                             </li>
                             <li>
-                                <ul class="uk-comment-list">
-                                    <li>
-                                        <article class="uk-comment">
-                                            <header class="uk-comment-header">
-                                                <div class="uk-comment-avatar">
-                                                            <i class="uk-icon uk-icon-user"></i>
-                                                        </div>
-                                                        <div class="fx fx-column">
-                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
-                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
-                                                </div>
-                                            </header>
-                                            <div class="uk-comment-body">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum dignissimos numquam eveniet ratione veritatis odio vel totam molestias adipisci dolorem velit reprehenderit, atque non tenetur porro magni. In, tenetur.
-                                                </p>
+                                    <div class="uk-grid mb20" data-uk-grid-margin="">
+                                        <div class="uk-width-1-1 uk-width-medium-7-10">
+                                            <div class="card-good-title">
+                                                <p>Отзыв о свадебном платье Дюймовочка в огне</p>
                                             </div>
-                                        </article>
-                                        <ul>
-                                            <li>
-                                                    
-                                                <article class="uk-comment">
-                                                    <header class="uk-comment-header">
-                                                        <div class="uk-comment-avatar">
-                                                            <i class="uk-icon uk-icon-user"></i>
-                                                        </div>
-                                                        <div class="fx fx-column">
-                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
-                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
-                                                        </div>
-                                                    </header>
-                                                    <div class="uk-comment-body">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi eligendi incidunt odio iure alias ab ipsa labore nisi recusandae! Consectetur fuga aut optio vel odit praesentium numquam accusamus, sequi beatae?
-                                                        </p>
-                                                    </div>
-                                                </article>
+                                        </div>
+                                        <div class="uk-width-1-1 uk-width-medium-3-10 fx fx-right fx-middle md-fx-left">
+                                            <div class="product-item__valuation text-brand">
+                                                <i class="uk-icon uk-icon-star"></i>
+                                                <i class="uk-icon uk-icon-star"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                            </div>
+                                            <p class="ml10">344</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-reviews__panel mb20">
+                                        <div class="uk-grid" data-uk-grid-margin="">
+                                            <div class="uk-width-1-1 uk-width-large-3-10 fx fx-left fx-middle lg-fx-center">
+                                                <div class="">
+                                                    <a href="#" class="btn btn-primary">НАПИСАТЬ ОТЗЫВ</a>
+                                                </div>
 
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <article class="uk-comment">
-                                            <header class="uk-comment-header">
-                                                <div class="uk-comment-avatar">
-                                                            <i class="uk-icon uk-icon-user"></i>
-                                                        </div>
-                                                        <div class="fx fx-column">
-                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
-                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
-                                                </div>
-                                            </header>
-                                            <div class="uk-comment-body">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum dignissimos numquam eveniet ratione veritatis odio vel totam molestias adipisci dolorem velit reprehenderit, atque non tenetur porro magni. In, tenetur.
-                                                </p>
                                             </div>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="uk-comment">
-                                            <header class="uk-comment-header">
-                                                <div class="uk-comment-avatar">
-                                                            <i class="uk-icon uk-icon-user"></i>
-                                                        </div>
-                                                        <div class="fx fx-column">
-                                                            <h4 class="uk-comment-title">Lorem ipsum.</h4>
-                                                            <div class="uk-comment-meta">12 days ago | Profile | #</div>
+                                            <div class="uk-width-1-1 uk-width-large-7-10 fx fx-middle">
+                                                <div>
+                                                    <p>
+                                                        Добавьте отзыв, заполнив личные данные, или сначала войдите на сайт,
+                                                        тогда информация будет автоматически взята из профиля.</p>
                                                 </div>
-                                            </header>
-                                            <div class="uk-comment-body">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta ipsum dignissimos numquam eveniet ratione veritatis odio vel totam molestias adipisci dolorem velit reprehenderit, atque non tenetur porro magni. In, tenetur.
-                                                </p>
                                             </div>
-                                        </article>
-                                    </li>
-                                </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-review-list mb20">
+                                        {% for 1 in 1..3 %}
+                                            <div class="card-review-item">
+                                                <div class="uk-grid" data-uk-grid-margin="">
+                                                    <div class="uk-width-1-1 uk-width-large-4-10">
+                                                        <div class="fx fx-justify fx-middle lg-fx-center">
+                                                            <div class="card-review-item__img">
+                                                                <img src="http://via.placeholder.com/102x102" alt="">
+                                                            </div>
+                                                            <div class="card-review-item__text text-left">
+                                                                <div class="card-review-item__date mb15">
+                                                                    <p>
+                                                                        16.09.2016
+                                                                    </p>
+                                                                </div>
+                                                                <div class="card-review-item__name fz22 text-brand mb10">
+                                                                    <p>Наталья
+                                                                        Ивановна Титоренко</p>
+                                                                </div>
+                                                                <div class="card-review-item__valuate text-brand">
+                                                                    <i class="uk-icon uk-icon-star"></i>
+                                                                    <i class="uk-icon uk-icon-star"></i>
+                                                                    <i class="uk-icon uk-icon-star-o"></i>
+                                                                    <i class="uk-icon uk-icon-star-o"></i>
+                                                                    <i class="uk-icon uk-icon-star-o"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-1-1 uk-width-large-6-10 fx fx-middle">
+                                                        <div class="text-left text-paragraph">
+                                                            <p>
+                                                                приехала из отпуска: залила воду в чайник, включила и в
+                                                                момент закипания крышка подпрыгнула и отвалилась. Вот, сижу
+                                                                выбираю новый чайник... Пластмассовые не нравятся, но и
+                                                                такой уже не куплю (проработал всего
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="fx fx-center fx-column fx-middle mb20">
+                                        <div class="text-brand fz25 mb5">
+                                            <p>Написать отзыв</p>
+                                        </div>
+                                        <div class="fz16 mb5">
+                                            <p>Оцените товар от 1 до 5</p>
+                                        </div>
+                                        <div class="card-reviews__valuation text-brand">
+                                            <form action="">
+                                                <i class="uk-icon uk-icon-star"></i>
+                                                <i class="uk-icon uk-icon-star"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                                <i class="uk-icon uk-icon-star-o"></i>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="card-reviews__panel mb20">
+                                        <div class="uk-grid" data-uk-grid-margin="">
+                                            <div class="uk-width-1-1 uk-width-medium-3-10 fx fx-left fx-middle lg-fx-center">
+                                                <div class="">
+                                                    <a href="" class="btn btn-primary">ВОЙТИ</a>
+                                                </div>
+                                            </div>
+                                            <div class="uk-width-1-1 uk-width-medium-7-10">
+                                                <div>
+                                                    <p>
+                                                        Добавьте отзыв, заполнив личные данные, или сначала войдите на сайт,
+                                                        тогда
+                                                        информация будет автоматически взята из профиля.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-reviews__form">
+                                        <form action="">
+                                            <div class="mb20">
+                                                <div class="uk-grid mb25" data-uk-grid-margin="">
+                                                    <div class="uk-width-1-1 uk-width-medium-1-2 fx fx-column">
+                                                        <label for="">Имя *</label>
+                                                        <div class="input-wrapper">
+                                                            <input type="text" placeholder="Имя *" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-1-1 uk-width-medium-1-2">
+                                                        <label for="">Email *</label>
+                                                        <div class="input-wrapper">
+                                                            <input type="text" placeholder="Email *" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-wrapper">
+                                                    <label for="">Текст отзыва *</label>
+                                                    <textarea name="" id="" cols="30" rows="10" placeholder="Текст отзыва *"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button class="btn btn-primary">Отправить</button>
+                                            </div>
+                                        </form>
+                                    </div>
                             </li>
                         </ul>
 						

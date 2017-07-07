@@ -159,6 +159,10 @@ textarea
 				margin-top: 14px
 		.scroll-mb0
 			margin-bottom: 0
+			
+		.side-dd-wrapper-scroll
+			visibility: visible
+			pointer-events: initial
 		
 .footer-copyright::before
 	font-family: $font-icon
@@ -236,10 +240,6 @@ textarea
 	font-size: 30px
 	margin-bottom: 30px
 	text-align: center
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
 	display: flex
 	justify-content: center
 	align-items: center
@@ -344,14 +344,19 @@ textarea
 			margin-top: 15px
 			margin-right: 20px
 			
-			
+.text-left
+	text-align: left
+	
 .side-dd-wrapper-scroll
 	position: absolute
 	top: 50%
-	left: 15px
+	left: 0
 	transform: translateY(-50%)
+	pointer-events: none
+	visibility: hidden
+	
 	.uk-dropdown-bottom
-		margin-top: 15px
+		margin-top: 20px
 		
 .products-img
 	max-height: 200px
@@ -856,6 +861,9 @@ ul.markered-list
 .card-main
 	background-color: $beige
 	padding: 20px 35px 30px 35px
+	overflow: hidden
+	.uk-grid-margin
+		margin-top: 15px
 
 .dd-full
 
@@ -1000,7 +1008,7 @@ ul.markered-list
 .uk-tab > li:nth-child(n+2)
 	margin-left: 20px
 
-.card-slider__item-wrapper
+.card-slider
 	background-color: #FFF
 	border: 1px solid #c1c1c1
 	display: -webkit-flex
@@ -1013,7 +1021,7 @@ ul.markered-list
 	padding: 35px 0 35px
 	margin-left: 5px
 	margin-right: 5px
-
+ 
 
 .card-carousel__item
 	border: 1px solid #c1c1c1
@@ -1021,6 +1029,11 @@ ul.markered-list
 
 .card-slider__item
 	max-width: 415px
+	margin: 0 auto
+	
+.sdsd
+	display: none
+	
 
 .card-slider
 	.owl-dots > div
@@ -2049,3 +2062,50 @@ a.svg
 			
 .pb15
 	padding-bottom: 25px
+	
+	
+//CARD_REVIEWS
+
+.card-review-item__img
+	border: 2px solid #cdbdae
+	border-radius: 100%
+	overflow: hidden
+	line-height: 0
+	font-size: 0
+
+.card-review-item
+	padding: 25px 30px 25px 30px
+	border: 2px solid #f0f0ef
+	background-color: #fff
+	&:not(:last-child)
+		margin-bottom: 10px
+
+.card-reviews__panel
+	padding: 25px 30px 25px 30px
+	background-color: #fff
+	
+.card-good-title
+	font-size: 30px
+	
+	
+.card-reviews__form
+	background-color: #fff
+	padding: 35px 80px 35px 80px
+	label
+		margin-bottom: 10px
+		display: block
+		
+	.uk-grid-margin
+		margin-top: 15px
+		
+.card-reviews .tabs
+	.uk-grid-margin
+		margin-top: 15px
+	
+	
+.card-main__footer
+	background-color: #fff
+	padding: 50px 80px 50px 80px
+
+.card-review-item__text
+	margin-left: 20px
