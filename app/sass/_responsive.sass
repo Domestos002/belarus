@@ -182,6 +182,11 @@
 	.page-header__logo-panel
 		order: 3
 		
+		
+	.page-header
+		.sticky-placeholder
+			order: 3
+		
 	.page-title
 		margin-bottom: 0
 		padding: 25px 0
@@ -195,6 +200,13 @@
 			margin-bottom: 0 !important
 
 @media (max-width: $breakpoint-small-max)
+	.page-header__logo-panel
+		order: 0
+	
+	.page-header
+		.sticky-placeholder
+			order: 0
+			
 	.page-header__logo-panel
 		&.is_stuck
 			.hide-on-scroll-mobile
@@ -366,6 +378,17 @@
 		min-height: 250px
 
 @media (max-width: 630px)
+	.products-slider-tabs
+		.tabs-nav
+			display: flex
+			flex-direction: column
+			align-items: center
+			li
+				width: 100% !important
+				margin-left: 0 !important
+				&:not(:last-child)
+					margin-bottom: 15px
+					
 	.card-reviews .tabs-nav .uk-tab
 		justify-content: center
 	.lines-item

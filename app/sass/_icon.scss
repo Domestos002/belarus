@@ -43,6 +43,9 @@ $icon-button-active-color:                       #444 !default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.uk-icon-remove:before,
+.uk-icon-close:before,
+.uk-icon-times:before { content: "\f00d"; }
 .uk-icon-check-square-o:before { content: "\f046"; }
 .uk-icon-envelope-open:before { content: "\f2b6"; }
 .uk-icon-envelope-open-o:before { content: "\f2b7"; }
