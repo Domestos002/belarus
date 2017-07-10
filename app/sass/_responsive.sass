@@ -3,6 +3,15 @@
 		display: none
 
 @media (max-width: $breakpoint-medium-max)
+	.page-header__logo-panel
+		padding: 15px 0
+		
+	.page-main section:not(:last-child)
+		margin-bottom: 25px
+		
+	.header-logo
+		max-width: 185px
+		
 	.page-header__nav
 		justify-content: center
 		
@@ -56,6 +65,7 @@
 
 	.breadcrumb
 		margin-top: 0
+		margin-bottom: 0 !important
 
 	.lg-text-left
 		text-align: left
@@ -68,7 +78,7 @@
 		flex-direction: row
 		
 	.lg-fx-left
-		flex-direction: flex-start
+		justify-content: flex-start
 		
 	.lg-fx-bottom
 		align-items: flex-end
@@ -200,6 +210,38 @@
 			margin-bottom: 0 !important
 
 @media (max-width: $breakpoint-small-max)
+	.card-reviews
+		.tabs-nav
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			li
+				width: 100%
+			
+	.page-header__actions-bar a.page-header__actions-bar__key
+		width: 45px
+		
+	.hamburger-inner::before
+		top: -9px
+		
+	.hamburger-inner::after
+		bottom: -9px
+		
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+		width: 25px
+		
+	.hamburger-box
+		width: 25px
+	
+	.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__bag, .page-header__actions-bar__person
+		width: 37px
+		
+	.page-header__actions-bar > :not(:last-child)
+		margin-right: 5px
+		
+	.page-header__logo-panel
+		padding: 7px 0
+		
 	.page-header__logo-panel
 		order: 0
 	
@@ -280,6 +322,13 @@
 	.card-order-footer
 		flex-direction: column
 		align-items: center
+		
+	.page-hero-slider__item
+		min-height: 325px
+		
+	.page-header__actions-bar
+		.uk-dropdown
+			display: none !important
 
 	.card-slider__item-wrapper
 		padding: 0
@@ -378,6 +427,9 @@
 		min-height: 250px
 
 @media (max-width: 630px)
+	.page-header__actions-bar__heart, .page-header__actions-bar__key
+		display: none !important
+		
 	.products-slider-tabs
 		.tabs-nav
 			display: flex
@@ -411,7 +463,7 @@
 		
 @media (max-width: 550px)
 	
-	
+		
 	.bag-order__head
 		padding: 15px 30px 0 30px
 	.bag-order-radio__field
@@ -449,6 +501,12 @@
 		margin-right: 0
 
 @media (max-width: $breakpoint-mini-max)
+	.card-review-item__name
+		font-size: 17px
+		
+	.header-logo
+		max-width: 145px
+	
 	.page-title h1, .page-title h2, .page-title h3, .page-title p, .card-good-title
 		font-size: 22px
 		

@@ -65,7 +65,6 @@ textarea
 
 
 .page-hero-slider__list
-	min-height: 350px
 	.owl-prev, .owl-next
 		background-color: $black
 
@@ -142,7 +141,7 @@ textarea
 	display: none
 	
 .page-header__logo-panel
-	z-index: 15
+	z-index: 110
 	padding: 20px 0 20px 0
 	background-color: #fff
 	&.is_stuck
@@ -393,6 +392,7 @@ textarea
 	justify-content: flex-start
 	flex-direction: column
 
+
 .ruble-icon, .delivery-icon
 	width: 60px
 	height: 60px
@@ -452,14 +452,23 @@ textarea
 		&::after
 			color: $brand
 		
-.jq-radio.checked .jq-radio__div
-	margin: 0
-	width: 100%
-	height: 100%
-	background: $brand
-	box-shadow: none
+.jq-radio
+	&.checked .jq-radio__div
+		margin: 0
+		width: 9px
+		height: 9px
+		background: $brand
+		box-shadow: none
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&.focused
+		border: 1px solid $brand2 !important
+		outline: initial !important
 
 .jq-radio
+	border: 1px solid #c1c1c1
 	&.focused
 		outline: none
 		border: none
@@ -580,7 +589,7 @@ svg
 	
 .header-delivery-icon-link
 	&:hover
-		color: #98d0f9
+		color: #cbb1e3
 
 .page-header__actions-bar__icon
 	width: 35px
@@ -709,6 +718,8 @@ ul.markered-list
 .partners-slider__item
 	max-width: 131px
 	margin: 0 auto
+	border: 1px solid #c1c1c1
+	
 
 .lines-item__img
 	height: auto
@@ -1004,6 +1015,8 @@ ul.markered-list
 		position: relative
 
 	.tabs-nav
+		li
+			max-width: initial
 		.uk-tab
 			justify-content: flex-start
 			a
@@ -1124,6 +1137,16 @@ input[type="checkbox"], input[type="radio"]
 
 .jq-selectbox__dropdown
 	border-color: $brand
+	border-radius: 0
+	
+.jq-selectbox li.selected
+	background-color: #eae2e5
+	color: $black
+	
+.jq-selectbox li:hover
+	background-color: #eae2e5
+	color: $black
+	
 
 .uk-modal
 	transition: none !important
@@ -1419,10 +1442,18 @@ a.svg
 		padding: 5px 15px
 	&.active
 		display: block
+		
+.ws-nw
+	white-space: nowrap
+	-webkit-hyphens: auto
+	-moz-hyphens: auto
+	-ms-hyphens: auto
+	hyphens: auto
 
 .header-logo
 	height: 32px
 	transition: none
+	max-width: 220px
 	svg
 		height: 32px
 		width: 100%
@@ -1817,6 +1848,8 @@ a.svg
 	position: absolute
 	top: $bag-indent
 	left: 30px
+	width: 16px
+	height: 16px
 	
 .bag-order-radio__block-label, .bag-order-radio__field
 	padding-left: 50px
@@ -1958,16 +1991,14 @@ a.svg
 .bag-goods__item-price-sum, .bag-goods__item-price, .bag-delivery__price, .bag-delivery-result__price
 	& > p
 		&::after
-			content: 'a'
-			font-family: $font-ruble
+			content: 'Р'
 			display: inline
 			margin-left: 5px
 			
 .bag_sidebar-goods-price, .bag_sidebar-delivery-price, .bag_sidebar-result-price
 	font-family: $font-base-bold
 	&::after
-		content: 'a'
-		font-family: $font-ruble
+		content: 'Р'
 		display: inline
 		margin-left: 5px
 		
@@ -2006,6 +2037,8 @@ a.svg
 	padding: 15px 80px 0 80px
 	input
 		font-size: 14px
+	&.uk-grid
+		margin-top: 0 !important
 
 .bag-goods__item-price-sum
 	font-family: $font-base-bold

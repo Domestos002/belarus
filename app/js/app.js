@@ -58,7 +58,7 @@
         });
     }
 
-    function slideMenu() {
+    function slideMenu(){
         var count = 0;
 
         $(".uk-offcanvas").find(".uk-parent").each(function () {
@@ -70,16 +70,15 @@
         console.log(count);
 
         for (var i = 1; i <= count; i++) {
-            var caption = $(".uk-offcanvas").find(".uk-parent#dd-" + i + " > a").filter(':first');
-            var body = $(".uk-offcanvas").find(".uk-parent#dd-" + i + "").find("ul").filter(':first');
-            $(".uk-offcanvas-bar > ul").append("<div class='dp-panel'" + " id='dp-" + i + "'> </div>");
+            var caption = $(".uk-offcanvas").find(".uk-parent#dd-" + i + " > a").filter( ':first' );
+            var body = $(".uk-offcanvas").find(".uk-parent#dd-" + i + "").find("ul").filter( ':first' );
+            $(".uk-offcanvas-bar > ul").append( "<div class='dp-panel'" + " id='dp-" + i + "'> </div>");
 
             caption.clone().appendTo(".dp-panel#dp-" + i);
             body.appendTo(".dp-panel#dp-" + i);
-        }
-        ;
+        };
 
-        $(".uk-offcanvas").find(".uk-parent").click(function () {
+        $(".uk-offcanvas").find(".uk-parent").click(function() {
             var number = $(this).attr('id');
             number = number.split("-")[1];
 
@@ -87,7 +86,7 @@
 
         });
 
-        $(".dp-panel > a").click(function () {
+        $(".dp-panel > a").click(function() {
             var number = $(this).parent().attr('id');
             number = number.split("-")[1];
             $(".dp-panel#dp-" + number).removeClass("dp-panel-open");
@@ -441,6 +440,7 @@
                 var placeholderTop = placeholder.offsetTop;
                 var header = _self.doc.getElementById("page-header");
                 var parent = placeholder.parentNode;
+                var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
                 function detach() {
                     sticky.classList.remove("is_stuck");
@@ -450,11 +450,13 @@
                 }
 
                 if (sticky.hasAttribute('data-sticky-target')) {
-                    if (document.body.scrollTop >= (stickyTop + header.clientHeight)) {
+                    console.log(bodyScrollTop + "-scrolltop");
+                    console.log(stickyTop + header.clientHeight + "-ddee");
+                    if (bodyScrollTop >= (stickyTop + header.clientHeight)) {
 
-                        if (document.body.scrollTop > sticky.offsetTop && !(sticky.classList.contains('is_stuck'))) {
+                        if (bodyScrollTop > sticky.offsetTop && !(sticky.classList.contains('is_stuck'))) {
                             console.log(stickyTop + "stickytopC");
-                            console.log(document.body.scrollTop + "docscrolltopC");
+                            console.log(bodyScrollTop + "docscrolltopC");
                             placeholder.style.height = sticky.clientHeight + "px";
                             sticky.classList.add("is_stuck");
                             if (sticky.hasAttribute('data-sticky-in-parent')) {
@@ -466,7 +468,7 @@
 
                         else {
 
-                            if (document.body.scrollTop < placeholderTop) {
+                            if (bodyScrollTop < placeholderTop) {
 
                                 detach();
 
@@ -482,7 +484,7 @@
 
                 else {
 
-                    if (document.body.scrollTop + 60 <= placeholderTop) {
+                    if (bodyScrollTop + 60 <= placeholderTop) {
 
                         detach();
 
@@ -492,7 +494,7 @@
                     }
 
 
-                    if (document.body.scrollTop + 60 > sticky.offsetTop && !(sticky.classList.contains('is_stuck')) && !(sticky.classList.contains('attached'))) {
+                    if (bodyScrollTop + 60 > sticky.offsetTop && !(sticky.classList.contains('is_stuck')) && !(sticky.classList.contains('attached'))) {
 
                         placeholder.style.height = sticky.clientHeight + "px";
                         sticky.classList.add("is_stuck");
@@ -508,7 +510,7 @@
                     }
 
 
-                    if (document.body.scrollTop + 60 < sticky.offsetTop + sticky.clientHeight && sticky.classList.contains('attached')) {
+                    if (bodyScrollTop + 60 < sticky.offsetTop + sticky.clientHeight && sticky.classList.contains('attached')) {
 
                         sticky.classList.add("is_stuck");
                         if (sticky.hasAttribute('data-sticky-in-parent')) {
@@ -525,7 +527,7 @@
                     }
 
 
-                    if (document.body.scrollTop + 60 + sticky.clientHeight >= parent.offsetTop + parent.clientHeight) {
+                    if (bodyScrollTop + 60 + sticky.clientHeight >= parent.offsetTop + parent.clientHeight) {
                         sticky.classList.add("attached");
                         sticky.style.top = "initial";
                         parent.style.position = "relative";
