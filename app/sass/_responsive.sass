@@ -212,6 +212,25 @@
 @media (max-width: $breakpoint-small-max)
 	.card-reviews
 		.tabs-nav
+			li
+				padding-top: 15px
+		.tabss
+			display: flex
+			margin: 0 auto
+			align-items: center
+			justify-content: center
+			flex-direction: column
+			margin-top: -15px
+			
+	.tabss li:not(:last-child)
+		margin-right: 0
+		
+	.tabss > li:nth-child(n+2) > a
+		margin-left: 0
+		margin-right: 0
+		
+	.card-reviews
+		.tabs-nav
 			display: flex
 			flex-direction: column
 			justify-content: space-between

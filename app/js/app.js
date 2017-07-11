@@ -118,9 +118,6 @@
             if (b.height() > $(window).height()) {
                 $('html').removeClass("uk-modal-page");
                 b.css({paddingRight: '0'});
-                if (logoP.hasClass("is_stuck")) {
-                    logoP.css({paddingRight: '0'});
-                }
             }
 
         });
@@ -130,9 +127,6 @@
 
                 $('html').addClass("uk-modal-page");
                 b.css({paddingRight: scrollbar + 'px'});
-                if (logoP.hasClass("is_stuck")) {
-                    logoP.css({paddingRight: scrollbar + 'px'});
-                }
 
             });
         }
@@ -338,51 +332,6 @@
         }
     };
 
-    YOURAPPNAME.prototype.initSwitcher = function () {
-        var _self = this;
-
-        var switchers = _self.doc.querySelectorAll('[data-switcher]');
-
-        if (switchers && switchers.length > 0) {
-            for (var i = 0; i < switchers.length; i++) {
-                var switcher = switchers[i],
-                    switcherOptions = _self.options(switcher.dataset.switcher),
-                    switcherElems = switcher.children,
-                    switcherTargets = _self.doc.querySelector('[data-switcher-target="' + switcherOptions.target + '"]').children;
-                console.log(switcherOptions);
-                console.log(_self.str2json(switcherOptions.substr(mode)));
-                for (var y = 0; y < switcherElems.length; y++) {
-                    var switcherElem = switcherElems[y],
-                        parentNode = switcher.children,
-                        switcherTarget = switcherTargets[y];
-
-                    if (switcherElem.classList.contains('active')) {
-                        for (var z = 0; z < parentNode.length; z++) {
-                            parentNode[z].classList.remove('active');
-                            switcherTargets[z].classList.remove('active');
-                        }
-                        switcherElem.classList.add('active');
-                        switcherTarget.classList.add('active');
-                    }
-
-                    switcherElem.children[0].addEventListener('click', function (elem, target, parent, targets) {
-                        return function (e) {
-                            e.preventDefault();
-                            if (!elem.classList.contains('active')) {
-                                for (var z = 0; z < parentNode.length; z++) {
-                                    parent[z].classList.remove('active');
-                                    targets[z].classList.remove('active');
-                                }
-                                elem.classList.add('active');
-                                target.classList.add('active');
-                            }
-                        };
-
-                    }(switcherElem, switcherTarget, parentNode, switcherTargets));
-                }
-            }
-        }
-    };
 
     YOURAPPNAME.prototype.options = function (string) {
         var _self = this;
@@ -431,6 +380,20 @@
             }
         }
 
+        function detach() {
+            var length = stickys.length;
+            for (var i = 0; i < length; i++) {
+
+                var sticky = stickys[i];
+                sticky.classList.remove("is_stuck");
+                if (sticky.hasAttribute('data-sticky-in-parent')) {
+                    sticky.classList.remove("sticky-in-parent");
+
+                };
+
+            }
+        }
+
         function render() {
             var length = stickys.length;
             for (var i = 0; i < length; i++) {
@@ -441,58 +404,30 @@
                 var header = _self.doc.getElementById("page-header");
                 var parent = placeholder.parentNode;
                 var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-                function detach() {
-                    sticky.classList.remove("is_stuck");
-                    if (sticky.hasAttribute('data-sticky-in-parent')) {
-                        sticky.classList.remove("sticky-in-parent");
-                    }
-                }
-
+                sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
                 if (sticky.hasAttribute('data-sticky-target')) {
-                    console.log(bodyScrollTop + "-scrolltop");
-                    console.log(stickyTop + header.clientHeight + "-ddee");
                     if (bodyScrollTop >= (stickyTop + header.clientHeight)) {
-
                         if (bodyScrollTop > sticky.offsetTop && !(sticky.classList.contains('is_stuck'))) {
-                            console.log(stickyTop + "stickytopC");
-                            console.log(bodyScrollTop + "docscrolltopC");
                             placeholder.style.height = sticky.clientHeight + "px";
                             sticky.classList.add("is_stuck");
                             if (sticky.hasAttribute('data-sticky-in-parent')) {
                                 sticky.classList.add("sticky-in-parent");
                             }
-                            // sticky.style.top = mainOffset + "px";
-                            // mainOffset = mainOffset + sticky.clientHeight;
                         }
-
                         else {
-
                             if (bodyScrollTop < placeholderTop) {
-
                                 detach();
-
                             }
-
                         }
                     }
-
                     else {
                         detach();
                     }
                 }
-
                 else {
-
                     if (bodyScrollTop + 60 <= placeholderTop) {
-
                         detach();
-
-                        console.log("DETACH!!");
-                        console.log(placeholderTop + "placeholderTop!!");
-
                     }
-
 
                     if (bodyScrollTop + 60 > sticky.offsetTop && !(sticky.classList.contains('is_stuck')) && !(sticky.classList.contains('attached'))) {
 
@@ -502,13 +437,8 @@
                             sticky.classList.add("sticky-in-parent");
                         }
                         sticky.style.top = 60 + "px";
-                        console.log("init");
-                        sticky.style.width = placeholder.clientWidth + "px";
-
-                        // mainOffset = 60 + sticky.clientHeight;
-
+                        sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
                     }
-
 
                     if (bodyScrollTop + 60 < sticky.offsetTop + sticky.clientHeight && sticky.classList.contains('attached')) {
 
@@ -517,42 +447,27 @@
                             sticky.classList.add("sticky-in-parent");
                         }
                         sticky.style.top = 60 + "px";
-                        sticky.style.width = placeholder.clientWidth + "px";
-
+                        sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
                         sticky.classList.remove("attached");
-                        console.log("attach");
                         parent.style.position = "static";
-
-
                     }
-
-
                     if (bodyScrollTop + 60 + sticky.clientHeight >= parent.offsetTop + parent.clientHeight) {
                         sticky.classList.add("attached");
                         sticky.style.top = "initial";
                         parent.style.position = "relative";
                     }
-
-
-
                 }
-
-
             }
         }
 
         window.addEventListener('scroll', function () {
-
             init();
             render();
-
         }, true);
 
         window.addEventListener('resize', function () {
-
             init();
             render();
-
         }, true);
 
         init();
@@ -571,8 +486,6 @@
         console.log('DOM is loaded! Paste your app code here (Pure JS code).');
         // DOM is loaded! Paste your app code here (Pure JS code).
         // Do not use jQuery here cause external libs do not loads here...
-
-        app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
     });
 
     app.appLoad('full', function (e) {
@@ -697,25 +610,6 @@
         cardSlider();
         bag();
         sliderHeight();
-
-        // console.log($("#page-header").outerHeight() + "- blyaaaaa11");
-        // console.log($(window).scrollTop() + "- blyaaaaa!!");
-        // if ($(window).scrollTop() > $("#page-header").outerHeight()) {
-        //     $(".page-header__logo-panel").stick_in_parent({
-        //         parent: $(".site-wrapper")
-        //
-        //             .on("sticky_kit:stick", function(e) {
-        //                 logoHeight = $(".page-header__logo-panel").outerHeight();
-        //                 $(".bag-result-block").stick_in_parent({
-        //                     offset_top: logoHeight
-        //                 });
-        //             })
-        //     });
-        // }
-        // else
-        // {
-        //     $(".page-header__logo-panel").trigger("sticky_kit:detach");
-        // }
         jQuery.fn.extend({
             toggleOwl: function (selector, options, destroy) {
                 return this.each(function () {
@@ -798,8 +692,6 @@
         $(".page-hero-slider__item img").on('load', function () {
             sliderHeight();
         });
-        slideMenu();
-        cardSlider();
 
         $(".uk-parent").click(function () {
             $(this).find(".uk-nav").css({"height": $(".uk-offcanvas-bar").outerHeight()});
@@ -879,7 +771,7 @@
         $(window).resize = function () {
             siteDD();
             catalogDD();
-            slideMenu();
+
             sliderHeight();
             actions();
             cardSlider();

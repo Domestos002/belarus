@@ -145,6 +145,7 @@ textarea
 	padding: 20px 0 20px 0
 	background-color: #fff
 	&.is_stuck
+		width: 100vw
 		box-shadow:  0 0 20px rgba(0,0,0,0.15)
 		-webkit-transform: translate3d(0,0,0) //avoid blinking in web kit
 		transform: translate3d(0,0,0)
@@ -1024,7 +1025,26 @@ ul.markered-list
 				align-items: center
 				justify-content: center
 	
-
+.tabss
+	display: flex
+	justify-content: flex-start
+	align-items: baseline
+	li
+		min-width: 190px !important
+		flex-grow: 0 !important
+		width: initial !important
+		a
+			min-width: 190px !important
+			height: 45px !important
+			width: initial !important
+			display: flex
+			align-items: center
+			justify-content: center
+			padding: 0 30px
+		&:not(:last-child)
+			margin-right: 20px
+			
+			
 .uk-tab > li:nth-child(n+2) > a
 	margin-left: 0
 
@@ -1072,7 +1092,7 @@ ul.markered-list
 
 .hamburger
 	padding: 0
-	height: 25px
+	height: 0 !important
 	&:focus
 		outline: none
 
@@ -1868,6 +1888,7 @@ a.svg
 	
 .hamburger-box
 	width: 35px
+	height: 22px
 	
 .bag-order__result-notification
 	margin-right: 20px
