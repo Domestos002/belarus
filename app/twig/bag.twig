@@ -14,9 +14,13 @@
                         <div class="bag_main uk-width-1-1 uk-width-large-7-10">
                             <div class="bag-goods">
                                 <div class="bag-goods__head fx fx-right">
-                                    <span class="bag-goods__head-btn">
+                                    <span class="bag-goods__head-btn" id="card-delete">
                                         Удалить всё
                                     </span>
+                                    <div class="bag-goods__head-notification hidden">
+                                        <p>Ваша корзина пуста</p>
+                                    </div>
+
                                 </div>
                                 <div class="bag-goods__list">
                                     {% for 1 in 1..3 %}
@@ -46,7 +50,7 @@
                                                         <button type="button" class="bag-goods__item-count-minus">
                                                         </button>
                                                         <div class="input-wrapper">
-                                                            <input class="" autocomplete="false" data-max="5" type="tel"
+                                                            <input class="input-count" autocomplete="false" data-max="5" type="tel"
                                                                    value="1">
                                                         </div>
                                                         <button type="button" class="bag-goods__item-count-plus">
@@ -259,7 +263,7 @@
                                                     </div>
                                                     <div class="uk-width-1-1 uk-width-medium-1-2">
                                                         <div class="input-wrapper">
-                                                            <input type="text" name="Телефон *" placeholder="Телефон *" />
+                                                            <input type="text" name="phone" placeholder="Телефон *" />
                                                         </div>
                                                     </div>
                                                     <div class="uk-width-1-1 uk-width-medium-1-2">
@@ -503,7 +507,7 @@
                                             </div>
                                             <div class="bag-promo">
                                                 <div class="input-wrapper">
-                                                    <input type="text">
+                                                    <input type="text"  />
                                                 </div>
                                                 <a href="#" class="btn btn-promo">Активировать</a>
                                             </div>
@@ -561,7 +565,7 @@
                                     </div>
                                     <div class="bag-promo">
                                         <div class="input-wrapper">
-                                            <input type="text">
+                                            <input type="text" placeholder="промокод" />
                                         </div>
                                         <a href="#" class="btn btn-promo">Активировать</a>
                                     </div>

@@ -43,6 +43,8 @@ $icon-button-active-color:                       #444 !default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.uk-icon-lock:before { content: "\f023"; }
+.uk-icon-unlock:before { content: "\f09c"; }
 .uk-icon-remove:before,
 .uk-icon-close:before,
 .uk-icon-times:before { content: "\f00d"; }

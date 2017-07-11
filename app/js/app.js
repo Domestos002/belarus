@@ -96,15 +96,6 @@
 
     }
 
-    function sliderHeight() {
-        console.log((".page-hero-slider__img").outerHeight + "height");
-        $(".page-hero-slider__item img").on("load", function (e) {
-            $(".page-hero-slider__list-content").css({"height": $(".page-hero-slider__img").outerHeight()});
-            console.log((".page-hero-slider__img").outerHeight + "height");
-
-        });
-    }
-
     function catalogDD() {
         var b = $('body');
         var bWidth = b.outerWidth();
@@ -276,14 +267,11 @@
         _self.Object = Object;
         _self.scrollWidth = 0;
 
-
-        // _self.bootstrap();
     }
 
     YOURAPPNAME.prototype.bootstrap = function () {
         var _self = this;
 
-        // Initialize window scollBar width
         _self.scrollWidth = _self.scrollBarWidth();
     };
 
@@ -313,6 +301,7 @@
                 callback();
         }
     };
+
     YOURAPPNAME.prototype.str2json = function (str, notevil) {
         try {
             if (notevil) {
@@ -331,7 +320,6 @@
             return false;
         }
     };
-
 
     YOURAPPNAME.prototype.options = function (string) {
         var _self = this;
@@ -478,18 +466,141 @@
     var app = new YOURAPPNAME(document);
 
     app.appLoad('loading', function () {
-        console.log('App is loading... Paste your app code here.');
         // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
+
     });
 
     app.appLoad('dom', function () {
-        console.log('DOM is loaded! Paste your app code here (Pure JS code).');
         // DOM is loaded! Paste your app code here (Pure JS code).
         // Do not use jQuery here cause external libs do not loads here...
     });
 
     app.appLoad('full', function (e) {
         $('input, select').styler({});
+
+        $(".bag-goods__item-del").click(function () {
+            var el  = $(this);
+            var parent = el.parents(".bag-goods__item");
+
+            parent.slideUp(300, function(){ parent.remove(); });
+            if ($(".bag-goods__item").length <= 1 ){
+                $(".bag-goods__head-notification").removeClass("hidden");
+                $("#card-delete").addClass("hidden");
+            }
+
+        });
+
+        $("#card-delete").click(function () {
+            var els  = $(".bag-goods__item");
+            els.slideUp(300, function(){ els.remove(); });
+            $(".bag-goods__head-notification").removeClass("hidden");
+            $("#card-delete").addClass("hidden");
+        });
+
+        $(".dd-btn").click(function () {
+            var el = $(this);
+            var target = el.parents(".section-inner").find(".dd-btn-target");
+            el.toggleClass("active");
+            if (!(target.hasClass("active"))){
+                target.addClass("active");
+                target.stop().slideDown(400);
+            }
+            else{
+                target.removeClass("active");
+                target.stop().slideUp(400);
+            }
+
+        });
+
+
+
+        (function () {
+
+            function ass_amount_check(_target) {
+                _target.each(function() {
+                    var
+                        amount_new = _target.val();
+
+                    if (amount_new < 1 || isNaN(amount_new) || amount_new > 20) {
+                        _target.val(1);
+                    }
+
+                });
+            };
+
+
+            var plus = $(".bag-goods__item-count-plus");
+            var minus = $(".bag-goods__item-count-minus");
+            var input = $(".input-count");
+            plus.click(function () {
+
+                var plus = $(this);
+                var inp = plus.siblings(".input-wrapper").find("input");
+                var inpVal = parseInt(inp.val());
+
+                if (!(inpVal >= 20)) {
+                    inpVal++;
+                    inp.val(inpVal);
+                }
+
+
+            });
+
+            $(document).on('change', $(".input-count"), function(event) {
+                ass_amount_check($(event.$(".input-count")));
+            }).on('keydown', $(".input-count"), function(event){
+                if (event.which == 13) {
+                    event.preventDefault();
+                    $(event.target).change();
+                    ass_amount_check($(event.target));
+                }
+            });
+
+            minus.click(function () {
+                var minus = $(this);
+                var inp = minus.siblings(".input-wrapper").find("input");
+                var inpVal = parseInt(inp.val());
+
+                if (!(inpVal <= 1)) {
+                    inpVal--;
+                    inp.val(inpVal);
+                }
+                // console.log(inpVal + "wdwdw");
+                // cart_q_inp = $(this).siblings('.cart_q_inp');
+                // cart_q_val = parseInt(cart_q_inp.val());
+                //
+                // if ($(this).hasClass('minus') && cart_q_val >= 2) {
+                //     cart_q_val -= 1;
+                // };
+                //
+                // if ($(this).hasClass('plus')) {
+                //     cart_q_val += 1;
+                // };
+                //
+                // cart_q_inp.val(cart_q_val).change();
+                //
+                // return false;
+            });
+        })();
+
+
+        $(document).on('click', '.btn_cart_q', function() {
+            cart_q_inp = $(this).siblings('.cart_q_inp');
+            cart_q_val = parseInt(cart_q_inp.val());
+
+            if ($(this).hasClass('minus') && cart_q_val >= 2) {
+                cart_q_val -= 1;
+            };
+
+            if ($(this).hasClass('plus')) {
+                cart_q_val += 1;
+            };
+
+            cart_q_inp.val(cart_q_val).change();
+
+            return false;
+        });
+
         $(".page-hero-slider__img").on("load", function (e) {
             console.log((".page-hero-slider__img").outerHeight + "height");
         });
@@ -605,11 +716,10 @@
         siteDD();
         catalogDD();
         slideMenu();
-
+        $('input[name="phone"]').mask('+7 (999) 999-99-99');
         actions();
         cardSlider();
         bag();
-        sliderHeight();
         jQuery.fn.extend({
             toggleOwl: function (selector, options, destroy) {
                 return this.each(function () {
@@ -689,10 +799,6 @@
             }
         });
 
-        $(".page-hero-slider__item img").on('load', function () {
-            sliderHeight();
-        });
-
         $(".uk-parent").click(function () {
             $(this).find(".uk-nav").css({"height": $(".uk-offcanvas-bar").outerHeight()});
 
@@ -767,15 +873,48 @@
             }
         });
         app.sticky();
+        $(function(){
 
+            var progressbar = $("#progressbar"),
+                bar         = progressbar.find('.uk-progress-bar'),
+                settings    = {
+
+                    action: '/', // upload url
+
+                    allow : '*.(jpg|jpeg|gif|png)', // allow only images
+
+                    loadstart: function() {
+                        bar.css("width", "0%").text("0%");
+                        progressbar.removeClass("uk-hidden");
+                    },
+
+                    progress: function(percent) {
+                        percent = Math.ceil(percent);
+                        bar.css("width", percent+"%").text(percent+"%");
+                    },
+
+                    allcomplete: function(response) {
+
+                        bar.css("width", "100%").text("100%");
+
+                        setTimeout(function(){
+                            progressbar.addClass("uk-hidden");
+                        }, 250);
+
+                        alert("Upload Completed")
+                    }
+                };
+
+            var select = UIkit.uploadSelect($(".js-upload-select"), settings),
+                drop   = UIkit.uploadDrop($(".js-upload-drop"), settings);
+        });
         $(window).resize = function () {
             siteDD();
             catalogDD();
-
-            sliderHeight();
             actions();
             cardSlider();
             bag();
+            // document.location.reload();
         };
 
         $(window).scroll = function () {

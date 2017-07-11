@@ -1,0 +1,109 @@
+{% extends "layouts/app.twig" %}
+
+{% block pageTitle %}Главная страница{% endblock %}
+
+
+{% block content %}
+
+    <main class="page-main">
+        {% include "widgets/bredcrumbs.twig" with {"title": "Заказ N 1007-10 вопрос о достаке товара  [000246437]"} %}
+        <section class="support">
+            <div class="uk-container uk-container-center">
+                <div class="section-inner">
+                    <div class="text-center mb20">
+                        <a href="#" class="btn btn-primary dd-btn" id="set-inquiry-btn">Добавить сообщение</a>
+                    </div>
+                    <div class="mb40 dd-btn-target" >
+                        <div class="support-inquiry-form ">
+                            <form action="">
+                                <div class="support-inquiry-form__list mb40">
+                                    <div class="support-inquiry-form__item">
+                                        <div class="input-wrapper">
+                                            <input type="text" placeholder="Тема"/>
+                                        </div>
+                                    </div>
+                                    <div class="support-inquiry-form__item">
+                                        <div class="input-wrapper">
+                                            <textarea name="" id="" cols="30" rows="10"
+                                                      placeholder="Текст сообщения"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb20">
+                                    <label class="df fx-left"><input type="checkbox">Отсылать ответы на e-mail</label>
+                                </div>
+                                <div class="text-left support-review-block js-upload-drop fx fx-left fx-middle mb20">
+                                    <a href="#" class="btn btn-primary uk-position-relative ovh mr20"><input class="btn btn-primary mr20 js-upload-select" type="file">Обзор...</a>
+                                    <p class="sm-fz14 text-grey">выберите файл</p>
+                                </div>
+                                {#<div id="" class="uk-placeholder">#}
+                                    {#Info text... <a class="uk-form-file">Select a file<input id="upload-select" type="file"></a>.#}
+                                {#</div>#}
+                                {#<div id="progressbar" class="uk-progress uk-hidden">#}
+                                    {#<div class="uk-progress-bar" style="width: 0%;">...</div>#}
+                                {#</div>#}
+                                <div class="text-center">
+                                    <button class="btn btn-primary md-full-width">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="support-question-list">
+                        {% for 1 in 1..3 %}
+                            <div class="support-question-item">
+                                <div class="support-question-item__body">
+                                    <div class="support-question-item__title mb20 text-bold fz22">
+                                        <p>Заказ N 1007-10 вопрос о достаке товара</p>
+                                    </div>
+                                    <div class="text-paragraph">
+                                        <p>Причина в нарушении лицензионного договора. Так как период поддержки по данной
+                                            лицензии закончился 21.06.2014, версия системы 6.2.3 для нее не доступна, так
+                                            как она вышла после окончания периода поддержки.</p>
+                                    </div>
+                                </div>
+                                <div class="support-question-item__footer fx fx-left fx-middle fx-wrap" data-uk-grid-margin="">
+                                    <div class="support-question-item__img sm-hidden">
+                                        <p>P</p>
+                                    </div>
+                                    <a href="mailto:webprapor@gmail.com" class="support-question-item__mail">webprapor@gmail.com</a>
+                                    <div class="support-question-item__date">
+                                        <p class="">13.04.2017 11:15:48</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="support-question-item support-question-item-dev">
+                                <div class="support-question-item__body">
+                                    <div class="support-question-item__title mb20 text-bold fz22">
+                                        <p>Заказ N 1007-10 вопрос о достаке товара</p>
+                                    </div>
+                                    <div class="text-paragraph">
+                                        <p>Причина в нарушении лицензионного договора. Так как период поддержки по данной
+                                            лицензии закончился 21.06.2014, версия системы 6.2.3 для нее не доступна, так
+                                            как она вышла после окончания периода поддержки.</p>
+                                    </div>
+                                </div>
+                                <div class="support-question-item__footer fx fx-left fx-middle">
+                                    <div class="uk-grid uk-grid-collapse full-width">
+                                        <div class="uk-width-1-1 uk-width-medium-8-10 fx fx-middle fx-wrap" data-uk-grid-margin="">
+                                            <p class="text-bold mr20">
+                                                Службы поддержки BELLARUS
+                                            </p>
+                                            <div class="support-question-item__date">
+                                                <p class="">13.04.2017 11:15:48</p>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-1 uk-width-medium-2-10 fx fx-middle fx-right md-fx-left">
+                                            <a href="#" class="btn btn-primary md-full-width">Ответить</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

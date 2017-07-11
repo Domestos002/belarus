@@ -6,6 +6,13 @@
 	.page-header__logo-panel
 		padding: 15px 0
 		
+	.side-dd-wrapper-scroll
+		display: none !important
+		
+	.is_stuck
+		.show-on-scroll-mobile
+			display: block !important
+		
 	.page-main section:not(:last-child)
 		margin-bottom: 25px
 		
@@ -210,6 +217,22 @@
 			margin-bottom: 0 !important
 
 @media (max-width: $breakpoint-small-max)
+	.dd-btn
+		width: 100%
+		
+	.underlined-list__caption
+		font-size: 25px
+		
+	.btn-primary, .checkbox-btn, .tabss li a, .tabs-nav.product-tabs li a
+		font-size: 17px
+		line-height: 35px
+		min-width: 130px
+		padding: 0 15px 0 15px
+		
+	.tabs-nav.product-tabs li a
+		max-width: 260px !important
+		margin: 0 auto !important
+		
 	.card-reviews
 		.tabs-nav
 			li
@@ -434,7 +457,7 @@
 		.md-mb#{$mb}
 			margin-bottom: $mb + px
 
-	@each $fz in (14, 35, 18)
+	@each $fz in (14, 35, 18, 25)
 		.md-fz#{$fz}
 			font-size: $fz + px
 
@@ -446,7 +469,7 @@
 		min-height: 250px
 
 @media (max-width: 630px)
-	.page-header__actions-bar__heart, .page-header__actions-bar__key
+	.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__person
 		display: none !important
 		
 	.products-slider-tabs
@@ -475,9 +498,6 @@
 
 	.lines-item__text
 		width: 100%
-		
-	.sidebar-title
-		display: none
 		
 		
 @media (max-width: 550px)
@@ -520,6 +540,9 @@
 		margin-right: 0
 
 @media (max-width: $breakpoint-mini-max)
+	.underlined-list__caption
+		font-size: 22px
+		
 	.card-review-item__name
 		font-size: 17px
 		
@@ -615,7 +638,7 @@
 		.sm-mb#{$mb}
 			margin-bottom: $mb + px
 
-	@each $fz in (14, 20, 30)
+	@each $fz in (14, 20, 30, 22)
 		.sm-fz#{$fz}
 			font-size: $fz + px
 

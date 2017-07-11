@@ -1,0 +1,478 @@
+.ax_default {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  color:#333333;
+  text-align:center;
+  line-height:20px;
+}
+.box_2 {
+}
+.box_3 {
+}
+.ellipse {
+}
+.heading_1 {
+  font-family:'Arial Обычный', 'Arial';
+  font-size:32px;
+  text-align:left;
+  line-height:36px;
+}
+.heading_2 {
+  font-size:24px;
+  text-align:center;
+  line-height:28px;
+}
+.heading_3 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:bold;
+  font-size:18px;
+  text-align:left;
+  line-height:20px;
+}
+.heading_4 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:bold;
+  font-size:14px;
+  text-align:left;
+}
+.heading_5 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:bold;
+  text-align:left;
+}
+.heading_6 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:bold;
+  font-size:10px;
+  text-align:left;
+}
+.paragraph {
+  font-size:14px;
+  text-align:left;
+}
+.line {
+}
+.shape {
+}
+.horizontal_line {
+}
+.image {
+  color:#000000;
+}
+.box_opacity {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+  line-height:15px;
+}
+.box_black_opacity_4 {
+  color:#FFFFFF;
+  text-align:center;
+}
+.image1 {
+  color:#000000;
+}
+.placeholder {
+}
+.box_with_shadow {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-size:12px;
+  color:#1E1E1E;
+  text-align:center;
+}
+._28_h1 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:28px;
+  color:#2B2B2B;
+  text-align:left;
+}
+._12_droplist_with_border {
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+}
+._12_input_textfield {
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+}
+._12_button_sky {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_link {
+  font-size:12px;
+  color:#666699;
+  text-align:left;
+  line-height:normal;
+}
+._12_link_middle {
+  font-size:12px;
+  color:#666699;
+  text-align:left;
+  line-height:normal;
+}
+._12_label {
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+  line-height:15px;
+}
+._12_label_gray {
+  font-size:12px;
+  color:#808080;
+  text-align:left;
+  line-height:normal;
+}
+._12_button_radius {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_button_radius_hover {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_button_radius_sky {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+.box_border {
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+}
+._13_label_bold {
+  font-family:'Arial Полужирный', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:13px;
+  color:#000000;
+  text-align:left;
+  line-height:normal;
+}
+.line_black_opacity_10 {
+}
+._12_label_bold {
+  font-family:'Arial Полужирный', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+  line-height:17px;
+}
+._12_label_red {
+  font-size:12px;
+  color:#E53F31;
+  text-align:left;
+}
+._12_box_opacity {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+  line-height:15px;
+}
+.pos_ {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+}
+.pos_hover {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#2B2B2B;
+  text-align:left;
+}
+._12_button_radius_left {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_button_radius_left_hover {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_button_radius_center {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_button_radius_center_hover {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_button_radius_right {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_button_radius_right_hover {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._12_label__center_ {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+  line-height:17px;
+}
+.input_box_radius {
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+}
+._12_link_underline {
+  font-size:12px;
+  color:#666699;
+  text-align:left;
+}
+._12_button {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+._11_button_radius_left {
+  font-size:11px;
+  color:#000000;
+  text-align:center;
+}
+._11_button_radius_left_hover {
+  font-size:11px;
+  color:#000000;
+  text-align:center;
+}
+._11_label {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:11px;
+  color:#000000;
+  text-align:left;
+  line-height:normal;
+}
+.atom_form_check_label {
+  font-size:13px;
+  color:#2B2B2B;
+  text-align:left;
+}
+._12_label_center {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+  line-height:17px;
+}
+.shape1 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:15px;
+  color:#666699;
+  text-align:left;
+  line-height:normal;
+}
+.box_1 {
+}
+.atom_form_check_label_left {
+  font-size:12px;
+  color:#2B2B2B;
+  text-align:left;
+}
+.img_ {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:normal;
+  font-style:normal;
+  font-size:13px;
+  color:#000000;
+}
+.box__opacity_ {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+  line-height:15px;
+}
+.box_border_hover {
+  font-size:13px;
+  color:#000000;
+  text-align:center;
+}
+._14_link {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:14px;
+  color:#666699;
+  text-align:left;
+}
+.head_link_14_50_selected {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:14px;
+  color:#2B2B2B;
+  text-align:left;
+}
+._11_label_gray_center {
+  font-size:11px;
+  color:#808080;
+  text-align:center;
+  line-height:16px;
+}
+.img_empty_placeholder {
+  font-size:11px;
+  text-align:center;
+}
+._28_h1_center {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:28px;
+  color:#2B2B2B;
+  text-align:center;
+}
+._11_label__gray_ {
+  font-size:11px;
+  color:#808080;
+  text-align:left;
+  line-height:normal;
+}
+.box_opacity1 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+  line-height:15px;
+}
+.box_black_opacity_41 {
+  color:#FFFFFF;
+  text-align:center;
+}
+._15_link {
+  font-size:15px;
+  color:#666699;
+  text-align:left;
+  line-height:17px;
+}
+._15_label {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:15px;
+  color:#2B2B2B;
+  text-align:left;
+  line-height:normal;
+}
+._15_link_underline_right {
+  font-size:15px;
+  color:#666699;
+  text-align:right;
+}
+.pos_box_hover {
+  font-family:'Arial Полужирный', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:13px;
+  color:#BA9C4A;
+  text-align:right;
+  line-height:15px;
+}
+.box_white_opacity_90 {
+  font-size:12px;
+  color:#000000;
+  text-align:left;
+}
+._12_button_hover {
+  font-size:12px;
+  color:#000000;
+  text-align:center;
+}
+.pos_border_1px_hover {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:12px;
+  color:#2B2B2B;
+  text-align:left;
+}
+.checkbox {
+  text-align:left;
+}
+.radio_button {
+  text-align:left;
+}
+.sticky_1 {
+  text-align:left;
+}
+._16_h4_link {
+  font-family:'Arial Полужирный', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:16px;
+  color:#666699;
+  text-align:left;
+  line-height:17px;
+}
+._28_h1_center1 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:36px;
+  color:#2B2B2B;
+  text-align:center;
+}
+._16_h4_center {
+  font-family:'Arial Полужирный', 'Arial';
+  font-weight:700;
+  font-style:normal;
+  font-size:16px;
+  color:#2B2B2B;
+  text-align:center;
+  line-height:normal;
+}
+._11_label_red {
+  font-size:11px;
+  color:#E53F31;
+  text-align:left;
+  line-height:normal;
+}
+.icon {
+}
+.paragraph1 {
+  text-align:left;
+}
+.shape2 {
+  font-family:'Arial Обычный', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  color:#333333;
+  text-align:center;
+  line-height:normal;
+}

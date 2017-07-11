@@ -1,5 +1,7 @@
 *
 	box-sizing: border-box
+	
+
 
 input
 	width: 100%
@@ -43,7 +45,7 @@ h3
 	.pb#{$pb}
 		padding-bottom: $pb + px ////wdwdwdwdwddwdwdwdwdwd
 
-@each $fz in (24, 18, 17, 30, 25, 20, 19, 50, 22, 16, 26, 14, 33, 35)
+@each $fz in (24, 40, 18, 17, 30, 25, 20, 19, 50, 22, 16, 26, 14, 33, 35)
 	.fz#{$fz}
 		font-size: $fz + px
 
@@ -303,6 +305,7 @@ a[class*="__mail"]
 	box-shadow: none
 	border: none
 	cursor: pointer
+	overflow: hidden
 	color: #fff
 	background-color: $brand
 	line-height: 45px

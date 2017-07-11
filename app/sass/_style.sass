@@ -25,6 +25,7 @@ input, textarea
 	
 textarea
 	font-family: $font-base
+	resize: none
 
 
 .owl-nav
@@ -579,10 +580,6 @@ svg
 	width: 100%
 	height: auto
 
-
-
-	
-
 .header-delivery-icon
 	width: 40px
 	height: 20px
@@ -600,7 +597,6 @@ svg
 .page-header__actions-bar
 	height: 40px
 	.uk-dropdown
-		margin-top: 25px
 		box-shadow:  0 0 20px rgba(0,0,0,0.15)
 		
 	& > *
@@ -626,10 +622,15 @@ svg
 .page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__bag, .page-header__actions-bar__person
 	width: 42px
 	z-index: 20
-	//background-color: $beige
-	border-radius: 100%
+	border-radius: 100% ///dwdwd
 	padding: 7px
 	background-color: transparent
+	
+.dropdown-divider
+	svg
+		width: 40px
+		path
+			fill: $black
 
 .products-item__icon
 	border-radius: 100%
@@ -1035,7 +1036,7 @@ ul.markered-list
 		width: initial !important
 		a
 			min-width: 190px !important
-			height: 45px !important
+			line-height: 45px
 			width: initial !important
 			display: flex
 			align-items: center
@@ -1065,11 +1066,22 @@ ul.markered-list
 	margin-left: 5px
 	margin-right: 5px
  
+.support-inquiry-form__item
+	&:not(:last-child)
+		margin-bottom: 15px
 
 .card-carousel__item
 	border: 1px solid #c1c1c1
-
-
+	
+.bag-goods__head-notification
+	padding: 20px 15px
+	
+.hidden
+	display: none !important
+	
+.input-error
+	border-color: $red
+	
 .card-slider__item
 	max-width: 415px
 	margin: 0 auto
@@ -1079,6 +1091,7 @@ ul.markered-list
 	
 
 .card-slider
+	overflow: hidden
 	.owl-dots > div
 		width: 165px
 		height: 145px
@@ -1312,7 +1325,7 @@ a.svg
 	margin-right: 40px
 
 .modal-reg__socials
-	flex-grow: 1 ///efefef
+	flex-grow: 1
 	&-gp
 		background-color: #d03324
 		&:hover
@@ -1369,15 +1382,15 @@ a.svg
 	p
 		position: relative
 		display: inline
-		padding-left: 10px
-		padding-right: 10px
+		padding-left: 20px
+		padding-right: 20px
 		z-index: 2
 		background-color: #fff
 		
 .dropdown-footer
 	background-color: $beige
 	padding: 15px 0
-	text-align: center /////wdwdwdw
+	text-align: center
 	margin: 0 -15px
 	.btn-primary
 		text-transform: none !important
@@ -1386,8 +1399,8 @@ a.svg
 	&-inner
 		position: relative
 		display: inline
-		padding-left: 10px
-		padding-right: 10px
+		padding-left: 20px
+		padding-right: 20px
 		z-index: 2
 		background-color: #fff
 	&::before
@@ -1549,6 +1562,7 @@ a.svg
 .card-reviews__counter
 	font-size: 22px
 	color: #fff
+	line-height: 20px //dwdwdwd
 	text-transform: uppercase
 	background-color: $brand
 	display: inline
@@ -2143,11 +2157,12 @@ a.svg
 	display: none !important
 	
 .page-header__actions-bar-favorite-count
-	top: -11px
+	top: -4px
 	
 .page-header__actions-bar
 	.uk-dropdown
 		background-color: #fff
+		margin-top: 40px
 		left: -46px !important
 		a
 			width: initial
@@ -2207,3 +2222,112 @@ a.svg
 	.uk-tab>li:not(.uk-active)>a:hover, .uk-tab>li:not(.uk-active)>a:focus, .uk-tab>li.uk-open:not(.uk-active)>a
 		padding: 0
 		margin: 0
+		
+.support-inquiry-item__bl
+	background-color: $brand2
+	height: 30px
+	padding: 5px 10px
+	color: #fff
+	display: inline-block
+	
+.support-inquiry-item
+	background-color: $beige
+	padding: 30px 15px
+	&:not(:last-child)
+		margin-bottom: 30px
+		
+.support-inquiry-form
+	background-color: $beige
+	padding: 20px
+	max-width: 700px
+	margin: 0 auto
+	
+.support-inquiry-item__num
+	-ms-word-break: break-all
+	word-break: break-all
+	-webkit-hyphens: auto
+	-moz-hyphens: auto
+	-ms-hyphens: auto
+	hyphens: auto
+	
+.support-question-item__img
+	width: 45px
+	height: 45px
+	flex-shrink: 0
+	border-radius: 100%
+	border: 2px solid $brand
+	font-size: 20px
+	display: flex
+	align-items: center
+	justify-content: center
+	margin-right: 20px
+	&::before
+		content: ''
+		
+.support-question-item__mail
+	margin-right: 20px
+	font-family: $font-base-semibold
+
+.support-question-item__footer
+	background-color: $beige
+	padding: 10px 20px
+	.uk-grid
+		margin-top: -15px
+		[class*="uk-width-"]
+			padding-top: 15px
+	.uk-grid-margin
+		margin-top: 10px
+	
+.support-question-item__body
+	padding: 20px
+
+.support-question-item
+	border: 1px solid #c1c1c1
+	&:not(:last-child)
+		margin-bottom: 20px
+
+	
+.dd-btn
+	position: relative
+	padding: 0 30px 0 45px !important
+	&::before
+		content: ''
+		width: 13px
+		height: 3px
+		background-color: #fff
+		position: absolute
+		left: 20px
+		top: 50%
+		transform: translate(-50%, -50%)
+	&::after
+		content: ''
+		width: 3px
+		height: 13px
+		background-color: #fff
+		position: absolute
+		left: 20px
+		top: 50%
+		transform: translate(-50%, -50%)
+	&.active
+		&::after
+			display: none
+			
+.dd-btn-target
+	display: none
+	
+.js-upload-select
+	opacity: 0 !important
+	cursor: pointer !important
+	
+.jq-file
+	cursor: pointer !important
+	padding: 0 !important
+	position: absolute !important
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+	
+	
+	
