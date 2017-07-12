@@ -26,6 +26,7 @@ input, textarea
 textarea
 	font-family: $font-base
 	resize: none
+	overflow: auto
 
 
 .owl-nav
@@ -56,15 +57,22 @@ textarea
 		@extend %navs
 	.tabs-nav
 		li
-			width: 120px !important
+			max-width: 250px !important
 
 .products-slider
 	@extend %navs
 
 .lines-slider, .page-hero-slider__list
 	@extend %navs
+	
+.page-hero-slider
+	.section-inner
+		min-height: 400px
+		width: 100%
 
-
+.hamburger-show-on-scroll-mobile
+	height: 22px
+	
 .page-hero-slider__list
 	.owl-prev, .owl-next
 		background-color: $black
@@ -163,7 +171,14 @@ textarea
 			
 		.side-dd-wrapper-scroll
 			visibility: visible
-			pointer-events: initial
+			pointer-events: initial //wdwdwd
+			display: block
+			height: 30px
+
+
+		.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__bag, .page-header__actions-bar__person
+			padding: 7px 7px 0 7px
+
 		
 .footer-copyright::before
 	font-family: $font-icon
@@ -173,6 +188,8 @@ textarea
 .page-header__search-panel-inner
 	padding: 10px 0 10px 0
 
+.page-header__tovars-counter
+	padding-top: 7px
 	
 .mobile-menu-btn
 	color: $brand
@@ -293,6 +310,7 @@ textarea
 	text-align: center
 	line-height: 1.2em
 	padding: 0 20px
+
 	&::after
 		@extend %line
 		margin-top: 20px
@@ -358,37 +376,52 @@ textarea
 .text-left
 	text-align: left
 	
-.side-dd-wrapper-scroll
-	position: absolute
-	top: 50%
-	left: 0
-	transform: translateY(-50%)
-	pointer-events: none
-	visibility: hidden
+.page-header__search-panel
+	.side-dd-wrapper
+		height: 25px
 	
+.side-dd-wrapper-scroll
+	pointer-events: none
+	position: relative
+	display: none
+	
+	visibility: hidden
+	margin: auto auto auto 0
 	.uk-dropdown-bottom
 		margin-top: 20px
 		
+	.hamburger-box
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		top: 0
+		
+.m-auto
+	margin: auto
+
 .products-img
 	max-height: 200px
 	overflow: hidden
 	display: flex
 	justify-content: center
 	img
+		width: auto !important
 		width: initial !important
 		
 .products-slider__item-footer
 	margin-top: auto
-		
+	
 .products-slider__item-description
-	height: 65px
+	min-height: 65px
 	display: block
+	
 
 .products-item
 	padding: 40px 17px 15px 17px
 	border: 1px solid #c1c1c1
 	max-width: 260px
-	margin: 0 auto
+	margin: 1px // avoid cut border with owl-carousel
 	height: 620px
 	display: flex
 	justify-content: flex-start
@@ -498,6 +531,9 @@ textarea
 
 .page-footer__hot-line
 	margin-bottom: 38px
+	
+.footer-logo
+	width: 100%
 
 .footer-logo__wrapper
 	margin-bottom: 20px
@@ -527,6 +563,7 @@ textarea
 	border: 2px solid $brand
 	display: flex
 	align-items: center
+	text-align: center
 	font-family: $font-base-bold
 	justify-content: center
 	font-size: 30px
@@ -548,9 +585,6 @@ textarea
 	padding: 25px 20px 25px 20px
 	min-height: 315px
 	max-width: 240px
-	display: flex
-	flex-direction: column
-	justify-content: space-around
 	margin: 0 auto
 
 .reviews-slider__social-icon
@@ -561,7 +595,9 @@ textarea
 	font-size: 30px
 	
 
-
+.mr7
+	margin-right: 7px
+	
 .products-valuation
 	display: flex
 	flex-direction: row
@@ -578,7 +614,6 @@ textarea
 
 svg
 	width: 100%
-	height: auto
 
 .header-delivery-icon
 	width: 40px
@@ -608,7 +643,13 @@ svg
 		
 		&.page-header__actions-bar__key
 			width: 47px
+			&.is_stuck
+				height: 42px
+			svg
+				width: 47px
 		svg
+			height: 30px
+			width: 30px
 			path
 				+trans()
 				fill: $brand
@@ -622,13 +663,18 @@ svg
 .page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__bag, .page-header__actions-bar__person
 	width: 42px
 	z-index: 20
-	border-radius: 100% ///dwdwd
+	border-radius: 100%
 	padding: 7px
 	background-color: transparent
+	transition: color 0.3s ease 0s !important
+	
+	
+
 	
 .dropdown-divider
 	svg
 		width: 40px
+		height: 40px
 		path
 			fill: $black
 
@@ -720,6 +766,9 @@ ul.markered-list
 .partners-slider__item
 	max-width: 131px
 	margin: 0 auto
+	border: 1px solid #c1c1c1
+	
+.card-manufacturer__img img
 	border: 1px solid #c1c1c1
 	
 
@@ -935,6 +984,7 @@ ul.markered-list
 
 .uk-offcanvas-bar
 	background-color: #fff
+	overflow: hidden
 	padding: 70px 20px 50px 20px
 	.uk-nav-offcanvas > li > a
 		color: #000
@@ -1005,7 +1055,7 @@ ul.markered-list
 			
 .uk-breadcrumb>li, .uk-breadcrumb>li>a, .uk-breadcrumb>li>span
 	font-size: 16px
-			
+	
 .uk-breadcrumb>li:nth-child(n+2):before
 	content: "|"
 
@@ -1105,7 +1155,6 @@ ul.markered-list
 
 .hamburger
 	padding: 0
-	height: 0 !important
 	&:focus
 		outline: none
 
@@ -1249,7 +1298,14 @@ input[type="checkbox"], input[type="radio"]
 	min-height: 200px
 	max-width: 320px
 	margin: 0 auto
-
+	position: relative
+	
+.posmm
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	
 .login-btn
 	background-color: $brand
 	font-size: 18px
@@ -1490,6 +1546,9 @@ a.svg
 	svg
 		height: 32px
 		width: 100%
+		
+.catalog-dd
+	cursor: pointer
 
 .catalog-dd.uk-open
 	.catalog-dd-overlay
@@ -1841,7 +1900,7 @@ a.svg
 	
 .bag-mobile-result
 	padding: 15px 20px
-	background-color: $beige
+	background-color: $lightgrey
 	border-bottom: 1px solid $bag-border-color
 	z-index: 100
 	
@@ -2156,9 +2215,6 @@ a.svg
 .hidden-imp
 	display: none !important
 	
-.page-header__actions-bar-favorite-count
-	top: -4px
-	
 .page-header__actions-bar
 	.uk-dropdown
 		background-color: #fff
@@ -2166,6 +2222,8 @@ a.svg
 		left: -46px !important
 		a
 			width: initial
+			svg
+				height: 30px
 			
 .pb15
 	padding-bottom: 25px
@@ -2315,19 +2373,37 @@ a.svg
 .dd-btn-target
 	display: none
 	
-.js-upload-select
-	opacity: 0 !important
-	cursor: pointer !important
+.jq-file__browse
+	left: 1px !important
+	right: initial !important
+	right: auto !important
+	height: 40px !important
+	background: $brand !important
+	border-radius: 0 !important
+	box-shadow: none !important
+	color: #fff !important
+	text-shadow: none !important
+	display: flex !important
+	align-items: center !important
+	justify-content: center !important
+	
+.jq-file__name
+	padding: 0 10px 0 10px !important
+	height: 40px !important
+	display: flex !important
+	align-items: center !important
+	justify-content: center !important
+	border: none !important
+	box-shadow: none !important
+	background-color: transparent !important
+	font-size: 14px !important
 	
 .jq-file
-	cursor: pointer !important
-	padding: 0 !important
-	position: absolute !important
-	top: 0
-	left: 0
-	right: 0
-	bottom: 0
-
+	border: none !important
+	box-shadow: none !important
+	.focused
+		border: none !important
+	
 	
 	
 	

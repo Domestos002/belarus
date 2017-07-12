@@ -84,11 +84,16 @@
 	.lg-fx-row
 		flex-direction: row
 		
+	
+		
 	.lg-fx-left
 		justify-content: flex-start
 		
 	.lg-fx-bottom
 		align-items: flex-end
+		
+	.lg-fx-baseline
+		align-items: baseline
 
 	.lg-fx-around
 		justify-content: space-around
@@ -171,7 +176,7 @@
 	body
 		font-size: 16px
 
-	.lg-d-fx
+	.lg-d-fx, .lg-fx
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
@@ -180,6 +185,10 @@
 
 	.lg-fx-column
 		flex-direction: column
+		
+	.lg-list-mr-10
+		& > *
+			margin-right: 10px
 
 	.lg-fx-column-reverse
 		flex-direction: column-reverse
@@ -216,6 +225,18 @@
 		& > *
 			margin-bottom: 0 !important
 
+@media (max-width: 870px)
+	.products-slider-tabs
+		.tabs-nav
+			display: flex
+			flex-direction: column
+			align-items: center
+			li
+				width: 100% !important
+				margin-left: 0 !important
+				&:not(:last-child)
+					margin-bottom: 15px
+			
 @media (max-width: $breakpoint-small-max)
 	.dd-btn
 		width: 100%
@@ -280,9 +301,6 @@
 		
 	.page-header__actions-bar > :not(:last-child)
 		margin-right: 5px
-		
-	.page-header__logo-panel
-		padding: 7px 0
 		
 	.page-header__logo-panel
 		order: 0
@@ -368,6 +386,11 @@
 	.page-hero-slider__item
 		min-height: 325px
 		
+	.page-hero-slider
+		.section-inner
+			min-height: 325px
+			width: 100%
+		
 	.page-header__actions-bar
 		.uk-dropdown
 			display: none !important
@@ -421,7 +444,10 @@
 		display: -ms-flex
 		display: -o-flex
 		display: flex
-	
+		
+	.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__person
+		display: none !important
+		
 	.bag-order__head-change-text
 		display: none
 		
@@ -436,6 +462,9 @@
 		
 	.md-fx-left
 		justify-content: flex-start
+		
+	.md-fx-baseline
+		align-items: baseline
 
 	.md-fx-center
 		justify-content: center
@@ -445,6 +474,11 @@
 
 	.md-fx-middle
 		align-items: center
+		
+	.is_stuck
+		.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__bag, .page-header__actions-bar__person
+			padding: 7px !important
+	
 	
 	.md-full-width
 		width: 100%
@@ -464,24 +498,14 @@
 
 	.footer-logo__wrapper
 		max-width: initial
+		max-width: none
 
 	.reviews-slider__item
 		min-height: 250px
 
 @media (max-width: 630px)
-	.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__person
-		display: none !important
-		
-	.products-slider-tabs
-		.tabs-nav
-			display: flex
-			flex-direction: column
-			align-items: center
-			li
-				width: 100% !important
-				margin-left: 0 !important
-				&:not(:last-child)
-					margin-bottom: 15px
+
+	
 					
 	.card-reviews .tabs-nav .uk-tab
 		justify-content: center
@@ -540,6 +564,9 @@
 		margin-right: 0
 
 @media (max-width: $breakpoint-mini-max)
+	.products-item
+		margin: 0 auto
+		
 	.underlined-list__caption
 		font-size: 22px
 		
@@ -551,6 +578,11 @@
 	
 	.page-title h1, .page-title h2, .page-title h3, .page-title p, .card-good-title
 		font-size: 22px
+	
+	.section-title
+		font-size: 20px
+		&::before
+			margin-bottom: 10px
 		
 	.card-reviews__form label
 		display: none
@@ -587,10 +619,7 @@
 		background-color: transparent
 		padding: 0
 
-	.section-title
-		font-size: 25px
-		&::before
-			margin-bottom: 10px
+
 
 	.lines-slider__item
 		max-width: 160px

@@ -360,7 +360,6 @@
                     var sticky = stickys[i];
                     var placeholder = sticky.parentNode;
                     $(sticky).wrap("<div class='sticky-placeholder'></div>");
-                    placeholder.style.height = sticky.clientHeight;
                 }
             }
             else {
@@ -393,11 +392,14 @@
                 var parent = placeholder.parentNode;
                 var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
                 sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
+                placeholder.style.height = sticky.innerHeight + "px";
+                console.log("render");
                 if (sticky.hasAttribute('data-sticky-target')) {
                     if (bodyScrollTop >= (stickyTop + header.clientHeight)) {
                         if (bodyScrollTop > sticky.offsetTop && !(sticky.classList.contains('is_stuck'))) {
                             placeholder.style.height = sticky.clientHeight + "px";
                             sticky.classList.add("is_stuck");
+
                             if (sticky.hasAttribute('data-sticky-in-parent')) {
                                 sticky.classList.add("sticky-in-parent");
                             }
@@ -419,13 +421,14 @@
 
                     if (bodyScrollTop + 60 > sticky.offsetTop && !(sticky.classList.contains('is_stuck')) && !(sticky.classList.contains('attached'))) {
 
-                        placeholder.style.height = sticky.clientHeight + "px";
+
                         sticky.classList.add("is_stuck");
                         if (sticky.hasAttribute('data-sticky-in-parent')) {
                             sticky.classList.add("sticky-in-parent");
                         }
                         sticky.style.top = 60 + "px";
                         sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
+                        placeholder.style.height = sticky.innerHeight + "px";
                     }
 
                     if (bodyScrollTop + 60 < sticky.offsetTop + sticky.clientHeight && sticky.classList.contains('attached')) {
@@ -436,13 +439,15 @@
                         }
                         sticky.style.top = 60 + "px";
                         sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
+                        placeholder.style.height = sticky.innerHeight + "px";
                         sticky.classList.remove("attached");
                         parent.style.position = "static";
                     }
                     if (bodyScrollTop + 60 + sticky.clientHeight >= parent.offsetTop + parent.clientHeight) {
                         sticky.classList.add("attached");
-                        sticky.style.top = "initial";
+                        sticky.style.top = "auto";
                         parent.style.position = "relative";
+                        placeholder.style.height = sticky.innerHeight + "px";
                     }
                 }
             }
@@ -456,6 +461,8 @@
         window.addEventListener('resize', function () {
             init();
             render();
+
+
         }, true);
 
         init();
@@ -583,24 +590,6 @@
             });
         })();
 
-
-        $(document).on('click', '.btn_cart_q', function() {
-            cart_q_inp = $(this).siblings('.cart_q_inp');
-            cart_q_val = parseInt(cart_q_inp.val());
-
-            if ($(this).hasClass('minus') && cart_q_val >= 2) {
-                cart_q_val -= 1;
-            };
-
-            if ($(this).hasClass('plus')) {
-                cart_q_val += 1;
-            };
-
-            cart_q_inp.val(cart_q_val).change();
-
-            return false;
-        });
-
         $(".page-hero-slider__img").on("load", function (e) {
             console.log((".page-hero-slider__img").outerHeight + "height");
         });
@@ -701,8 +690,8 @@
 
             }
         });
-        $(".hamburger-desktop").on('click', function (e) {
-            var hamburger = $(this);
+        $(".catalog-dd").on('click', function (e) {
+            var hamburger = $(this).find(".hamburger");
 
             if (hamburger.hasClass("is-active")) {
                 hamburger.removeClass("is-active");
@@ -804,8 +793,7 @@
 
         });
 
-        $(".slide-toggle").click(function () {
-
+        $(document).on('click', '.slide-toggle', function() {
             if ($(this).hasClass("active")) {
                 $(this).removeClass("active");
 
@@ -816,9 +804,8 @@
 
                 $(this).parent("div").siblings(".slide-toggle-content").stop().slideUp(400);
             }
-
         });
-
+        // 45632
         var hmobile = $(".hamburger-mobile");
 
         $(".uk-parent > a").on('click', function (e) {
@@ -873,6 +860,7 @@
             }
         });
         app.sticky();
+
         $(function(){
 
             var progressbar = $("#progressbar"),
@@ -914,7 +902,7 @@
             actions();
             cardSlider();
             bag();
-            // document.location.reload();
+            location.reload();
         };
 
         $(window).scroll = function () {

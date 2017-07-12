@@ -29,10 +29,10 @@
                                     <div class="page-hero-slider__btn">
                                         <a href="#" class="btn btn-primary fz20 md-fz18">КУПИТЬ СЕЙЧАС</a>
                                     </div>
-									
+
 								</div>
 								<div class="uk-width-1-2">
-									
+
 								</div>
 							</div>
 						</div>
@@ -127,7 +127,7 @@
                         <img src="http://via.placeholder.com/104x104" alt="">
                     </div>
                     <div class="lines-slider__item-description fz16 text-center">
-                        <p>Color LUX с маслом <br/> 
+                        <p>Color LUX с маслом <br/>
                             арганы и фитокератином</p>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
         		{% include "elements/section-title.twig" with {"title": "Отзывы  о магазине"} %}
         		<div class="reviews-slider owl-carousel mb20">
         			{% for 1 in 1..4 %}
-						<div class="reviews-slider__item uk-position-relative d-fx fx-column fx-middle">
+						<div class="reviews-slider__item uk-position-relative">
                             <div class="reviews-slider__item-header fx fx-center fx-column fx-justify fx-middle">
                             <a class="reviews-slider__social-icon uk-icon uk-icon-vk" href="#"></a>
 							<div class="reviews-slider__img mb20">
@@ -166,27 +166,29 @@
 						</div>
         			{% endfor %}
                     {% for 1 in 1..4 %}
-						<div class="reviews-slider__item uk-position-relative d-fx fx-column fx-middle">
+                        <div class="reviews-slider__item uk-position-relative">
                             <div class="reviews-slider__item-header fx fx-center fx-column fx-justify fx-middle">
                                 <a class="reviews-slider__social-icon uk-icon uk-icon-vk" href="#"></a>
                                 <div class="reviews-slider__img mb20">
                                     <img src="http://via.placeholder.com/120x120" alt="">
                                 </div>
                                 <div class="reviews-slider__name mb15 fz20 text-uppercase text-brand">
-                                    <p>Светлана Булеева-Валуева</p>
+                                    <p>Светлана Булеева</p>
                                 </div>
                             </div>
-							<div class="reviews-slider__description fz16">
-								<p>Здравствуйте! Заказ получен. Большое спасибо. Косметика очень понравилась.</p>
-							</div>
-						</div>
+                            <div class="reviews-slider__description fz16">
+                                <p>Здравствуйте! Заказ получен. Большое спасибо. Косметика очень понравилась.
+                                    Здравствуйте! Заказ получен. Большое спасибо. Косметика очень понравилась
+                                </p>
+                            </div>
+                        </div>
                     {% endfor %}
         		</div>
         		<div class="text-center">
         			<a href="#" class="text-underline uk-display-inline-block">Все отзывы</a>
         		</div>
 				</div>
-        	</div>				
+        	</div>
         </section>
         <section>
         	<div class="uk-container uk-container-center">
@@ -205,20 +207,20 @@
         			<div class="">
         				<div class="text-center">
         					<div class="mb20">
-        						
+
         					<object class="advantages-icon" type="image/svg+xml" data="images/baloons.svg" width="100%" height="100%"></object>
         					</div>
         					<div class=" 	fz22  font-semibold text-uppercase mb15">
         						<p>
     								Акции и скидки <br/>
-									для клиентов	
+									для клиентов
         						</p>
         					</div>
         					<div class="text-underline">
         						<a href="#">Узнать подробности</a>
         					</div>
         				</div>
-        				
+
         			</div>
         			<div class="">
         				<div class="text-center">
@@ -240,7 +242,7 @@
         				<div class="text-center">
         					<div class="mb20">
         					<object class="advantages-icon" type="image/svg+xml" data="images/stopwatch.svg" width="100%" height="100%"></object>
-        						
+
         					</div>
         					<div class="fz22 font-semibold text-uppercase mb15">
         						<p>
@@ -262,7 +264,7 @@
         <section>
         	<div class="uk-container uk-container-center">
         		<div class="section-inner">
-        		{% include "elements/section-title.twig" with {"type": "bottom", "title": "Производители"} %}	
+        		{% include "elements/section-title.twig" with {"type": "bottom", "title": "Производители"} %}
         		<div class="partners-slider owl-carousel">
         			{% for 1 in 1..15 %}
 						<div class="partners-slider__item">
