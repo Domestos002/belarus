@@ -154,7 +154,7 @@ textarea
 	padding: 20px 0 20px 0
 	background-color: #fff
 	&.is_stuck
-		width: 100vw
+		width: 100vw !important
 		box-shadow:  0 0 20px rgba(0,0,0,0.15)
 		-webkit-transform: translate3d(0,0,0) //avoid blinking in web kit
 		transform: translate3d(0,0,0)
@@ -171,11 +171,12 @@ textarea
 			
 		.side-dd-wrapper-scroll
 			visibility: visible
-			pointer-events: initial //wdwdwd
+			pointer-events: initial
+			cursor: pointer
 			display: block
 			height: 30px
-
-
+			width: 30px
+		
 		.page-header__actions-bar__heart, .page-header__actions-bar__key, .page-header__actions-bar__bag, .page-header__actions-bar__person
 			padding: 7px 7px 0 7px
 
@@ -383,8 +384,8 @@ textarea
 .side-dd-wrapper-scroll
 	pointer-events: none
 	position: relative
-	display: none
-	
+	height: 0
+	width: 0
 	visibility: hidden
 	margin: auto auto auto 0
 	.uk-dropdown-bottom
@@ -2405,5 +2406,59 @@ a.svg
 		border: none !important
 	
 	
+.products-item-hit, .products-item-new, .products-item-discount
+	position: relative
+	&::before
+		min-width: 120px
+		height: 30px
+		display: flex
+		align-items: center
+		position: absolute
+		top: 15px
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+		z-index: 10
+		font-size: 16px
+		font-family: $font-base-bold
+		padding: 8px 15px
+		left: 0
+		text-transform: uppercase
+		color: #fff
+		
+.products-item-hit::before
+	content: 'хит продаж'
+	background-color: $brand
 	
+.products-item-new::before
+	content: 'новинка'
+	background-color: #18956d
+	
+.products-item-discount::before
+	content: 'скидка'
+	background-color: #fe9901
+
+.uk-tooltip
+	color: $black
+	background: $lightgrey
+	font-size: 14px
+	font-family: $font-base
+	
+	
+.uk-tooltip-top:after,
+.uk-tooltip-top-left:after,
+.uk-tooltip-top-right:after
+	border-top-color: $lightgrey
+	
+.uk-tooltip-bottom:after,
+.uk-tooltip-bottom-left:after,
+.uk-tooltip-bottom-right:after
+	border-bottom-color: $lightgrey
+	
+
+.uk-tooltip-left:after
+	border-left-color: $lightgrey
+	
+.uk-tooltip-right
+	border-right-color: $lightgrey
 	

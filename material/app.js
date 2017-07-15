@@ -342,93 +342,133 @@
         return options;
     };
 
-    var Sticky = function(values) {
+    YOURAPPNAME.prototype.sticky = function () {
+        var _self = this;
+        var stickys = _self.doc.querySelectorAll('[data-sticky]');
+
+        var count = false;
         var mainOffset = 0;
 
-        // Define option defaults
-        var defaults = {
-            stickyOffsetTop: mainOffset,
-            stickyStatus: true,
-            stickInParent: "true",
-            stickyType: 'top',
-            selector: 'stuuck'
-        };
+        console.log(count + '-count');
 
-        Sticky.prototype.detach = function () {
-
-        };
-
-        Sticky.prototype.destroy = function () {
-
-        };
-
-        Sticky.prototype.render = function () {
-            var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-            console.log(values);
-            for (var key in values) {
-                // этот код будет вызван для каждого свойства объекта
-                // ..и выведет имя свойства и его значение
-
-                console.log( "Ключ: " + key + " значение: " + values[key] );
-
-                if (bodyScrollTop > values[key].stickyOffsetTop) {
-                    console.log("bluyalexazaebal");
+        function init() {
+            var length = stickys.length;
+            mainOffset = 0;
+            if (count == false) {
+                count = true;
+                for (var i = 0; i < length; i++) {
+                    var sticky = stickys[i];
+                    var placeholder = sticky.parentNode;
+                    $(sticky).wrap("<div class='sticky-placeholder'></div>");
                 }
             }
-
-
-
-        };
-
-        Sticky.prototype.scroll = function () {
-
-        };
-
-        Sticky.prototype.init = function () {
-
-        };
-
-    };
-
-
-
-    function stickyInit(){
-        var stickyArr = document.querySelectorAll('[data-sticky]');
-        var stickysLenght = stickyArr.length;
-
-        console.log('xzxzxz');
-        for (var i = 0; i < stickysLenght; i++) {
-            var stickyItem = stickyArr[i];
-            var values = [];
-            // var placeholder = sticky.parentNode;
-            // $(sticky).wrap("<div class='sticky-placeholder'></div>");
-
-            var stickyEl = new Sticky({
-                stickInParent: $(stickyItem).data("sticky").stickInParent,
-                stickyOffsetTop : stickyItem.offsetTop
-            });
-
-
-            values.push(stickyEl);
-
+            else {
+                return false;
+            }
         }
 
-        // for (var key in values) {
-        //     // этот код будет вызван для каждого свойства объекта
-        //     // ..и выведет имя свойства и его значение
-        //
-        //     alert( "Ключ: " + key + " значение: " + values[key] );
-        // }
+        function detach() {
+            var length = stickys.length;
+            for (var i = 0; i < length; i++) {
 
-        window.addEventListener('scroll', function(e) {
-            stickyEl.render();
-        });
+                var sticky = stickys[i];
+                sticky.classList.remove("is_stuck");
+                if (sticky.hasAttribute('data-sticky-in-parent')) {
+                    sticky.classList.remove("sticky-in-parent");
 
-        return values;
-    }
+                };
+
+            }
+        }
+
+        function render() {
+            var length = stickys.length;
+            for (var i = 0; i < length; i++) {
+                var sticky = stickys[i];
+                var stickyTop = sticky.offsetTop;
+                var placeholder = sticky.parentNode;
+                var placeholderTop = placeholder.offsetTop;
+                var header = _self.doc.getElementById("page-header");
+                var parent = placeholder.parentNode;
+                var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
+                placeholder.style.height = sticky.innerHeight + "px";
+                console.log("render");
+                if (sticky.hasAttribute('data-sticky-target')) {
+                    if (bodyScrollTop >= (stickyTop + header.clientHeight)) {
+                        if (bodyScrollTop > sticky.offsetTop && !(sticky.classList.contains('is_stuck'))) {
+                            placeholder.style.height = sticky.clientHeight + "px";
+
+                            sticky.classList.add("is_stuck");
+                            mainOffset += sticky.clientHeight;
+                            console.log(mainOffset);
+                            if (sticky.hasAttribute('data-sticky-in-parent')) {
+                                sticky.classList.add("sticky-in-parent");
+                            }
+                        }
+                        else {
+                            if (bodyScrollTop < placeholderTop) {
+                                detach();
+                            }
+                        }
+                    }
+                    else {
+                        detach();
+                    }
+                }
+                else {
+                    if (bodyScrollTop + mainOffset <= placeholderTop) {
+                        detach();
+                    }
+
+                    if (bodyScrollTop + mainOffset > sticky.offsetTop && !(sticky.classList.contains('is_stuck')) && !(sticky.classList.contains('attached'))) {
 
 
+                        sticky.classList.add("is_stuck");
+                        if (sticky.hasAttribute('data-sticky-in-parent')) {
+                            sticky.classList.add("sticky-in-parent");
+                        }
+                        sticky.style.top = mainOffset + "px";
+                        sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
+                        placeholder.style.height = sticky.innerHeight + "px";
+                    }
+
+                    if (bodyScrollTop + mainOffset < sticky.offsetTop + sticky.clientHeight && sticky.classList.contains('attached')) {
+
+                        sticky.classList.add("is_stuck");
+                        if (sticky.hasAttribute('data-sticky-in-parent')) {
+                            sticky.classList.add("sticky-in-parent");
+                        }
+                        sticky.style.top = mainOffset + "px";
+                        sticky.style.width = parent.clientWidth - $(parent).css("padding-left").slice(0, -2) + "px";
+                        placeholder.style.height = sticky.innerHeight + "px";
+                        sticky.classList.remove("attached");
+                        parent.style.position = "static";
+                    }
+                    if (bodyScrollTop + mainOffset + sticky.clientHeight >= parent.offsetTop + parent.clientHeight) {
+                        sticky.classList.add("attached");
+                        sticky.style.top = "auto";
+                        parent.style.position = "relative";
+                        placeholder.style.height = sticky.innerHeight + "px";
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('scroll', function () {
+            init();
+            render();
+        }, true);
+
+        window.addEventListener('resize', function () {
+            init();
+            render();
+        }, true);
+
+        init();
+        render();
+
+    };
 
     var app = new YOURAPPNAME(document);
 
@@ -443,9 +483,6 @@
     });
 
     app.appLoad('full', function (e) {
-
-        stickyInit();
-
         $('input, select').styler({});
 
         $(".bag-goods__item-del").click(function () {
@@ -822,6 +859,7 @@
 
             }
         });
+        app.sticky();
 
         $(function(){
 
