@@ -11,7 +11,8 @@
     "css-hamburgers": "^0.8.1",
     "owl.carousel": "2.1.5",
     "bootstrap-sass": "^3.3.7",
-    "sticky-kit": "^1.1.2"
+    "sticky-kit": "^1.1.2",
+    "scrollmagic": "^2.0.5"
   },
   "devDependencies": {
     "uikit": "^2.27.2",

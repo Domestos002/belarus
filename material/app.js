@@ -385,7 +385,7 @@
             var length = stickys.length;
             for (var i = 0; i < length; i++) {
                 var sticky = stickys[i];
-                var stickyTop = sticky.offsetTop;
+                var stickyTop = sticky.offsetTop;console.log(stickyEl.stickInParent + " - nu eb tvoy mat");
                 var placeholder = sticky.parentNode;
                 var placeholderTop = placeholder.offsetTop;
                 var header = _self.doc.getElementById("page-header");
@@ -911,3 +911,5 @@
     });
 
 })();
+
+

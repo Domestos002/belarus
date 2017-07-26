@@ -58,7 +58,7 @@
         });
     }
 
-    function slideMenu(){
+    function slideMenu() {
         var count = 0;
 
         $(".uk-offcanvas").find(".uk-parent").each(function () {
@@ -70,15 +70,16 @@
         console.log(count);
 
         for (var i = 1; i <= count; i++) {
-            var caption = $(".uk-offcanvas").find(".uk-parent#dd-" + i + " > a").filter( ':first' );
-            var body = $(".uk-offcanvas").find(".uk-parent#dd-" + i + "").find("ul").filter( ':first' );
-            $(".uk-offcanvas-bar > ul").append( "<div class='dp-panel'" + " id='dp-" + i + "'> </div>");
+            var caption = $(".uk-offcanvas").find(".uk-parent#dd-" + i + " > a").filter(':first');
+            var body = $(".uk-offcanvas").find(".uk-parent#dd-" + i + "").find("ul").filter(':first');
+            $(".uk-offcanvas-bar > ul").append("<div class='dp-panel'" + " id='dp-" + i + "'> </div>");
 
             caption.clone().appendTo(".dp-panel#dp-" + i);
             body.appendTo(".dp-panel#dp-" + i);
-        };
+        }
+        ;
 
-        $(".uk-offcanvas").find(".uk-parent").click(function() {
+        $(".uk-offcanvas").find(".uk-parent").click(function () {
             var number = $(this).attr('id');
             number = number.split("-")[1];
 
@@ -86,7 +87,7 @@
 
         });
 
-        $(".dp-panel > a").click(function() {
+        $(".dp-panel > a").click(function () {
             var number = $(this).parent().attr('id');
             number = number.split("-")[1];
             $(".dp-panel#dp-" + number).removeClass("dp-panel-open");
@@ -101,7 +102,7 @@
         var bWidth = b.outerWidth();
         var scrollbar = window.innerWidth - bWidth;
         var catalog = $(".catalog-dd");
-        var logoP =  $(".page-header__logo-panel");
+        var logoP = $(".page-header__logo-panel");
         catalog.on('hide.uk.dropdown', function () {
 
             var hamburger = $(".hamburger-desktop");
@@ -342,92 +343,104 @@
         return options;
     };
 
-    var Sticky = function(values) {
-        var mainOffset = 0;
 
-        // Define option defaults
-        var defaults = {
-            stickyOffsetTop: mainOffset,
-            stickyStatus: true,
-            stickInParent: "true",
-            stickyType: 'top',
-            selector: 'stuuck'
-        };
+
+
+    var Sticky = function () {
+        var el; ///
 
         Sticky.prototype.detach = function () {
-
+            this.el.classList.remove("is_stuck");
         };
 
         Sticky.prototype.destroy = function () {
 
         };
 
-        Sticky.prototype.render = function () {
-            var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-            console.log(values);
-            for (var key in values) {
-                // этот код будет вызван для каждого свойства объекта
-                // ..и выведет имя свойства и его значение
-
-                console.log( "Ключ: " + key + " значение: " + values[key] );
-
-                if (bodyScrollTop > values[key].stickyOffsetTop) {
-                    console.log("bluyalexazaebal");
-                }
-            }
-
-
-
-        };
-
-        Sticky.prototype.scroll = function () {
-
-        };
-
-        Sticky.prototype.init = function () {
+        Sticky.prototype.attach = function () {
+            this.el.classList.add("is_stuck");
 
         };
 
     };
 
 
-
-    function stickyInit(){
+    function stickyInit() {
         var stickyArr = document.querySelectorAll('[data-sticky]');
         var stickysLenght = stickyArr.length;
+        var values = [];
+        var mainOffset = 0;
+        var mainOffsetBefore;
+        var render = function () {
+            var bodyScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-        console.log('xzxzxz');
+            for (var key in values) {
+
+
+                if (bodyScrollTop + mainOffset > values[key].offsetTop && !(values[key].stateEl == 1)) {
+                    values[key].attach();
+                    console.log("attach");
+                    values[key].stateEl = 1;
+                    values[key].el.style.top = mainOffset + "px";
+                    mainOffset += values[key].el.clientHeight;
+                    mainOffsetBefore = 0;
+                    if (key != 0) {
+                        mainOffsetBefore = values[key-1].el.clientHeight;
+                    }
+                    else {
+                        mainOffsetBefore = 0;
+                    }
+                    console.log(mainOffsetBefore + " - mainOffsetBefore|mainOffserBsd");
+
+                }
+                console.log(key + " - keyBefore");
+                console.log(values[key].stateEl + " - stateElBefore");
+                console.log(values[key].offsetTop + " - offsetTopBefore");
+                console.log(bodyScrollTop + " - bodyScrollTopBefore");
+                console.log(mainOffset + " - mainOffsetBefore");
+                if (bodyScrollTop + mainOffsetBefore < values[key].offsetTop && values[key].stateEl == 1) {
+                    values[key].detach();
+                    console.log("detach");
+                    console.log(key + " - keyAfter");
+                    console.log(values[key].stateEl + " - stateElAfter");
+                    console.log(values[key].offsetTop + " - offsetTopAfter");
+                    console.log(bodyScrollTop + mainOffset + " - PlusHeightAfter");
+                    if (key != 0) {
+                        mainOffset -= values[key].el.clientHeight;
+                    }
+                    else {
+                        mainOffset = 0;
+                    }
+
+                    console.log(mainOffset + "mainOffset2");
+                    values[key].stateEl = 0;
+                    mainOffsetBefore = 0;
+                }
+
+            }
+        };
+
         for (var i = 0; i < stickysLenght; i++) {
             var stickyItem = stickyArr[i];
-            var values = [];
-            // var placeholder = sticky.parentNode;
-            // $(sticky).wrap("<div class='sticky-placeholder'></div>");
+            var stickyEl = new Sticky({});
 
-            var stickyEl = new Sticky({
-                stickInParent: $(stickyItem).data("sticky").stickInParent,
-                stickyOffsetTop : stickyItem.offsetTop
-            });
+            $(stickyItem).wrapAll('<div class="sticky-placeholder"></div>');
 
-
+            $(stickyItem).parents(".sticky-placeholder").css({"height" : $(stickyItem).outerHeight()});
+            //options
+            stickyEl.stickInParent = $(stickyItem).data("sticky").stickInParent;
+            stickyEl.type = $(stickyItem).data("sticky").stickInParent;
+            //values
+            stickyEl.offsetTop = stickyItem.offsetTop;
+            stickyEl.el = stickyItem;
+            stickyEl.stateEl = 0;
             values.push(stickyEl);
 
         }
 
-        // for (var key in values) {
-        //     // этот код будет вызван для каждого свойства объекта
-        //     // ..и выведет имя свойства и его значение
-        //
-        //     alert( "Ключ: " + key + " значение: " + values[key] );
-        // }
 
-        window.addEventListener('scroll', function(e) {
-            stickyEl.render();
-        });
-
-        return values;
+        window.addEventListener('scroll', render);
     }
-
 
 
     var app = new YOURAPPNAME(document);
@@ -449,11 +462,13 @@
         $('input, select').styler({});
 
         $(".bag-goods__item-del").click(function () {
-            var el  = $(this);
+            var el = $(this);
             var parent = el.parents(".bag-goods__item");
 
-            parent.slideUp(300, function(){ parent.remove(); });
-            if ($(".bag-goods__item").length <= 1 ){
+            parent.slideUp(300, function () {
+                parent.remove();
+            });
+            if ($(".bag-goods__item").length <= 1) {
                 $(".bag-goods__head-notification").removeClass("hidden");
                 $("#card-delete").addClass("hidden");
             }
@@ -461,8 +476,10 @@
         });
 
         $("#card-delete").click(function () {
-            var els  = $(".bag-goods__item");
-            els.slideUp(300, function(){ els.remove(); });
+            var els = $(".bag-goods__item");
+            els.slideUp(300, function () {
+                els.remove();
+            });
             $(".bag-goods__head-notification").removeClass("hidden");
             $("#card-delete").addClass("hidden");
         });
@@ -471,11 +488,11 @@
             var el = $(this);
             var target = el.parents(".section-inner").find(".dd-btn-target");
             el.toggleClass("active");
-            if (!(target.hasClass("active"))){
+            if (!(target.hasClass("active"))) {
                 target.addClass("active");
                 target.stop().slideDown(400);
             }
-            else{
+            else {
                 target.removeClass("active");
                 target.stop().slideUp(400);
             }
@@ -483,73 +500,16 @@
         });
 
 
-
         (function () {
 
-            function ass_amount_check(_target) {
-                _target.each(function() {
-                    var
-                        amount_new = _target.val();
-
-                    if (amount_new < 1 || isNaN(amount_new) || amount_new > 20) {
-                        _target.val(1);
-                    }
-
-                });
-            };
-
-
-            var plus = $(".bag-goods__item-count-plus");
-            var minus = $(".bag-goods__item-count-minus");
-            var input = $(".input-count");
-            plus.click(function () {
-
-                var plus = $(this);
-                var inp = plus.siblings(".input-wrapper").find("input");
-                var inpVal = parseInt(inp.val());
-
-                if (!(inpVal >= 20)) {
-                    inpVal++;
-                    inp.val(inpVal);
-                }
-
-
-            });
-
-            $(document).on('change', $(".input-count"), function(event) {
+            $(document).on('change', $(".input-count"), function (event) {
                 ass_amount_check($(event.$(".input-count")));
-            }).on('keydown', $(".input-count"), function(event){
+            }).on('keydown', $(".input-count"), function (event) {
                 if (event.which == 13) {
                     event.preventDefault();
                     $(event.target).change();
                     ass_amount_check($(event.target));
                 }
-            });
-
-            minus.click(function () {
-                var minus = $(this);
-                var inp = minus.siblings(".input-wrapper").find("input");
-                var inpVal = parseInt(inp.val());
-
-                if (!(inpVal <= 1)) {
-                    inpVal--;
-                    inp.val(inpVal);
-                }
-                // console.log(inpVal + "wdwdw");
-                // cart_q_inp = $(this).siblings('.cart_q_inp');
-                // cart_q_val = parseInt(cart_q_inp.val());
-                //
-                // if ($(this).hasClass('minus') && cart_q_val >= 2) {
-                //     cart_q_val -= 1;
-                // };
-                //
-                // if ($(this).hasClass('plus')) {
-                //     cart_q_val += 1;
-                // };
-                //
-                // cart_q_inp.val(cart_q_val).change();
-                //
-                // return false;
             });
         })();
 
@@ -756,7 +716,7 @@
 
         });
 
-        $(document).on('click', '.slide-toggle', function() {
+        $(document).on('click', '.slide-toggle', function () {
             if ($(this).hasClass("active")) {
                 $(this).removeClass("active");
 
@@ -823,31 +783,31 @@
             }
         });
 
-        $(function(){
+        $(function () {
 
             var progressbar = $("#progressbar"),
-                bar         = progressbar.find('.uk-progress-bar'),
-                settings    = {
+                bar = progressbar.find('.uk-progress-bar'),
+                settings = {
 
                     action: '/', // upload url
 
-                    allow : '*.(jpg|jpeg|gif|png)', // allow only images
+                    allow: '*.(jpg|jpeg|gif|png)', // allow only images
 
-                    loadstart: function() {
+                    loadstart: function () {
                         bar.css("width", "0%").text("0%");
                         progressbar.removeClass("uk-hidden");
                     },
 
-                    progress: function(percent) {
+                    progress: function (percent) {
                         percent = Math.ceil(percent);
-                        bar.css("width", percent+"%").text(percent+"%");
+                        bar.css("width", percent + "%").text(percent + "%");
                     },
 
-                    allcomplete: function(response) {
+                    allcomplete: function (response) {
 
                         bar.css("width", "100%").text("100%");
 
-                        setTimeout(function(){
+                        setTimeout(function () {
                             progressbar.addClass("uk-hidden");
                         }, 250);
 
@@ -856,7 +816,7 @@
                 };
 
             var select = UIkit.uploadSelect($(".js-upload-select"), settings),
-                drop   = UIkit.uploadDrop($(".js-upload-drop"), settings);
+                drop = UIkit.uploadDrop($(".js-upload-drop"), settings);
         });
         $(window).resize = function () {
             siteDD();
