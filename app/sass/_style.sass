@@ -207,7 +207,7 @@ textarea
 		height: 35px
 		background-color: transparent
 		border: 1px solid $brand
-		padding: 0 40px 0 15px
+		padding: 0 50px 0 15px
 		color: #fff
 		font-size: 18px
 		&:focus, &:hover
@@ -216,16 +216,32 @@ textarea
 			outline: none !important
 		
 
-	&::after
-		content: '\f002'
-		font-family: $font-icon
-		position: absolute
-		color: $brand
-		top: 48%
-		transform: translateY(-50%)
-		right: 15px
-		flex: 25px
-
+	//&::after
+	//	content: '\f002'
+	//	font-family: $font-icon
+	//	position: absolute
+	//	color: $brand
+	//	top: 48%
+	//	transform: translateY(-50%)
+	//	right: 15px
+	//	flex: 25px
+.page-header__search-bar-icon
+  cursor: pointer
+  display: inline-block
+  position: absolute
+  height: 35px
+  width: 50px
+  bottom: 0
+  line-height: 35px
+  right: 0
+  padding-right: 15px
+  padding-left: 15px
+  &:after
+      content: '\f002'
+      font-family: $font-icon
+      color: $brand
+      transform: translateY(-50%)
+      flex: 25px
 
 .page-hero-slider__img
 	object-fit: cover
@@ -982,15 +998,23 @@ ul.markered-list
 		&:focus
 			outline: none !important
 
-	&::after
-		content: '\f002'
-		font-family: $font-icon
-		position: absolute
-		color: $brand
-		top: 48%
-		transform: translateY(-50%)
-		right: 15px
-		flex: 25px
+.uk-offcanvas-bar__search-icon
+  cursor: pointer
+  display: inline-block
+  position: absolute
+  height: 35px
+  width: 50px
+  bottom: 0
+  line-height: 35px
+  right: 0
+  padding-right: 15px
+  padding-left: 15px
+  &:after
+    content: '\f002'
+    font-family: $font-icon
+    color: $brand
+    transform: translateY(-50%)
+    flex: 25px
 
 .breadcrumb
 	background: $lightgrey
